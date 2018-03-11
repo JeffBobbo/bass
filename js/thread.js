@@ -47,9 +47,13 @@ function reduce(from, filter)
       continue;
     const skills = Object.keys(piece.skills);
     let include = false;
+    piece.weight = 0;
     build.skills.forEach(sk => {
       if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
+      {
         include = true;
+        piece.weight += piece.skills[sk.stats.Jewel];
+      }
     });
     if (include)
       to[name] = piece;
@@ -82,22 +86,34 @@ function loop()
 
   let count = 0;
 
-  for (const [hname, head] of Object.entries(uheads))
+  let desc = list => {
+    list.sort((a, b) => {
+      return list[a].weight - list[b].weight; 
+    });
+  };
+
+  for (const hname of Object.keys(uheads).sort(desc))
   {
-  for (const [cname, chest] of Object.entries(uchests))
+  const head = uheads[hname];
+  console.log(head.weight);
+  for (const cname of Object.keys(uchests).sort(desc))
   {
-  for (const [aname, arm] of Object.entries(uarms))
+  const chest = uchests[cname];
+  for (const aname of Object.keys(uarms).sort(desc))
   {
-  for (const [wname, waist] of Object.entries(uwaists))
+  const arm = uarms[aname];
+  for (const wname of Object.keys(uwaists).sort(desc))
   {
-  for (const [lname, leg] of Object.entries(ulegs))
+  const waist = uwaists[wname];
+  for (const lname of Object.keys(ulegs).sort(desc))
   {
+    const leg = ulegs[lname];
     ++count;
-    const torsoInc = "Torso Inc" in head.skills ||
-                     "Torso Inc" in chest.skills ||
-                     "Torso Inc" in arm.skills ||
-                     "Torso Inc" in waist.skills ||
-                     "Torso Inc" in leg.skills;
+    const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
+                     ("Torso Inc" in chest.skills ? 1 : 0) +
+                     ("Torso Inc" in arm.skills ? 1 : 0) +
+                     ("Torso Inc" in waist.skills ? 1 : 0) +
+                     ("Torso Inc" in leg.skills ? 1 : 0) ;
 
     let set = {
       "gear": [hname, cname, aname, wname, lname],
