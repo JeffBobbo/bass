@@ -74,11 +74,11 @@ function loop()
   let uarms = reduce(arms, build.filtered);
   let uwaists = reduce(waists, build.filtered);
   let ulegs = reduce(legs, build.filtered);
-  console.log(Object.keys(uheads));
-  console.log(Object.keys(uchests));
-  console.log(Object.keys(uarms));
-  console.log(Object.keys(uwaists));
-  console.log(Object.keys(ulegs));
+  const possibilities = Object.keys(uheads).length *
+                        Object.keys(uchests).length *
+                        Object.keys(uarms).length *
+                        Object.keys(uwaists).length *
+                        Object.keys(ulegs).length;
 
   let count = 0;
 
