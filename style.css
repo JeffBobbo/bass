@@ -1,0 +1,17 @@
+body
+{
+  height:100vh;
+  overflow-y:hidden;
+}
+
+
+table#skills
+{
+  max-height:50%;
+  overflow-y:scroll;
+}
+
+.skill-slot.empty
+{
+  color:grey;
+}

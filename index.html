@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- META -->
+    <title>BASS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+
+    <script type="text/javascript" src="js/tools.js"></script>
+    <script type="text/javascript">
+let worker = new Worker('./js/thread.js');
+worker.onmessage = function(msg) {
+  const data = msg.data;
+  switch (data.cmd)
+  {
+    case "sets":
+      const sets = data.payload;
+      updateSetsTable(sets);
+      break;
+    case "prog":
+      if (data.prog % 1000 == 0)
+        console.log(data.prog);
+      break;
+    default:
+      throw "Unknown command: " + data.cmd;
+  }
+};
+
+let skills = {};
+let gskills = [];
+let armour = {};
+let jewels = {};
+
+let selectedSkills = [];
+
+$(document).ready(function() {
+  $.getJSON("data/skills.json", function(payload) {
+    skills = payload;
+    worker.postMessage({"cmd": "addSkills", "payload": skills});
+    gskills = filter(skills, "Points", ">", 0).sort();
+    updateSkillsTable();
+  });
+  $.getJSON("data/armour.json", function(payload) {
+    armour = payload;
+    worker.postMessage({"cmd": "addArmour", "payload": armour});
+  });
+  $.getJSON("data/jewels.json", function(payload) {
+    jewels = payload;
+    // const keys = Object.keys(payload).sort((a, b) => {
+    //   return a.Skills.localeCompare(b.Skills);
+    // });
+    // for (let i = 0, l = keys.length; i < l; ++i)
+    // {
+    //   let stats = payload[keys[i]];
+    //   stats.name = keys[i];
+    //   jewels.push(stats);
+    // }
+    worker.postMessage({"cmd": "addJewels", "payload": jewels});
+  });
+
+  $("select#filter").change(updateSkillsTable);
+  $("select#class").change(updateSkillsTable);
+  $("input#class-filter").change(updateSkillsTable);
+  $("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
+  $("button#punchit").click(punchit);
+});
+
+function addSkill(skillname)
+{
+  if (selectedSkills.length >= 5)
+    throw "Too many skills";
+
+  const skill = skills[skillname];
+  selectedSkills.push({"name": skillname, "stats": skill});
+  updateSkillsSelected();
+  updateSkillsTable();
+}
+
+function updateSkillsSelected()
+{
+  $('div.skill-slot').each(function(index) {
+    if (index < selectedSkills.length)
+    {
+      $(this).text(selectedSkills[index].name);
+      $(this).removeClass("empty");
+    }
+    else
+    {
+      $(this).text("Skill #" + (index+1));
+      $(this).addClass("empty");
+    }
+  });
+}
+
+function updateSkillsTable()
+{
+  let filtered = gskills.slice(0);
+  {
+    const v = $("select#filter").val();
+    if (v !== "all")
+      filtered = filter(skills, "Categories", "includes", v, filtered)
+  }
+  if ($("input#class-filter").prop('checked') && $("select#class").val() === "Blademaster")
+  {
+    filtered = filter(skills, "Categories", "excludes", "Bowgun", filtered);
+    filtered = filter(skills, "Categories", "excludes", "Bow", filtered);
+  }
+  else
+  {
+    filtered = filter(skills, "Categories", "excludes", "Blademaster", filtered)
+  }
+
+
+  for (var i = selectedSkills.length - 1; i >= 0; i--)
+  {
+    const skill = selectedSkills[i];
+    filtered = filter(skills, "Jewel", "excludes", skill.stats.Jewel, filtered);
+  }
+
+  $('table#skills tbody tr').remove();
+  $.each(filtered, id => {
+    $('table#skills > tbody:last-child').append('<tr><td>'+filtered[id]+'</td></tr>');
+  });
+  $("table#skills tbody tr td").click((e) => { addSkill(e.target.textContent); });
+}
+
+function updateSetsTable(sets)
+{
+  console.error("Implement");
+  console.log("Received " + sets.length + " sets");
+}
+
+let run = false;
+function punchit()
+{
+  if (run)
+  {
+    worker.postMessage({"cmd": "stop"});
+    $("button#punchit").text("Search");
+    run = false;
+  }
+  else
+  {
+    let build = {
+      "skills": selectedSkills,
+      "elder": $("select#elder").val(),
+      "hr": $("select#hr").val(),
+      "gender": $("select#gender").val(),
+      "slots": $("select#slots").val(),
+      "class": $("select#class").val()
+    };
+    worker.postMessage({"cmd": "start", "build": build});
+    $("button#punchit").text("Stop");
+    run = true;
+  }
+}
+    </script>
+  </head>
+  <body>
+    <!-- black star &#9733; -->
+    <div class="grid">
+      <div class="col_9">
+        <div class="col_3">
+          <p>Village Level</p>
+          <select id="elder">
+            <option value="6">6&#9733;</option>
+            <option value="5">5&#9733;</option>
+            <option value="4">4&#9733;</option>
+            <option value="3">3&#9733;</option>
+            <option value="2">2&#9733;</option>
+            <option value="1">1&#9733;</option>
+          </select>
+        </div>
+        <div class="col_3">
+          <p>Hunter Rank</p>
+          <select id="hr">
+            <option value="9">HR9 (GR)</option>
+            <option value="8">HR8 (GR)</option>
+            <option value="7">HR7 (GR)</option>
+            <option value="6">HR6 (HR)</option>
+            <option value="5">HR5 (HR)</option>
+            <option value="4">HR4 (HR)</option>
+            <option value="3">HR3 (LR)</option>
+            <option value="2">HR2 (LR)</option>
+            <option value="1">HR1 (LR)</option>
+          </select>
+        </div>
+        <div class="col_3">
+          <p>Gender</p>
+          <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="col_3">
+          <p>Class</p>
+          <select id="class">
+            <option value="Blademaster">Blademaster</option>
+            <option value="Gunner">Gunner</option>
+          </select>
+        </div>
+
+        <div class="col_2 skill-slot empty">Skill #1</div>
+        <div class="col_2 skill-slot empty">Skill #2</div>
+        <div class="col_2 skill-slot empty">Skill #3</div>
+        <div class="col_2 skill-slot empty">Skill #4</div>
+        <div class="col_2 skill-slot empty">Skill #5</div>
+        <div class="col_2"><button id="removeSkills" class="small">Remove All</button></div>
+
+        <div class="col_2">
+          <p>Slots</p>
+          <select id="slots">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="col_2">
+          <p>Allow bad skills</p>
+          <input type="checkbox" id="badskills" checked disabled/>
+        </div>
+        <div class="col_2">
+          <p>Allow piercings</p>
+          <input type="checkbox" id="piercings" checked disabled/>
+        </div>
+        <div class="col_2">
+          <p>Allow Torso Inc.</p>
+          <input type="checkbox" id="torsoinc" checked disabled/>
+        </div>
+        <div class="col_2">
+          <p>Allow (dummy)</p>
+          <input type="checkbox" id="dummy" checked disabled/>
+        </div>
+        <div class="col_2">
+          <button id="punchit">Search</button>
+        </div>
+      </div>
+      <div class="col_3">
+        Filter Class:
+        <input type="checkbox" id="class-filter"/>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="Offensive">Offensive</option>
+          <option value="Defensive">Defensive</option>
+          <option value="Resistance">Resistance</option>
+          <option value="Farming">Farming</option>
+          <option value="Treasure Hunting">Treasure Hunting</option>
+          <option value="Blademaster">Blademaster</option>
+          <option value="Bowgun">Bowgun</option>
+          <option value="Bow">Bow</option>
+        </select>
+        <table id="skills">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
