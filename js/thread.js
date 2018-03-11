@@ -46,10 +46,10 @@ function reduce(from, filter)
     if (!filter.includes(name))
       continue;
     const skills = Object.keys(piece.skills);
-    let include = true;
+    let include = false;
     build.skills.forEach(sk => {
-      if (skills.includes(sk.stats.Jewel) == true || piece.skills[sk] < 0)
-        include = false;
+      if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
+        include = true;
     });
     if (include)
       to[name] = piece;
@@ -74,6 +74,11 @@ function loop()
   let uarms = reduce(arms, build.filtered);
   let uwaists = reduce(waists, build.filtered);
   let ulegs = reduce(legs, build.filtered);
+  console.log(Object.keys(uheads));
+  console.log(Object.keys(uchests));
+  console.log(Object.keys(uarms));
+  console.log(Object.keys(uwaists));
+  console.log(Object.keys(ulegs));
 
   let count = 0;
 
@@ -87,8 +92,7 @@ function loop()
   {
   for (const [lname, leg] of Object.entries(ulegs))
   {
-    if (count++ % 1000 == 0)
-      console.log(count);
+    ++count;
     const torsoInc = "Torso Inc" in head.skills ||
                      "Torso Inc" in chest.skills ||
                      "Torso Inc" in arm.skills ||
@@ -114,6 +118,7 @@ function loop()
     if (hasAllSkills === false)
       continue;
 
+    console.log("searched " + count + " sets");
     console.log(set);
     return;
   } // leg
@@ -121,6 +126,7 @@ function loop()
   } // arm
   } // chest
   } // head
+  console.log("searched " + count + " sets");
   console.log("no sets");
 }
 
