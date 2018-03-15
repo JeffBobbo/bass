@@ -17,30 +17,38 @@
 
     <script type="text/javascript" src="js/tools.js"></script>
     <script type="text/javascript">
-let worker = new Worker('./js/thread.js');
-worker.onmessage = function(msg) {
-  const data = msg.data;
-  switch (data.cmd)
-  {
-    case "sets":
-      const sets = data.payload;
-      updateSetsTable(sets);
-      break;
-    case "prog":
-      if (data.prog % 1000 == 0)
-        console.log(data.prog);
-      break;
-    default:
-      throw "Unknown command: " + data.cmd;
-  }
-};
-
 let skills = {};
 let gskills = [];
 let armour = {};
 let jewels = {};
 
 let selectedSkills = [];
+let sets = [];
+
+let worker = new Worker('./js/thread.js');
+worker.onmessage = function(msg) {
+  const data = msg.data;
+  switch (data.cmd)
+  {
+    case "prog":
+      $("progress").val(data.value);
+      $("span#count").text(sets.length);
+      break;
+    case "stop":
+      $("progress").val(100);
+      $("button#punchit").text("Search");
+      run = false;
+      break;
+    case "set":
+      const set = data.set;
+      sets.push(set);
+      addSetToTable(set);
+      break;
+    default:
+      throw "Unknown command: " + data.cmd;
+  }
+};
+
 
 $(document).ready(function() {
   $.getJSON("data/skills.json", function(payload) {
@@ -55,15 +63,6 @@ $(document).ready(function() {
   });
   $.getJSON("data/jewels.json", function(payload) {
     jewels = payload;
-    // const keys = Object.keys(payload).sort((a, b) => {
-    //   return a.Skills.localeCompare(b.Skills);
-    // });
-    // for (let i = 0, l = keys.length; i < l; ++i)
-    // {
-    //   let stats = payload[keys[i]];
-    //   stats.name = keys[i];
-    //   jewels.push(stats);
-    // }
     worker.postMessage({"cmd": "addJewels", "payload": jewels});
   });
 
@@ -123,7 +122,7 @@ function updateSkillsTable()
   for (var i = selectedSkills.length - 1; i >= 0; i--)
   {
     const skill = selectedSkills[i];
-    filtered = filter(skills, "Jewel", "excludes", skill.stats.Jewel, filtered);
+    filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
   }
 
   $('table#skills tbody tr').remove();
@@ -133,10 +132,37 @@ function updateSkillsTable()
   $("table#skills tbody tr td").click((e) => { addSkill(e.target.textContent); });
 }
 
-function updateSetsTable(sets)
+function updateSetsTable()
 {
-  console.error("Implement");
-  console.log("Received " + sets.length + " sets");
+  for (const set of sets)
+  {
+    const row = "<tr>" +
+      "<td>" + set.gear.head.name + "</td>" +
+      "<td>" + set.gear.chest.name + "</td>" +
+      "<td>" + set.gear.arms.name + "</td>" +
+      "<td>" + set.gear.waist.name + "</td>" +
+      "<td>" + set.gear.legs.name + "</td>" +
+      "</tr>";
+    $("table#sets > tbody:last-child").append(row);
+  };
+}
+
+// fix this
+function addSetToTable(set)
+{
+  const row = "<tr>" +
+    "<td>" + set.gear[0] + "</td>" +
+    "<td>" + set.gear[1] + "</td>" +
+    "<td>" + set.gear[2] + "</td>" +
+    "<td>" + set.gear[3] + "</td>" +
+    "<td>" + set.gear[4] + "</td>" +
+    "</tr>";
+  $("table#sets > tbody:last-child").append(row);
+}
+
+function clearSetsTable()
+{
+  $("table#sets tbody tr").remove();
 }
 
 let run = false;
@@ -160,6 +186,9 @@ function punchit()
     };
     worker.postMessage({"cmd": "start", "build": build});
     $("button#punchit").text("Stop");
+    $('progress').show();
+    $('progress').val(0.0);
+    clearSetsTable();
     run = true;
   }
 }
@@ -242,12 +271,31 @@ function punchit()
           <input type="checkbox" id="dummy" checked disabled/>
         </div>
         <div class="col_2">
-          <button id="punchit">Search</button>
+          <button id="punchit">Search</button><br/>
+          <progress max="100" style="display:none;"></progress>
+          <span id="count"></span>
+        </div>
+        <div class="col_12">
+          <div style="overflow:auto; max-height:500px">
+            <table id="sets">
+              <thead>
+                <tr>
+                  <td>Head</td>
+                  <td>Chest</td>
+                  <td>Arms</td>
+                  <td>Waist</td>
+                  <td>Legs</td>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div class="col_3">
         Filter Class:
-        <input type="checkbox" id="class-filter"/>
+        <input type="checkbox" id="class-filter" checked/>
         <select id="filter">
           <option value="all">All</option>
           <option value="Offensive">Offensive</option>

@@ -19,47 +19,114 @@ let sets = [];
 function setup(data)
 {
   build = data;
+  if (build.skills.length == 0)
+    return;
   run = true;
 
-  // do a reduction on the gear set to make the search faster
-  let filtered = Object.keys(armour);
-  switch (build.class)
+  // remove any gear that's not the right type
+  function reduceType(part, source)
   {
-    case "Blademaster":
-      filtered = filter(armour, "type", "in", ["Both", "Blademaster"], filtered);
-    break;
-    case "Gunner":
-      filtered = filter(armour, "type", "in", ["Both", "Bow", "Bowgun"], filtered);
-    break;
+    build[part] = Object.keys(source);
+    switch (build.class)
+    {
+      case "Blademaster":
+        build[part] = filter(source, "type", "in", ["Both", "Blademaster"], build[part]);
+        break;
+      case "Gunner":
+        build[part] = filter(source, "type", "in", ["Both", "Bow", "Bowgun"], build[part]);
+        break;
+    }
   }
-  build.filtered = filtered;
+  reduceType("heads", heads);
+  reduceType("chests", chests);
+  reduceType("arms", arms);
+  reduceType("waists", waists);
+  reduceType("legs", legs);
+
+  // remove any gear that does provide a bonus to at least one skill
+  // also, give each piece of equipment a weight
+  function reduceSkillsAndWeigh(from)
+  {
+    for (let i = 0, l = from.length; i < l; ++ i)
+    {
+      const name = from[i];
+      const piece = armour[name];
+      piece.weight = 0;
+
+      const skills = Object.keys(piece.skills);
+      let include = false;
+      build.skills.forEach(sk => {
+        if (piece.skills["Torso Inc"] !== undefined || (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0))
+        {
+          include = true;
+          piece.weight += piece.skills[sk.stats.Jewel];
+        }
+      });
+      if (include == false)
+      {
+        from.splice(i, 1);
+        --i;
+        --l;
+      }
+    }
+  }
+  reduceSkillsAndWeigh(build.heads);
+  reduceSkillsAndWeigh(build.chests);
+  reduceSkillsAndWeigh(build.arms);
+  reduceSkillsAndWeigh(build.waists);
+  reduceSkillsAndWeigh(build.legs);
+
+  // sort by the weight assigned in reduce skills
+  function desc(gear)
+  {
+    gear.sort((a, b) => {
+      return armour[b].weight - armour[a].weight;
+    });
+  }
+  desc(build.heads);
+  desc(build.chests);
+  desc(build.arms);
+  desc(build.waists);
+  desc(build.legs);
+
+  if (build.heads.length > 8)
+    build.heads.splice(Math.ceil(build.heads.length * 0.5));
+  if (build.chests.length > 8)
+    build.chests.splice(Math.ceil(build.chests.length * 0.5));
+  if (build.arms.length > 8)
+    build.arms.splice(Math.ceil(build.arms.length * 0.5));
+  if (build.waists.length > 8)
+    build.waists.splice(Math.ceil(build.waists.length * 0.5));
+  if (build.legs.length > 8)
+    build.legs.splice(Math.ceil(build.legs.length * 0.5));
+
+  build.jewels = [];
+  for (const bskill of build.skills)
+  {
+    const statname = bskill.stats.Jewel;
+
+    for (const [jname, jstats] of Object.entries(jewels))
+    {
+      const b = jstats.Skills[statname];
+      if (b !== undefined && b > 0 && !build.jewels.includes(jname))
+        build.jewels.push(jname);
+    }
+  }
+
+  // compute the number of possible sets
+  build.combis = build.heads.length *
+                 build.chests.length *
+                 build.arms.length *
+                 build.waists.length *
+                 build.legs.length;
+  build.count = 0;
 
   // setup done, pass off to loop
+  console.log(build.combis + " combinations...");
+  build.start = (new Date()).getTime();
   loop();
 }
 
-function reduce(from, filter)
-{
-  let to = {};
-  for (const [name, piece] of Object.entries(from))
-  {
-    if (!filter.includes(name))
-      continue;
-    const skills = Object.keys(piece.skills);
-    let include = false;
-    piece.weight = 0;
-    build.skills.forEach(sk => {
-      if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
-      {
-        include = true;
-        piece.weight += piece.skills[sk.stats.Jewel];
-      }
-    });
-    if (include)
-      to[name] = piece;
-  }
-  return to;
-}
 
 function points(set, part)
 {
@@ -73,42 +140,27 @@ function points(set, part)
 
 function loop()
 {
-  let uheads = reduce(heads, build.filtered);
-  let uchests = reduce(chests, build.filtered);
-  let uarms = reduce(arms, build.filtered);
-  let uwaists = reduce(waists, build.filtered);
-  let ulegs = reduce(legs, build.filtered);
-  const possibilities = Object.keys(uheads).length *
-                        Object.keys(uchests).length *
-                        Object.keys(uarms).length *
-                        Object.keys(uwaists).length *
-                        Object.keys(ulegs).length;
+  function prog()
+  {
+    return build.count / build.combis;
+  }
+  postMessage({"cmd": "prog", "value": Math.floor(prog() * 100)});
 
-  let count = 0;
-
-  let desc = list => {
-    list.sort((a, b) => {
-      return list[a].weight - list[b].weight; 
-    });
-  };
-
-  for (const hname of Object.keys(uheads).sort(desc))
+  const lname = build.legs.pop();
+  const leg = legs[lname];
+  for (const wname of build.waists)
   {
-  const head = uheads[hname];
-  console.log(head.weight);
-  for (const cname of Object.keys(uchests).sort(desc))
+  const waist = waists[wname];
+  for (const aname of build.arms)
   {
-  const chest = uchests[cname];
-  for (const aname of Object.keys(uarms).sort(desc))
+  const arm = arms[aname];
+  for (const cname of build.chests)
   {
-  const arm = uarms[aname];
-  for (const wname of Object.keys(uwaists).sort(desc))
+  const chest = chests[cname];
+  for (const hname of build.heads)
   {
-  const waist = uwaists[wname];
-  for (const lname of Object.keys(ulegs).sort(desc))
-  {
-    const leg = ulegs[lname];
-    ++count;
+  const head = heads[hname];
+    ++build.count;
     const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
                      ("Torso Inc" in chest.skills ? 1 : 0) +
                      ("Torso Inc" in arm.skills ? 1 : 0) +
@@ -116,34 +168,85 @@ function loop()
                      ("Torso Inc" in leg.skills ? 1 : 0) ;
 
     let set = {
-      "gear": [hname, cname, aname, wname, lname],
-      "points": {}
+      "gear": {
+        "head": {"name": hname, "jewels": []},
+        "chest": {"name": cname, "jewels": []},
+        "arms": {"name": aname, "jewels": []},
+        "waist": {"name": wname, "jewels": []},
+        "legs": {"name": lname, "jewels": []}
+      },
+      "points": {},
+      "need": {}
     };
 
+    for (const skstat of Object.values(build.skills))
+      set.need[skstat.Jewel] = skstat.Points;
+
     points(set, head);
-    points(set, chest);
+    for (let i = 0; i < torsoInc+1; ++i)
+      points(set, chest);
     points(set, arm);
     points(set, waist);
     points(set, leg);
 
-    let hasAllSkills = true;
-    build.skills.forEach(sk => {
-      if (!(sk.name in set.points) || set.points[sk.name] < sk.stats.Points)
-        hasAllSkills = false;
-    });
-    if (hasAllSkills === false)
-      continue;
+    for (const [jname, jstat] of Object.entries(set.need))
+      set.need[jname] -= set.points[jname];
 
-    console.log("searched " + count + " sets");
-    console.log(set);
-    return;
-  } // leg
-  } // waist
-  } // arm
-  } // chest
+    function allSkills(set)
+    {
+      for (const p of Object.values(set.need))
+      {
+        if (p > 0)
+          return false;
+      }
+      return true;
+    }
+
+    var slots = {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    };
+    ++slots[heads[hname].slots];
+    ++slots[chests[cname].slots];
+    ++slots[arms[aname].slots];
+    ++slots[waists[wname].slots];
+    ++slots[legs[lname].slots];
+
+    console.log(slots);
+    continue;
+
+    for (const [name, stat] of Object.entries(set.need))
+    {
+      if (allSkills(set) === true)
+      {
+        postMessage({"cmd": "set", "set": set});
+        break;
+      }
+    }
+
   } // head
-  console.log("searched " + count + " sets");
-  console.log("no sets");
+  } // chest
+  } // arm
+  } // waist
+
+  if (build.legs.length)
+  {
+    if (run)
+      setTimeout(loop, 0);
+    else
+    {
+      const end = (new Date()).getTime();
+      console.log("Stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
+    }
+  }
+  else
+  {
+    const end = (new Date()).getTime();
+    postMessage({"cmd": "stop"});
+    console.log("Searched " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000));
+  }
 }
 
 onmessage = function(msg)
