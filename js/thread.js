@@ -214,16 +214,13 @@ function loop()
     ++slots[waists[wname].slots];
     ++slots[legs[lname].slots];
 
-    console.log(slots);
-    continue;
-
     for (const [name, stat] of Object.entries(set.need))
     {
-      if (allSkills(set) === true)
-      {
-        postMessage({"cmd": "set", "set": set});
-        break;
-      }
+      if (stat <= 0) // already got all we need
+        continue;
+
+      // look for gems
+      //
     }
 
   } // head
