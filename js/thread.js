@@ -100,16 +100,18 @@ function setup(data)
   if (build.legs.length > 8)
     build.legs.splice(Math.ceil(build.legs.length * 0.5));
 
-  build.jewels = [];
+  build.jewels = {};
   for (const bskill of build.skills)
   {
     const statname = bskill.stats.Jewel;
+    if (build.jewels[statname] === undefined)
+      build.jewels[statname] = [];
 
     for (const [jname, jstats] of Object.entries(jewels))
     {
       const b = jstats.Skills[statname];
-      if (b !== undefined && b > 0 && !build.jewels.includes(jname))
-        build.jewels.push(jname);
+      if (b !== undefined && b > 0)
+        build.jewels[statname].push(jname);
     }
   }
 
@@ -179,8 +181,8 @@ function loop()
       "need": {}
     };
 
-    for (const skstat of Object.values(build.skills))
-      set.need[skstat.Jewel] = skstat.Points;
+    for (const skill of build.skills)
+      set.need[skill.stats.Jewel] = skill.stats.Points;
 
     points(set, head);
     for (let i = 0; i < torsoInc+1; ++i)
@@ -191,16 +193,6 @@ function loop()
 
     for (const [jname, jstat] of Object.entries(set.need))
       set.need[jname] -= set.points[jname];
-
-    function allSkills(set)
-    {
-      for (const p of Object.values(set.need))
-      {
-        if (p > 0)
-          return false;
-      }
-      return true;
-    }
 
     var slots = {
       "0": 0,
@@ -220,7 +212,10 @@ function loop()
         continue;
 
       // look for gems
-      //
+      for (const jewel of build.jewels[name])
+      {
+        console.log(jewel);
+      }
     }
 
   } // head
