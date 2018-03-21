@@ -17,183 +17,7 @@
     <script type="text/javascript" src="js/kickstart.js"></script>
 
     <script type="text/javascript" src="js/tools.js"></script>
-    <script type="text/javascript">
-let skills = {};
-let gskills = [];
-let armour = {};
-let jewels = {};
-
-let selectedSkills = [];
-let sets = [];
-
-let worker = new Worker('./js/thread.js');
-worker.onmessage = function(msg) {
-  const data = msg.data;
-  switch (data.cmd)
-  {
-    case "prog":
-      $("progress").val(data.value);
-      $("span#count").text(sets.length);
-      break;
-    case "stop":
-      $("progress").val(100);
-      $("button#punchit").text("Search");
-      run = false;
-      break;
-    case "set":
-      const set = data.set;
-      sets.push(set);
-      addSetToTable(set);
-      break;
-    default:
-      throw "Unknown command: " + data.cmd;
-  }
-};
-
-
-$(document).ready(function() {
-  $.getJSON("data/skills.json", function(payload) {
-    skills = payload;
-    worker.postMessage({"cmd": "addSkills", "payload": skills});
-    gskills = filter(skills, "Points", ">", 0).sort();
-    updateSkillsTable();
-  });
-  $.getJSON("data/armour.json", function(payload) {
-    armour = payload;
-    worker.postMessage({"cmd": "addArmour", "payload": armour});
-  });
-  $.getJSON("data/jewels.json", function(payload) {
-    jewels = payload;
-    worker.postMessage({"cmd": "addJewels", "payload": jewels});
-  });
-
-  $("select#filter").change(updateSkillsTable);
-  $("select#class").change(updateSkillsTable);
-  $("input#class-filter").change(updateSkillsTable);
-  $("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
-  $("button#punchit").click(punchit);
-});
-
-function addSkill(skillname)
-{
-  if (selectedSkills.length >= 5)
-    throw "Too many skills";
-
-  const skill = skills[skillname];
-  selectedSkills.push({"name": skillname, "stats": skill});
-  updateSkillsSelected();
-  updateSkillsTable();
-}
-
-function updateSkillsSelected()
-{
-  $('div.skill-slot').each(function(index) {
-    if (index < selectedSkills.length)
-    {
-      $(this).text(selectedSkills[index].name);
-      $(this).removeClass("empty");
-    }
-    else
-    {
-      $(this).text("Skill #" + (index+1));
-      $(this).addClass("empty");
-    }
-  });
-}
-
-function updateSkillsTable()
-{
-  let filtered = gskills.slice(0);
-  {
-    const v = $("select#filter").val();
-    if (v !== "all")
-      filtered = filter(skills, "Categories", "includes", v, filtered)
-  }
-  if ($("input#class-filter").prop('checked') && $("select#class").val() === "Blademaster")
-  {
-    filtered = filter(skills, "Categories", "excludes", "Bowgun", filtered);
-    filtered = filter(skills, "Categories", "excludes", "Bow", filtered);
-  }
-  else
-  {
-    filtered = filter(skills, "Categories", "excludes", "Blademaster", filtered)
-  }
-
-
-  for (var i = selectedSkills.length - 1; i >= 0; i--)
-  {
-    const skill = selectedSkills[i];
-    filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
-  }
-
-  $('table#skills tbody tr').remove();
-  $.each(filtered, id => {
-    $('table#skills > tbody:last-child').append('<tr><td>'+filtered[id]+'</td></tr>');
-  });
-  $("table#skills tbody tr td").click((e) => { addSkill(e.target.textContent); });
-}
-
-function updateSetsTable()
-{
-  for (const set of sets)
-  {
-    const row = "<tr>" +
-      "<td>" + set.gear.head.name + "</td>" +
-      "<td>" + set.gear.chest.name + "</td>" +
-      "<td>" + set.gear.arms.name + "</td>" +
-      "<td>" + set.gear.waist.name + "</td>" +
-      "<td>" + set.gear.legs.name + "</td>" +
-      "</tr>";
-    $("table#sets > tbody:last-child").append(row);
-  };
-}
-
-// fix this
-function addSetToTable(set)
-{
-  const row = "<tr>" +
-    "<td>" + set.gear[0] + "</td>" +
-    "<td>" + set.gear[1] + "</td>" +
-    "<td>" + set.gear[2] + "</td>" +
-    "<td>" + set.gear[3] + "</td>" +
-    "<td>" + set.gear[4] + "</td>" +
-    "</tr>";
-  $("table#sets > tbody:last-child").append(row);
-}
-
-function clearSetsTable()
-{
-  $("table#sets tbody tr").remove();
-}
-
-let run = false;
-function punchit()
-{
-  if (run)
-  {
-    worker.postMessage({"cmd": "stop"});
-    $("button#punchit").text("Search");
-    run = false;
-  }
-  else
-  {
-    let build = {
-      "skills": selectedSkills,
-      "elder": $("select#elder").val(),
-      "hr": $("select#hr").val(),
-      "gender": $("select#gender").val(),
-      "slots": $("select#slots").val(),
-      "class": $("select#class").val()
-    };
-    worker.postMessage({"cmd": "start", "build": build});
-    $("button#punchit").text("Stop");
-    $('progress').show();
-    $('progress').val(0.0);
-    clearSetsTable();
-    run = true;
-  }
-}
-    </script>
+    <script type="text/javascript" src="js/bass.js"></script>
   </head>
   <body>
     <!-- black star &#9733; -->
@@ -201,7 +25,7 @@ function punchit()
       <div class="col_9">
         <div class="col_3">
           <p>Village Level</p>
-          <select id="elder">
+          <select id="elder" disabled title="Not implemented">
             <option value="6">6&#9733;</option>
             <option value="5">5&#9733;</option>
             <option value="4">4&#9733;</option>
@@ -212,7 +36,7 @@ function punchit()
         </div>
         <div class="col_3">
           <p>Hunter Rank</p>
-          <select id="hr">
+          <select id="hr" disabled title="Not implemented">
             <option value="9">HR9 (GR)</option>
             <option value="8">HR8 (GR)</option>
             <option value="7">HR7 (GR)</option>
@@ -256,20 +80,20 @@ function punchit()
           </select>
         </div>
         <div class="col_2">
-          <p>Allow bad skills</p>
-          <input type="checkbox" id="badskills" checked disabled/>
+          <p class="notice error" title="Not implemented">Allow bad skills</p>
+          <input type="checkbox" id="badskills" checked disabled title="Not implemented"/>
         </div>
         <div class="col_2">
           <p>Allow piercings</p>
-          <input type="checkbox" id="piercings" checked disabled/>
+          <input type="checkbox" id="piercings" checked/>
         </div>
         <div class="col_2">
-          <p>Allow Torso Inc.</p>
-          <input type="checkbox" id="torsoinc" checked disabled/>
+          <p class="notice warning" title="Partially implemented, Torso Inc will work on the chest piece, but is not considered for jewels">Allow Torso Inc.</p>
+          <input type="checkbox" id="torsoinc" checked/>
         </div>
         <div class="col_2">
-          <p>Allow (dummy)</p>
-          <input type="checkbox" id="dummy" checked disabled/>
+          <p class="notice error" title="Not implemented">Allow (dummy)</p>
+          <input type="checkbox" id="dummy" disabled/>
         </div>
         <div class="col_2">
           <button id="punchit">Search</button><br/>
@@ -278,14 +102,16 @@ function punchit()
         </div>
         <div class="col_12">
           <div style="overflow:auto; max-height:500px">
-            <table id="sets">
+            <table id="sets" class="sortable tight">
               <thead>
                 <tr>
+                  <td>Defence (Max)</td>
                   <td>Head</td>
                   <td>Chest</td>
                   <td>Arms</td>
                   <td>Waist</td>
                   <td>Legs</td>
+                  <td>Jewels</td>
                 </tr>
               </thead>
               <tbody>
@@ -297,7 +123,11 @@ function punchit()
       <div class="col_3">
         Filter Class:
         <input type="checkbox" id="class-filter" checked/>
-        <select id="filter">
+        <br/>
+        Filter Bad:
+        <input type="checkbox" id="bad-filter" checked/>
+        <br/>
+        Category: <select id="filter">
           <option value="all">All</option>
           <option value="Offensive">Offensive</option>
           <option value="Defensive">Defensive</option>
@@ -307,11 +137,10 @@ function punchit()
           <option value="Blademaster">Blademaster</option>
           <option value="Bowgun">Bowgun</option>
           <option value="Bow">Bow</option>
+          <option value="Other">Other</option>
         </select>
-        <table id="skills">
-          <tbody>
-          </tbody>
-        </table>
+        <div id="skills">
+        </div>
       </div>
     </div>
   </body>

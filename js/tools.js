@@ -30,6 +30,10 @@ function filter(object, key, comparison, value, keys = Object.keys(object))
         }
         return false;
       }
+      case "empty":
+      {
+        return obj[key].length === 0;
+      }
     }
     throw "Non-existing comparison: " + comparison;
   }

@@ -4,8 +4,33 @@ body
   overflow-y:hidden;
 }
 
-
 .skill-slot.empty
 {
   color:grey;
+}
+
+.skill-slot:not(.empty)
+{
+  cursor:pointer;
+}
+
+div#skills
+{
+  overflow-y:scroll;
+  bottom:0px;
+}
+
+div#skills>p
+{
+  cursor:pointer;
+}
+
+hr
+{
+  margin:0px;
+}
+
+.notice
+{
+  padding:0px;
 }

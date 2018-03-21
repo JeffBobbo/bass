@@ -43,6 +43,21 @@ function setup(data)
   reduceType("waists", waists);
   reduceType("legs", legs);
 
+  // remove piercings?
+  if (build.piercings === false)
+  {
+    for (let i = 0, l = build.heads.length; i < l; ++i)
+    {
+      const name = build.heads[i];
+      if (name.includes("Piercing"))
+      {
+        build.heads.splice(i, 1);
+        --i;
+        --l;
+      }
+    }
+  }
+
   // remove any gear that does provide a bonus to at least one skill
   // also, give each piece of equipment a weight
   function reduceSkillsAndWeigh(from)
@@ -55,8 +70,13 @@ function setup(data)
 
       const skills = Object.keys(piece.skills);
       let include = false;
+      if (piece.skills["Torso Inc"] !== undefined && build.torsoinc)
+      {
+        include = true;
+        piece.weight = 5; // weigh Torso Inc at 5
+      }
       build.skills.forEach(sk => {
-        if (piece.skills["Torso Inc"] !== undefined || (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0))
+        if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
         {
           include = true;
           piece.weight += piece.skills[sk.stats.Jewel];
@@ -89,15 +109,15 @@ function setup(data)
   desc(build.waists);
   desc(build.legs);
 
-  if (build.heads.length > 8)
+  while (build.heads.length > 16)
     build.heads.splice(Math.ceil(build.heads.length * 0.5));
-  if (build.chests.length > 8)
+  while (build.chests.length > 16)
     build.chests.splice(Math.ceil(build.chests.length * 0.5));
-  if (build.arms.length > 8)
+  while (build.arms.length > 16)
     build.arms.splice(Math.ceil(build.arms.length * 0.5));
-  if (build.waists.length > 8)
+  while (build.waists.length > 16)
     build.waists.splice(Math.ceil(build.waists.length * 0.5));
-  if (build.legs.length > 8)
+  while (build.legs.length > 16)
     build.legs.splice(Math.ceil(build.legs.length * 0.5));
 
   build.jewels = {};
@@ -122,6 +142,7 @@ function setup(data)
                  build.waists.length *
                  build.legs.length;
   build.count = 0;
+  build.found = 0;
 
   // setup done, pass off to loop
   console.log(build.combis + " combinations...");
@@ -163,6 +184,8 @@ function loop()
   {
   const head = heads[hname];
     ++build.count;
+    if (build.found > 100)
+      run = false;
     const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
                      ("Torso Inc" in chest.skills ? 1 : 0) +
                      ("Torso Inc" in arm.skills ? 1 : 0) +
@@ -178,7 +201,8 @@ function loop()
         "legs": {"name": lname, "jewels": []}
       },
       "points": {},
-      "need": {}
+      "need": {},
+      "jewels": []
     };
 
     for (const skill of build.skills)
@@ -205,19 +229,45 @@ function loop()
     ++slots[arms[aname].slots];
     ++slots[waists[wname].slots];
     ++slots[legs[lname].slots];
+    ++slots[build.slots];
 
-    for (const [name, stat] of Object.entries(set.need))
+    for (var [name, stat] of Object.entries(set.need))
     {
-      if (stat <= 0) // already got all we need
-        continue;
-
-      // look for gems
-      for (const jewel of build.jewels[name])
+      while (stat > 0)
       {
-        console.log(jewel);
+        var best = null;
+        // look for gems
+        for (const jname of build.jewels[name])
+        {
+          const jewel = jewels[jname];
+          if (slots[jewel.Slots] > 0 && (best === null || jewel.Skills[name] > jewels[best].Skills[name]))
+            best = jname;
+        }
+
+        if (best === null) // there is no gem to use, so break out
+          break;
+
+        --slots[jewels[best].Slots];
+        set.need[name] -= jewels[best].Skills[name];
+        stat -= jewels[best].Skills[name];
+        set.jewels.push(best);
       }
     }
 
+    const allSkills = (need) => {
+      for (const stat of Object.values(need))
+      {
+        if (stat > 0)
+          return false;
+      }
+      return true;
+    }
+
+    if (allSkills(set.need))
+    {
+      ++build.found;
+      postMessage({"cmd": "set", "set": set});
+    }
   } // head
   } // chest
   } // arm
@@ -230,6 +280,7 @@ function loop()
     else
     {
       const end = (new Date()).getTime();
+    postMessage({"cmd": "stop"});
       console.log("Stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
     }
   }
