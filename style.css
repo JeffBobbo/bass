@@ -1,7 +1,5 @@
 body
 {
-  max-height:100vh;
-  overflow-y:hidden;
 }
 
 .skill-slot.empty
@@ -16,8 +14,8 @@ body
 
 div#skills
 {
+  height:90vh;
   overflow-y:scroll;
-  bottom:0px;
 }
 
 div#skills>p
