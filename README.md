@@ -12,4 +12,5 @@ Data is retrieved via `XMLHttpRequest`s, some (most? Chrome at least) browsers b
 
 ## Acknowledgements
 [sj1k](https://github.com/Sjc1000) for reference and guidence.
+
 Plesioth (of ##monsterhunter on FreeNode) for guidence.
