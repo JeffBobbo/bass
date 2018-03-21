@@ -14,18 +14,19 @@ worker.onmessage = function(msg) {
   {
     case "prog":
       $("progress").val(data.value);
-      $("span#count").text(sets.length);
+      $("span#count").text(Math.min(sets.length, 100));
       break;
     case "stop":
       $("progress").val(100);
       $("button#punchit").text("Search");
-      $("span#count").text(sets.length);
+      $("span#count").text(Math.min(sets.length, 100));
       run = false;
       break;
     case "set":
       const set = data.set;
       sets.push(set);
-      addSetToTable(set);
+      if (sets.length < 100)
+        addSetToTable(set);
       break;
     default:
       throw "Unknown command: " + data.cmd;
