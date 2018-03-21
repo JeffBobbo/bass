@@ -168,30 +168,6 @@ function updateSkillsTable()
   $("div#skills p").click((e) => { addSkill(e.target.textContent); });
 }
 
-function updateSetsTable()
-{
-  for (const set of sets)
-  {
-    var maxdef = 0;
-    maxdef += armour[set.gear.head.name].defense.max;
-    maxdef += armour[set.gear.chest.name].defense.max;
-    maxdef += armour[set.gear.arms.name].defense.max;
-    maxdef += armour[set.gear.waist.name].defense.max;
-    maxdef += armour[set.gear.legs.name].defense.max;
-
-    const row = "<tr>" +
-      '<td value="' + maxdef + '">' + maxdef + '</td>' +
-      "<td>" + set.gear.head.name + "</td>" +
-      "<td>" + set.gear.chest.name + "</td>" +
-      "<td>" + set.gear.arms.name + "</td>" +
-      "<td>" + set.gear.waist.name + "</td>" +
-      "<td>" + set.gear.legs.name + "</td>" +
-      "<td>" + set.jewels + "</td>" +
-      "</tr>";
-    $("table#sets > tbody:last-child").append(row);
-  };
-}
-
 // fix this
 function addSetToTable(set)
 {
@@ -202,22 +178,19 @@ function addSetToTable(set)
   maxdef += armour[set.gear.waist.name].defense.max;
   maxdef += armour[set.gear.legs.name].defense.max;
 
-  $("table#sets > tbody:first-child").removeClass();
-  $("table#sets > tbody:last-child").removeClass();
-  $("table#sets > tbody:first-child").addClass("first");
-  $("table#sets > tbody:last-child").addClass("alt");
-
-  const row = "<tr>" +
-    '<td value="' + maxdef + '">' + maxdef + '</td>' +
+  let row = "<tr>" +
+    '<td>' + maxdef + '</td>' +
     "<td>" + set.gear.head.name + "</td>" +
     "<td>" + set.gear.chest.name + "</td>" +
     "<td>" + set.gear.arms.name + "</td>" +
     "<td>" + set.gear.waist.name + "</td>" +
     "<td>" + set.gear.legs.name + "</td>" +
-    "<td>" + JSON.stringify(set.jewels) + "</td>"+
+    "<td>";
+    for (const jewel of set.jewels)
+      row += jewel + "</br>";
+    row += "</td>" +
     "</tr>";
   $("table#sets > tbody:last-child").append(row);
-  $("table#sets > tbody:last-child").addClass("alt last");
 }
 
 function clearSetsTable()
