@@ -11,6 +11,5 @@ Things to note:
 Data is retrieved via `XMLHttpRequest`s, some (most? Chrome at least) browsers block `XMLHttpRequest`s over the `file://` protocol. Your browser might have an option to allow it, or otherwise can be solved by using a webserver locally.
 
 ## Acknowledgements
-[sj1k](https://github.com/Sjc1000) for reference and guidence.
-
-Plesioth (of ##monsterhunter on FreeNode) for guidence.
+* [sj1k](https://github.com/Sjc1000) for reference and guidence.
+* Plesioth (of ##monsterhunter on FreeNode) for guidence.
