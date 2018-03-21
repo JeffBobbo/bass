@@ -163,11 +163,7 @@ function points(set, part)
 
 function loop()
 {
-  function prog()
-  {
-    return build.count / build.combis;
-  }
-  postMessage({"cmd": "prog", "value": Math.floor(prog() * 100)});
+  postMessage({"cmd": "prog", "value": Math.floor((build.count / build.combis) * 100)});
 
   const lname = build.legs.pop();
   const leg = legs[lname];
