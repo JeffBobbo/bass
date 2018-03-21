@@ -28,7 +28,8 @@ hr
   margin:0px;
 }
 
-.notice
+
+.notice.error
 {
-  padding:0px;
+  color:brown;
 }
