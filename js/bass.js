@@ -89,6 +89,7 @@ function removeSkill(skillname)
   if (index >= 0)
     selectedSkills.splice(index, 1);
   updateSkillsSelected();
+  updateSkillsTable();
 }
 
 function updateSkillsSelected()
