@@ -212,7 +212,7 @@ function loop()
     points(set, leg);
 
     for (const [jname, jstat] of Object.entries(set.need))
-      set.need[jname] -= set.points[jname];
+      set.need[jname] -= set.points[jname] ? set.points[jname] : 0;
 
     var slots = {
       "0": 0,
@@ -236,7 +236,16 @@ function loop()
         for (const jname of build.jewels[name])
         {
           const jewel = jewels[jname];
-          if (slots[jewel.Slots] > 0 && (best === null || jewel.Skills[name] > jewels[best].Skills[name]))
+          let canfit = false;
+          for (let i = jewel.Slots; i <= 3; ++i)
+          {
+            if (slots[i] > 0)
+            {
+              canfit = true;
+              break;
+            }
+          }
+          if (canfit && (best === null || jewel.Skills[name] > jewels[best].Skills[name]))
             best = jname;
         }
 
