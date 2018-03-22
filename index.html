@@ -128,24 +128,36 @@
         </div>
       </div>
       <div class="col_3">
-        Filter Class:
-        <input type="checkbox" id="class-filter" checked/>
-        <br/>
-        Filter Bad:
-        <input type="checkbox" id="bad-filter" checked/>
-        <br/>
-        Category: <select id="filter">
-          <option value="all">All</option>
-          <option value="Offensive">Offensive</option>
-          <option value="Defensive">Defensive</option>
-          <option value="Resistance">Resistance</option>
-          <option value="Farming">Farming</option>
-          <option value="Treasure Hunting">Treasure Hunting</option>
-          <option value="Blademaster">Blademaster</option>
-          <option value="Bowgun">Bowgun</option>
-          <option value="Bow">Bow</option>
-          <option value="Other">Other</option>
-        </select>
+        <fieldset>
+          <legend>Skill list</legend>
+          <label for="filter">Category</label><br/>
+          <select id="filter">
+            <option value="all">All</option>
+            <option value="Offensive">Offensive</option>
+            <option value="Defensive">Defensive</option>
+            <option value="Resistance">Resistance</option>
+            <option value="Farming">Farming</option>
+            <option value="Treasure Hunting">Treasure Hunting</option>
+            <option value="Blademaster">Blademaster</option>
+            <option value="Bowgun">Bowgun</option>
+            <option value="Bow">Bow</option>
+            <option value="Other">Other</option>
+          </select><br/>
+          <fieldset>
+            <legend>Filter</legend>
+            <input type="checkbox" id="class-filter" checked/>
+            <label for="class-filter">Weapon class</label><br/>
+            <input type="checkbox" id="bad-filter" checked/>
+            <label for="bad-filter">Bad skills</label>
+          </fieldset>
+          <fieldset>
+            <legend>Sort by</legend>
+            <input type="radio" id="skill-sort-jewel" name="skill-sort" value="jewel" checked/>
+            <label for="skill-sort-jewel">Jewel name</label><br/>
+            <input type="radio" id="skill-sort-skill" name="skill-sort" value="skill"/>
+            <label for="skill-sort-skill">Skill name</label>
+          </fieldset>
+        </fieldset>
         <div id="skills">
         </div>
       </div>

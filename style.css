@@ -14,8 +14,8 @@ body
 
 div#skills
 {
-  height:90vh;
-  overflow-y:scroll;
+  max-height:600px;
+  overflow-y:auto;
 }
 
 div#skills>p
@@ -28,6 +28,16 @@ hr
   margin:0px;
 }
 
+p
+{
+  margin:4px 0px;
+}
+
+fieldset
+{
+  margin:6px 0px 4px 0px;
+  padding:4px;
+}
 
 .notice.error
 {

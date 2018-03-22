@@ -53,6 +53,7 @@ $(document).ready(function() {
   $("select#class").change(updateSkillsTable);
   $("input#class-filter").change(updateSkillsTable);
   $("input#bad-filter").change(updateSkillsTable);
+  $("input[type=radio][name=skill-sort]").change(updateSkillsTable);
   $("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
   $("button#punchit").click(punchit);
 });
@@ -150,13 +151,22 @@ function updateSkillsTable()
     filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
   }
 
-  // sort by jewel then points
-  filtered.sort((a, b) => {
-    const c = skills[a].Jewel.localeCompare(skills[b].Jewel);
-    if (c)
-      return c;
-    return skills[a].Points - skills[b].Points;
-  });
+  switch ($("input[type=radio][name=skill-sort]:checked").val())
+  {
+    // sort by jewel then points
+    case "jewel":
+      filtered.sort((a, b) => {
+        const c = skills[a].Jewel.localeCompare(skills[b].Jewel);
+        if (c)
+          return c;
+        return skills[a].Points - skills[b].Points;
+      });
+      break;
+    // sort by skill name
+    case "skill":
+      filtered.sort();
+    break;
+  }
 
   $('div#skills').empty();
   for (const name of filtered)
