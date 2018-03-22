@@ -1,52 +1,112 @@
 "use strict";
 
+// all skills, armour pieces and hewels
 let skills = {};
 let armour = {};
 let jewels = {};
 
+// all armour pieces, filtered appropriately
+let heads = {};
+let chests = {};
+let arms = {};
+let waists = {};
+let legs = {};
+
+// the currently selected skills
 let selectedSkills = [];
+
+let build = null;
+
+// sets thave been been found
 let sets = [];
 
-let worker = new Worker('./js/thread.js');
-worker.onmessage = function(msg) {
-  const data = msg.data;
-  switch (data.cmd)
-  {
-    case "prog":
-      $("progress").val(data.value);
-      $("span#count").text(Math.min(sets.length, 100));
-      break;
-    case "stop":
-      $("progress").val(100);
-      $("button#punchit").text("Search");
-      $("span#count").text(Math.min(sets.length, 100));
-      run = false;
-      break;
-    case "set":
-      const set = data.set;
-      sets.push(set);
-      if (sets.length < 100)
-        addSetToTable(set);
-      break;
-    default:
-      throw "Unknown command: " + data.cmd;
-  }
-};
+let workers = null;
 
+class WorkerPool
+{
+  constructor(size, cb)
+  {
+    this.size = size;
+    this.workers = [];
+    for (let i = 0; i < size; ++i)
+    {
+      let worker = new Worker('./js/thread.js');
+      worker.onmessage = cb;
+      worker.postMessage({"cmd": "id", "id": i});
+      this.workers.push(worker);
+    }
+  }
+
+  get count() { return this.size; }
+
+  postAll(msg)
+  {
+    for (let i = 0; i < this.size; ++i)
+      this.workers[i].postMessage(msg);
+  }
+
+  post(index, msg)
+  {
+    this.workers[index].postMessage(msg);
+  }
+}
 
 $(document).ready(function() {
+  workers = new WorkerPool(2, (msg) => {
+    const data = msg.data;
+    switch (data.cmd)
+    {
+      case "prog":
+        $("progress").val(data.value);
+        $("span#count").text(Math.min(sets.length, 100));
+        break;
+      case "stop":
+        $("progress").val(100);
+        $("button#punchit").text("Search");
+        $("span#count").text(Math.min(sets.length, 100));
+        run = false;
+        break;
+      case "set":
+        const set = data.set;
+        sets.push(set);
+        if (sets.length < 100)
+          addSetToTable(set);
+        break;
+      default:
+        throw "Unknown command: " + data.cmd;
+    }
+  });
+
   $.getJSON("data/skills.json", function(payload) {
     skills = payload;
-    worker.postMessage({"cmd": "addSkills", "payload": skills});
+    workers.postAll({"cmd": "addSkills", "payload": skills});
     updateSkillsTable();
   });
   $.getJSON("data/armour.json", function(payload) {
     armour = payload;
-    worker.postMessage({"cmd": "addArmour", "payload": armour});
+    for (const [name, stats] of Object.entries(armour))
+    {
+      let to = null;
+      if (stats.part === "Head")
+        to = heads;
+      else if (stats.part === "Chest")
+        to = chests;
+      else if (stats.part === "Arms")
+        to = arms;
+      else if (stats.part === "Waist")
+        to = waists;
+      else if (stats.part === "Legs")
+        to = legs;
+      else
+        throw "Unknown armour type: " + stats.part;
+
+      to[name] = stats;
+    }
+    workers.postAll({"cmd": "addArmour", "payload": [heads, chests, arms, waists, legs]});
   });
   $.getJSON("data/jewels.json", function(payload) {
     jewels = payload;
-    worker.postMessage({"cmd": "addJewels", "payload": jewels});
+    workers.postAll({"cmd": "addJewels", "payload": jewels});
   });
 
   $("select#filter").change(updateSkillsTable);
@@ -210,17 +270,174 @@ function clearSetsTable()
 }
 
 let run = false;
+function setup()
+{
+  if (build.skills.length == 0)
+  {
+    console.error("No skills");
+    return;
+  }
+
+  // remove any gear that's not the right type
+  function reduceType(part, source)
+  {
+    build[part] = Object.keys(source);
+    switch (build.class)
+    {
+      case "Blademaster":
+        build[part] = filter(source, "type", "in", ["Both", "Blademaster"], build[part]);
+        break;
+      case "Gunner":
+        build[part] = filter(source, "type", "in", ["Both", "Bow", "Bowgun"], build[part]);
+        break;
+    }
+  }
+  reduceType("heads", heads);
+  reduceType("chests", chests);
+  reduceType("arms", arms);
+  reduceType("waists", waists);
+  reduceType("legs", legs);
+
+  // remove piercings?
+  if (build.piercings === false)
+  {
+    for (let i = 0, l = build.heads.length; i < l; ++i)
+    {
+      const name = build.heads[i];
+      if (name.includes("Piercing"))
+      {
+        build.heads.splice(i, 1);
+        --i;
+        --l;
+      }
+    }
+  }
+
+  // remove any gear that does provide a bonus to at least one skill
+  // also, give each piece of equipment a weight
+  function reduceSkillsAndWeigh(list, from)
+  {
+    for (let i = 0, l = list.length; i < l; ++ i)
+    {
+      const name = list[i];
+      const piece = from[name];
+      piece.weight = 0;
+
+      const skills = Object.keys(piece.skills);
+      let include = false;
+      if (piece.skills["Torso Inc"] !== undefined && build.torsoinc)
+      {
+        include = true;
+        piece.weight = 5; // weigh Torso Inc at 5
+      }
+      build.skills.forEach(sk => {
+        if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
+        {
+          include = true;
+          piece.weight += piece.skills[sk.stats.Jewel];
+        }
+      });
+      if (include == false)
+      {
+        list.splice(i, 1);
+        --i;
+        --l;
+      }
+    }
+  }
+  reduceSkillsAndWeigh(build.heads, heads);
+  reduceSkillsAndWeigh(build.chests, chests);
+  reduceSkillsAndWeigh(build.arms, arms);
+  reduceSkillsAndWeigh(build.waists, waists);
+  reduceSkillsAndWeigh(build.legs, legs);
+
+  // sort by the weight assigned in reduce skills
+  function desc(list, from)
+  {
+    list.sort((a, b) => {
+      return from[b].weight - from[a].weight;
+    });
+  }
+  desc(build.heads, heads);
+  desc(build.chests, chests);
+  desc(build.arms, arms);
+  desc(build.waists, waists);
+  desc(build.legs, legs);
+
+  while (build.heads.length > 32)
+    build.heads.splice(Math.ceil(build.heads.length * 0.5));
+  while (build.chests.length > 32)
+    build.chests.splice(Math.ceil(build.chests.length * 0.5));
+  while (build.arms.length > 32)
+    build.arms.splice(Math.ceil(build.arms.length * 0.5));
+  while (build.waists.length > 32)
+    build.waists.splice(Math.ceil(build.waists.length * 0.5));
+  while (build.legs.length > 32)
+    build.legs.splice(Math.ceil(build.legs.length * 0.5));
+
+  build.jewels = {};
+  for (const bskill of build.skills)
+  {
+    const statname = bskill.stats.Jewel;
+    if (build.jewels[statname] === undefined)
+      build.jewels[statname] = [];
+
+    for (const [jname, jstats] of Object.entries(jewels))
+    {
+      const b = jstats.Skills[statname];
+      if (b !== undefined && b > 0)
+        build.jewels[statname].push(jname);
+    }
+  }
+
+  // compute the number of possible sets
+  build.combis = build.heads.length *
+                 build.chests.length *
+                 build.arms.length *
+                 build.waists.length *
+                 build.legs.length;
+  if (build.combis === 0)
+  {
+    console.error("No combinations possible");
+    return;
+  }
+  build.count = 0;
+  build.found = 0;
+
+  // setup done, pass off to workers
+  console.log(build.combis + " combinations...");
+  build.start = (new Date()).getTime();
+
+  {
+    let offset = 0, len = Math.floor(build.legs.length / workers.count), end = len;
+    for (let i = 0; i < workers.count-1; ++i)
+    {
+      workers.post(i, {"cmd": "start", "build": build, "offset": offset, "end": end});
+      offset += len;
+      end += len;
+    }
+    workers.post(workers.count-1, {"cmd": "start", "build": build, "offset": offset, "end": build.legs.length})
+  }
+
+
+  run = true;
+  $("button#punchit").text("Stop");
+  $('progress').show();
+  $('progress').val(0.0);
+  clearSetsTable();
+}
+
 function punchit()
 {
   if (run)
   {
-    worker.postMessage({"cmd": "stop"});
+    workers.postAll({"cmd": "stop"});
     $("button#punchit").text("Search");
     run = false;
   }
   else
   {
-    let build = {
+    build = {
       "skills": selectedSkills,
       "elder": $("select#elder").val(),
       "hr": $("select#hr").val(),
@@ -230,11 +447,6 @@ function punchit()
       "piercings": $("input#piercings").prop("checked"),
       "torsoinc": $("input#torsoinc").prop("checked")
     };
-    worker.postMessage({"cmd": "start", "build": build});
-    $("button#punchit").text("Stop");
-    $('progress').show();
-    $('progress').val(0.0);
-    clearSetsTable();
-    run = true;
+    setup();
   }
 }
