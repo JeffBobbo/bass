@@ -412,52 +412,52 @@
     "Jewel": "FireDrgRes",
     "Points": 10
   },
-  "Defence +20": {
+  "Defense +20": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": 10
   },
-  "Defence +30": {
+  "Defense +30": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": 15
   },
-  "Defence +40": {
+  "Defense +40": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": 20
   },
-  "Defence -20": {
+  "Defense -20": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": -10
   },
-  "Defence -30": {
+  "Defense -30": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": -15
   },
-  "Defence -40": {
+  "Defense -40": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Defence",
+    "Jewel": "Defense",
     "Points": -20
   },
   "Defensive Maneuvers +1": {

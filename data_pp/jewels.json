@@ -345,7 +345,7 @@
     "Price": 450,
     "Resources": {},
     "Skills": {
-      "Defence": -2,
+      "Defense": -2,
       "Sharpness": 4
     },
     "Slots": 3
@@ -367,7 +367,7 @@
     "Price": 200,
     "Resources": {},
     "Skills": {
-      "Defence": 1
+      "Defense": 1
     },
     "Slots": 1
   },
@@ -605,7 +605,7 @@
     "Resources": {},
     "Skills": {
       "Attack": 3,
-      "Defence": -1
+      "Defense": -1
     },
     "Slots": 2
   },
@@ -1039,7 +1039,7 @@
     "Resources": {},
     "Skills": {
       "Attack": 5,
-      "Defence": -1
+      "Defense": -1
     },
     "Slots": 3
   },
@@ -1304,7 +1304,7 @@
     "Price": 200,
     "Resources": {},
     "Skills": {
-      "Defence": -1,
+      "Defense": -1,
       "Sharpness": 1
     },
     "Slots": 1
@@ -1756,7 +1756,7 @@
     "Resources": {},
     "Skills": {
       "All Resist": -1,
-      "Defence": 3
+      "Defense": 3
     },
     "Slots": 2
   },
