@@ -952,7 +952,7 @@
     "Resources": {},
     "Skills": {
       "Attack": -1,
-      "Evade Inc": 1
+      "Evade Dist": 1
     },
     "Slots": 1
   },
@@ -963,7 +963,7 @@
     "Resources": {},
     "Skills": {
       "Attack": -2,
-      "Evade Inc": 4
+      "Evade Dist": 4
     },
     "Slots": 3
   },

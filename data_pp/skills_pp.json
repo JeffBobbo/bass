@@ -594,7 +594,7 @@
     "Jewel": "HearProtct",
     "Points": 10
   },
-  "Element Atk Up": {
+  "Element Attack Up": {
     "Categories": [
       "Offensive"
     ],
@@ -631,7 +631,7 @@
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Evade Inc",
+    "Jewel": "Evade Dist",
     "Points": 10
   },
   "Faint Duration [x2]": {

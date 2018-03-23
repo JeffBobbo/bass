@@ -17508,7 +17508,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "PierceS Up": 3,
       "Status Res": 2
     },
@@ -17574,7 +17574,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Sharpness": 3,
       "Status Res": 2
     },
@@ -17640,7 +17640,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "PierceS Up": 3,
       "Status Res": 2
     },
@@ -17706,7 +17706,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Sharpness": 3,
       "Status Res": 2
     },
@@ -17772,7 +17772,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Sharpness": 1,
       "Status Res": 2
     },
@@ -17838,7 +17838,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Sharpness": 1,
       "Status Res": 2
     },
@@ -17904,7 +17904,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "PierceS Up": 1,
       "Status Res": 2
     },
@@ -17970,7 +17970,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "Sharpness": 2,
       "Status Res": 2
     },
@@ -18036,7 +18036,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "PierceS Up": 1,
       "Status Res": 2
     },
@@ -18102,7 +18102,7 @@
     },
     "skills": {
       "Dragon Res": -3,
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "PierceS Up": 2,
       "Status Res": 2
     },
@@ -18325,7 +18325,7 @@
     },
     "skills": {
       "ChmleosRes": 2,
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "Everlastng": -2,
       "Wide Area": 3
     },
@@ -18589,7 +18589,7 @@
     },
     "skills": {
       "ChmleosRes": 3,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Everlastng": -2,
       "Wide Area": 1
     },
@@ -46624,7 +46624,7 @@
       "Pure Crystal": 1
     },
     "skills": {
-      "Evade Inc": 4,
+      "Evade Dist": 4,
       "HiSpdGathr": 1,
       "Set Trap": 1,
       "Whim": -3
@@ -46724,7 +46724,7 @@
       "Thunderbug Jelly": 6
     },
     "skills": {
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "HiSpdGathr": 2,
       "Set Trap": 3,
       "Whim": -2
@@ -46923,7 +46923,7 @@
       "Thunderbug Jelly": 6
     },
     "skills": {
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "HiSpdGathr": 2,
       "Set Trap": 3,
       "Whim": -2
@@ -47023,7 +47023,7 @@
       "Monster Broth+": 3
     },
     "skills": {
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "HiSpdGathr": 2,
       "Set Trap": 3,
       "Whim": -2
@@ -47123,7 +47123,7 @@
       "Monster Broth": 6
     },
     "skills": {
-      "Evade Inc": 4,
+      "Evade Dist": 4,
       "HiSpdGathr": 1,
       "Set Trap": 1,
       "Whim": -3
@@ -47321,7 +47321,7 @@
       "Monster Broth+": 3
     },
     "skills": {
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "HiSpdGathr": 2,
       "Set Trap": 3,
       "Whim": -2
@@ -49514,7 +49514,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Technique": 4
     },
     "slots": 2,
@@ -49547,7 +49547,7 @@
     "skills": {
       "Attack": -3,
       "Evade": 3,
-      "Evade Inc": 1
+      "Evade Dist": 1
     },
     "slots": 3,
     "type": "Both"
@@ -49578,7 +49578,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Technique": 2
     },
     "slots": 2,
@@ -49611,7 +49611,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Set Trap": 2
     },
     "slots": 2,
@@ -49643,7 +49643,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Technique": 4
     },
     "slots": 2,
@@ -49676,7 +49676,7 @@
     "skills": {
       "Attack": -3,
       "Evade": 3,
-      "Evade Inc": 1
+      "Evade Dist": 1
     },
     "slots": 3,
     "type": "Blademaster"
@@ -49707,7 +49707,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Technique": 4
     },
     "slots": 2,
@@ -49740,7 +49740,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 5,
-      "Evade Inc": 2
+      "Evade Dist": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -49771,7 +49771,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Technique": 2
     },
     "slots": 2,
@@ -49804,7 +49804,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Set Trap": 2
     },
     "slots": 2,
@@ -49836,7 +49836,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Technique": 2
     },
     "slots": 2,
@@ -49869,7 +49869,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Set Trap": 2
     },
     "slots": 2,
@@ -49901,7 +49901,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "Technique": 3
     },
     "slots": 1,
@@ -49934,7 +49934,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 4,
-      "Evade Inc": 1
+      "Evade Dist": 1
     },
     "slots": 2,
     "type": "Blademaster"
@@ -49965,7 +49965,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 1,
+      "Evade Dist": 1,
       "Technique": 4
     },
     "slots": 2,
@@ -49998,7 +49998,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 5,
-      "Evade Inc": 2
+      "Evade Dist": 2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -50029,7 +50029,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Technique": 2
     },
     "slots": 2,
@@ -50062,7 +50062,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 2,
-      "Evade Inc": 3,
+      "Evade Dist": 3,
       "Set Trap": 2
     },
     "slots": 2,
@@ -50094,7 +50094,7 @@
     },
     "skills": {
       "Attack": -2,
-      "Evade Inc": 2,
+      "Evade Dist": 2,
       "Technique": 3
     },
     "slots": 1,
@@ -50127,7 +50127,7 @@
     "skills": {
       "Attack": -2,
       "Evade": 4,
-      "Evade Inc": 1
+      "Evade Dist": 1
     },
     "slots": 2,
     "type": "Gunner"
