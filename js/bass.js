@@ -82,12 +82,13 @@ $(document).ready(function() {
     }
   });
 
-  $.getJSON("data/skills.json", function(payload) {
+  const dir = 'data_pp';
+  $.getJSON(dir + "/skills.json", function(payload) {
     skills = payload;
     workers.postAll({"cmd": "addSkills", "payload": skills});
     updateSkillsTable();
   });
-  $.getJSON("data/armour.json", function(payload) {
+  $.getJSON(dir + "/armour.json", function(payload) {
     armour = payload;
     for (const [name, stats] of Object.entries(armour))
     {
@@ -109,7 +110,7 @@ $(document).ready(function() {
     }
     workers.postAll({"cmd": "addArmour", "payload": [heads, chests, arms, waists, legs]});
   });
-  $.getJSON("data/jewels.json", function(payload) {
+  $.getJSON(dir + "/jewels.json", function(payload) {
     jewels = payload;
     workers.postAll({"cmd": "addJewels", "payload": jewels});
   });
