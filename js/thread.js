@@ -30,10 +30,30 @@ function points(set, part)
 
 function loop()
 {
-  //postMessage({"cmd": "prog", "value": Math.floor((build.count / build.combis) * 100)});
+  if (p < end)
+  {
+    if (run)
+    {
+      search();
+      setTimeout(loop, 0);
+    }
+    else
+    {
+      const end = (new Date()).getTime();
+      postMessage({"cmd": "stop"});
+      console.log("Thread " + id + " stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
+    }
+  }
+  else
+  {
+    const end = (new Date()).getTime();
+    postMessage({"cmd": "stop"});
+    console.log("Thread " + id + " searched " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000));
+  }
+}
 
-  if (p >= end)
-    return;
+function search()
+{
   const lname = build.legs[p++];
   const leg = legs[lname];
   for (const wname of build.waists)
@@ -41,6 +61,7 @@ function loop()
   const waist = waists[wname];
   for (const aname of build.arms)
   {
+  postMessage({"cmd": "prog", "thread": id, "count": build.count});
   const arm = arms[aname];
   for (const cname of build.chests)
   {
@@ -49,8 +70,6 @@ function loop()
   {
   const head = heads[hname];
     ++build.count;
-    if (build.found > 100)
-      run = false;
     const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
                      ("Torso Inc" in chest.skills ? 1 : 0) +
                      ("Torso Inc" in arm.skills ? 1 : 0) +
@@ -66,12 +85,12 @@ function loop()
         "legs": {"name": lname, "jewels": []}
       },
       "points": {},
-      "need": {},
       "jewels": []
     };
+    let need = {};
 
     for (const skill of build.skills)
-      set.need[skill.stats.Jewel] = skill.stats.Points;
+      need[skill.stats.Jewel] = skill.stats.Points;
 
     points(set, head);
     for (let i = 0; i < torsoInc+1; ++i)
@@ -80,8 +99,8 @@ function loop()
     points(set, waist);
     points(set, leg);
 
-    for (const [jname, jstat] of Object.entries(set.need))
-      set.need[jname] -= set.points[jname] ? set.points[jname] : 0;
+    for (const [jname, jstat] of Object.entries(need))
+      need[jname] -= set.points[jname] ? set.points[jname] : 0;
 
     var slots = {
       "0": 0,
@@ -96,7 +115,7 @@ function loop()
     ++slots[legs[lname].slots];
     ++slots[build.slots];
 
-    for (var [name, stat] of Object.entries(set.need))
+    for (var [name, stat] of Object.entries(need))
     {
       while (stat > 0)
       {
@@ -122,7 +141,7 @@ function loop()
           break;
 
         --slots[jewels[best].Slots];
-        set.need[name] -= jewels[best].Skills[name];
+        need[name] -= jewels[best].Skills[name];
         stat -= jewels[best].Skills[name];
         set.jewels.push(best);
       }
@@ -137,7 +156,7 @@ function loop()
       return true;
     }
 
-    if (allSkills(set.need))
+    if (allSkills(need))
     {
       ++build.found;
       postMessage({"cmd": "set", "set": set});
@@ -146,24 +165,6 @@ function loop()
   } // chest
   } // arm
   } // waist
-
-  if (build.legs.length)
-  {
-    if (run)
-      setTimeout(loop, 0);
-    else
-    {
-      const end = (new Date()).getTime();
-      postMessage({"cmd": "stop"});
-      console.log("Thread " + id + " stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
-    }
-  }
-  else
-  {
-    const end = (new Date()).getTime();
-    postMessage({"cmd": "stop"});
-    console.log("Thread " + id + " searched " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000));
-  }
 }
 
 onmessage = function(msg)

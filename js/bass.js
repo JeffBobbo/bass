@@ -21,6 +21,7 @@ let build = null;
 let sets = [];
 
 let workers = null;
+let progress = [];
 
 class WorkerPool
 {
@@ -34,6 +35,7 @@ class WorkerPool
       worker.onmessage = cb;
       worker.postMessage({"cmd": "id", "id": i});
       this.workers.push(worker);
+      progress.push(0);
     }
   }
 
@@ -57,18 +59,21 @@ $(document).ready(function() {
     switch (data.cmd)
     {
       case "prog":
-        $("progress").val(data.value);
-        $("span#count").text(Math.min(sets.length, 100));
+        progress[data.thread] = data.count;
+        let sum = 0;
+        for (const p of progress)
+          sum += p;
+        $("progress").val(Math.floor((sum / build.combis) * 100));
         break;
       case "stop":
         $("progress").val(100);
         $("button#punchit").text("Search");
-        $("span#count").text(Math.min(sets.length, 100));
         run = false;
         break;
       case "set":
         const set = data.set;
         sets.push(set);
+        $("span#count").text(sets.length + " sets found");
         if (sets.length < 100)
           addSetToTable(set);
         break;
@@ -364,16 +369,16 @@ function setup()
   desc(build.waists, waists);
   desc(build.legs, legs);
 
-  while (build.heads.length > 32)
-    build.heads.splice(Math.ceil(build.heads.length * 0.5));
-  while (build.chests.length > 32)
-    build.chests.splice(Math.ceil(build.chests.length * 0.5));
-  while (build.arms.length > 32)
-    build.arms.splice(Math.ceil(build.arms.length * 0.5));
-  while (build.waists.length > 32)
-    build.waists.splice(Math.ceil(build.waists.length * 0.5));
-  while (build.legs.length > 32)
-    build.legs.splice(Math.ceil(build.legs.length * 0.5));
+  while (build.heads.length > 20)
+    build.heads.splice(Math.ceil(build.heads.length * 0.9));
+  while (build.chests.length > 20)
+    build.chests.splice(Math.ceil(build.chests.length * 0.9));
+  while (build.arms.length > 20)
+    build.arms.splice(Math.ceil(build.arms.length * 0.9));
+  while (build.waists.length > 20)
+    build.waists.splice(Math.ceil(build.waists.length * 0.9));
+  while (build.legs.length > 20)
+    build.legs.splice(Math.ceil(build.legs.length * 0.9));
 
   build.jewels = {};
   for (const bskill of build.skills)
@@ -424,6 +429,7 @@ function setup()
   $("button#punchit").text("Stop");
   $('progress').show();
   $('progress').val(0.0);
+  $("span#count").text("0 sets found");
   clearSetsTable();
 }
 
