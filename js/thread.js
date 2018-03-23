@@ -155,6 +155,16 @@ function search()
       }
       return true;
     }
+    const badSkills = (points) => {
+      for (const [name, stat] of Object.entries(points))
+      {
+        if (stat <= 10)
+          return true;
+      }
+    }
+
+    if (!build.allowbad && badSkills(set.points))
+      continue;
 
     if (allSkills(need))
     {

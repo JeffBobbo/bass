@@ -450,6 +450,7 @@ function punchit()
       "gender": $("select#gender").val(),
       "slots": $("select#slots").val(),
       "class": $("select#class").val(),
+      "allowbad": $("input#badskills").prop("checked"),
       "piercings": $("input#piercings").prop("checked"),
       "torsoinc": $("input#torsoinc").prop("checked")
     };
