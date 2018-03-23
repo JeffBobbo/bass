@@ -321,14 +321,14 @@ function setup()
     {
       const name = list[i];
       const piece = from[name];
-      piece.weight = 0;
+      piece.weight = piece.rarity;
 
       const skills = Object.keys(piece.skills);
       let include = false;
       if (piece.skills["Torso Inc"] !== undefined && build.torsoinc)
       {
         include = true;
-        piece.weight = 5; // weigh Torso Inc at 5
+        piece.weight += 5; // weigh Torso Inc at 5
       }
       build.skills.forEach(sk => {
         if (skills.includes(sk.stats.Jewel) && piece.skills[sk.stats.Jewel] > 0)
