@@ -1,40 +1,4 @@
 {
-  "Attack Up (Large)": {
-    "Jewel": "Attack",
-    "Points": 20,
-    "Category": "Offensive",
-    "Description": ""
-  },
-  "Attack Up (Medium)": {
-    "Jewel": "Attack",
-    "Points": 15,
-    "Category": "Offensive",
-    "Description": ""
-  },
-  "Attack Up (Small)": {
-    "Jewel": "Attack",
-    "Points": 10,
-    "Category": "Offensive",
-    "Description": ""
-  },
-  "Attack Down (Large)": {
-    "Jewel": "Attack",
-    "Points": -20,
-    "Category": "Offensive",
-    "Description": ""
-  },
-  "Attack Down (Large)": {
-    "Jewel": "Attack",
-    "Points": -15,
-    "Category": "Offensive",
-    "Description": ""
-  },
-  "Attack Down (Large)": {
-    "Jewel": "Attack",
-    "Points": -10,
-    "Category": "Offensive",
-    "Description": ""
-  },
   "Defense +40": {
     "Jewel": "Defense",
     "Points": 20,
