@@ -64,10 +64,11 @@ $(document).ready(function() {
         for (const p of progress)
           sum += p;
         $("progress").val(Math.floor((sum / build.combis) * 100));
+        $("progress").prop("title", sum + " of " + build.combis + " sets searched");
         break;
-      case "stop":
-        $("progress").val(100);
+      case "stopped":
         $("button#punchit").text("Search");
+        $("button#punchit").prop("disabled", false);
         run = false;
         break;
       case "set":
@@ -76,6 +77,15 @@ $(document).ready(function() {
         $("span#count").text(sets.length + " sets found");
         if (sets.length < 100)
           addSetToTable(set);
+        break;
+      case "sets":
+        if (sets.length < 100)
+        {
+          for (const set of data.sets)
+            addSetToTable(set);
+        }
+        sets.push(...data.sets);
+        $("span#count").text(sets.length + " sets found");
         break;
       default:
         throw "Unknown command: " + data.cmd;
@@ -439,7 +449,8 @@ function punchit()
   if (run)
   {
     workers.postAll({"cmd": "stop"});
-    $("button#punchit").text("Search");
+    $("button#punchit").text("Stopping");
+    $("button#punchit").prop("disabled", true);
     run = false;
   }
   else

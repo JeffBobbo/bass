@@ -15,6 +15,7 @@ let end = 0;
 let p = 0;
 let run = false;
 let sets = [];
+let combinations = null;
 
 let id = null;
 
@@ -28,153 +29,160 @@ function points(set, part)
   }
 }
 
+function* generate()
+{
+  for (; p < end; ++p)
+  {
+    const lname = build.legs[p];
+    for (const wname of build.waists)
+    {
+      for (const aname of build.arms)
+      {
+        for (const cname of build.chests)
+        {
+          for (const hname of build.heads)
+            yield [hname, cname, aname, wname, lname];
+        }
+      }
+    }
+  }
+}
 function loop()
 {
-  if (p < end)
+  if (run)
   {
-    if (run)
+    let sets = [];
+    let last = true;
+    for (let i = 0; i < 1000 && last === true; ++i)
+      last = search(sets);
+    postMessage({"cmd": "sets", "sets": sets});
+    postMessage({"cmd": "prog", "thread": id, "count": build.count});
+    if (last === false)
     {
-      search();
-      setTimeout(loop, 0);
+      const end = (new Date()).getTime();
+      postMessage({"cmd": "stopped"});
+      console.log("Thread " + id + " searched " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
     }
     else
     {
-      const end = (new Date()).getTime();
-      postMessage({"cmd": "stop"});
-      console.log("Thread " + id + " stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
+      setTimeout(loop, 0);
     }
   }
   else
   {
     const end = (new Date()).getTime();
-    postMessage({"cmd": "stop"});
-    console.log("Thread " + id + " searched " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000));
+    postMessage({"cmd": "stopped"});
+    console.log("Thread " + id + " stopped after searching " + build.count + " sets of " + build.combis + " combinations in " + ((end - build.start) / 1000) + "s");
   }
 }
 
-function search()
+function search(sets)
 {
-  const lname = build.legs[p++];
-  const leg = legs[lname];
-  for (const wname of build.waists)
+  const g = combinations.next();
+  if (g.done)
+    return false;
+  const [hname, cname, aname, wname, lname] = g.value;
+  const [head, chest, arm, waist, leg] = [heads[hname], chests[cname], arms[aname], waists[wname], legs[lname]];
+  ++build.count;
+  const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
+                   ("Torso Inc" in chest.skills ? 1 : 0) +
+                   ("Torso Inc" in arm.skills ? 1 : 0) +
+                   ("Torso Inc" in waist.skills ? 1 : 0) +
+                   ("Torso Inc" in leg.skills ? 1 : 0) ;
+
+  let set = {
+    "gear": {
+      "head": {"name": hname, "jewels": []},
+      "chest": {"name": cname, "jewels": []},
+      "arms": {"name": aname, "jewels": []},
+      "waist": {"name": wname, "jewels": []},
+      "legs": {"name": lname, "jewels": []}
+    },
+    "points": {},
+    "jewels": []
+  };
+  let need = {};
+
+  for (const skill of build.skills)
+    need[skill.stats.Jewel] = skill.stats.Points;
+
+  points(set, head);
+  for (let i = 0; i < torsoInc+1; ++i)
+    points(set, chest);
+  points(set, arm);
+  points(set, waist);
+  points(set, leg);
+
+  for (const [jname, jstat] of Object.entries(need))
+    need[jname] -= set.points[jname] ? set.points[jname] : 0;
+
+  var slots = {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0
+  };
+  ++slots[heads[hname].slots];
+  ++slots[chests[cname].slots];
+  ++slots[arms[aname].slots];
+  ++slots[waists[wname].slots];
+  ++slots[legs[lname].slots];
+  ++slots[build.slots];
+
+  for (var [name, stat] of Object.entries(need))
   {
-  const waist = waists[wname];
-  for (const aname of build.arms)
-  {
-  postMessage({"cmd": "prog", "thread": id, "count": build.count});
-  const arm = arms[aname];
-  for (const cname of build.chests)
-  {
-  const chest = chests[cname];
-  for (const hname of build.heads)
-  {
-  const head = heads[hname];
-    ++build.count;
-    const torsoInc = ("Torso Inc" in head.skills ? 1 : 0) +
-                     ("Torso Inc" in chest.skills ? 1 : 0) +
-                     ("Torso Inc" in arm.skills ? 1 : 0) +
-                     ("Torso Inc" in waist.skills ? 1 : 0) +
-                     ("Torso Inc" in leg.skills ? 1 : 0) ;
-
-    let set = {
-      "gear": {
-        "head": {"name": hname, "jewels": []},
-        "chest": {"name": cname, "jewels": []},
-        "arms": {"name": aname, "jewels": []},
-        "waist": {"name": wname, "jewels": []},
-        "legs": {"name": lname, "jewels": []}
-      },
-      "points": {},
-      "jewels": []
-    };
-    let need = {};
-
-    for (const skill of build.skills)
-      need[skill.stats.Jewel] = skill.stats.Points;
-
-    points(set, head);
-    for (let i = 0; i < torsoInc+1; ++i)
-      points(set, chest);
-    points(set, arm);
-    points(set, waist);
-    points(set, leg);
-
-    for (const [jname, jstat] of Object.entries(need))
-      need[jname] -= set.points[jname] ? set.points[jname] : 0;
-
-    var slots = {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0
-    };
-    ++slots[heads[hname].slots];
-    ++slots[chests[cname].slots];
-    ++slots[arms[aname].slots];
-    ++slots[waists[wname].slots];
-    ++slots[legs[lname].slots];
-    ++slots[build.slots];
-
-    for (var [name, stat] of Object.entries(need))
+    while (stat > 0)
     {
-      while (stat > 0)
+      var best = null;
+      // look for gems
+      for (const jname of build.jewels[name])
       {
-        var best = null;
-        // look for gems
-        for (const jname of build.jewels[name])
+        const jewel = jewels[jname];
+        let canfit = false;
+        for (let i = jewel.Slots; i <= 3; ++i)
         {
-          const jewel = jewels[jname];
-          let canfit = false;
-          for (let i = jewel.Slots; i <= 3; ++i)
+          if (slots[i] > 0)
           {
-            if (slots[i] > 0)
-            {
-              canfit = true;
-              break;
-            }
+            canfit = true;
+            break;
           }
-          if (canfit && (best === null || jewel.Skills[name] > jewels[best].Skills[name]))
-            best = jname;
         }
-
-        if (best === null) // there is no gem to use, so break out
-          break;
-
-        --slots[jewels[best].Slots];
-        need[name] -= jewels[best].Skills[name];
-        stat -= jewels[best].Skills[name];
-        set.jewels.push(best);
+        if (canfit && (best === null || jewel.Skills[name] > jewels[best].Skills[name]))
+          best = jname;
       }
-    }
 
-    const allSkills = (need) => {
-      for (const stat of Object.values(need))
-      {
-        if (stat > 0)
-          return false;
-      }
-      return true;
-    }
-    const badSkills = (points) => {
-      for (const [name, stat] of Object.entries(points))
-      {
-        if (stat <= 10)
-          return true;
-      }
-    }
+      if (best === null) // there is no gem to use, so break out
+        break;
 
-    if (!build.allowbad && badSkills(set.points))
-      continue;
+      --slots[jewels[best].Slots];
+      need[name] -= jewels[best].Skills[name];
+      stat -= jewels[best].Skills[name];
+      set.jewels.push(best);
+    }
+  }
 
-    if (allSkills(need))
+  const allSkills = (need) => {
+    for (const stat of Object.values(need))
     {
-      ++build.found;
-      postMessage({"cmd": "set", "set": set});
+      if (stat > 0)
+        return false;
     }
-  } // head
-  } // chest
-  } // arm
-  } // waist
+    return true;
+  }
+  const badSkills = (points) => {
+    for (const [name, stat] of Object.entries(points))
+    {
+      if (stat <= -10)
+        return true;
+    }
+  }
+
+  if (!build.allowbad && badSkills(set.points))
+    return true;;
+
+  if (allSkills(need))
+    sets.push(set);
+  return true;
 }
 
 onmessage = function(msg)
@@ -206,6 +214,7 @@ onmessage = function(msg)
       p = data.offset;
       end = data.end;
       run = true;
+      combinations = generate();
       loop();
       break;
     case "stop":
