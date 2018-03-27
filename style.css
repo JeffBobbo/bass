@@ -49,6 +49,7 @@ div.notice>a
 {
   font-size:1.5rem;
   cursor:pointer;
+  user-select:none;
 }
 
 div#skill-overview
@@ -106,6 +107,29 @@ div#set-wrapper
   overflow:auto;
   flex:1;
 }
+
+/*
+ * sortable table stuff
+ */
+table.sortable th.sort>i
+{
+  cursor:pointer;
+  user-select:none;
+}
+table.sortable th.sort:not(.down):not(.up):after
+{
+
+}
+table.sortable tr:nth-child(even)
+{
+  background-color:#444;
+}
+
+td.numeric
+{
+  text-align:right;
+}
+
 /*
  * general stuff
  */
@@ -119,9 +143,28 @@ table
   width:100%;
 }
 
+table img
+{
+  width:1em;
+}
+
 table select
 {
   width:100%;
+}
+
+th
+{
+  font:initial;
+}
+
+.good
+{
+  color:#4caf50;
+}
+.bad
+{
+  color:#f44336;
 }
 
 hr

@@ -23,6 +23,9 @@ let sets = [];
 let workers = null;
 let progress = [];
 
+// how to go about sorting
+let sorting = [];
+
 class WorkerPool
 {
   constructor(size, cb)
@@ -71,20 +74,29 @@ $(document).ready(function() {
         $("button#punchit").prop("disabled", false);
         run = false;
         break;
-      case "set":
-        const set = data.set;
-        sets.push(set);
-        $("span#count").text(sets.length + " sets found");
-        if (sets.length < 100)
-          addSetToTable(set);
-        break;
       case "sets":
-        if (sets.length < 100)
+        for (let set of data.sets)
         {
-          for (const set of data.sets)
+          // compute set stats
+          set.defmin = 0;
+          set.defmax = 0;
+          set.res = {"Fire": 0, "Water": 0, "Thunder": 0, "Ice": 0, "Dragon": 0};
+          for (const piece of Object.values(set.gear))
+          {
+            const item = armour[piece.name];
+
+            // defense
+            set.defmin += item.defense.min;
+            set.defmax += item.defense.max;
+
+            // resistances
+            for (const [res, amt] of Object.entries(item.resistance))
+              set.res[res] += amt;
+          }
+          if (sets.length < 100)
             addSetToTable(set);
+          sets.push(set);
         }
-        sets.push(...data.sets);
         $("span#count").text(sets.length + " sets found");
         break;
       default:
@@ -139,7 +151,7 @@ $(document).ready(function() {
     updateSkillsOverview();
     updateSkillSelectAll();
   });
-  //$("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
+
   $("button#punchit").click(punchit);
 
   $("select.skill-filter").change(function(element) {
@@ -148,6 +160,33 @@ $(document).ready(function() {
   $("select.skill-select").change(function(element) {
     selectSkill(element);
     updateSkillSelectAll();
+  });
+
+  $("th.sort>i").click(function(element) {
+    const col = $(element.target);
+    const keys = col.data('key').split('.');
+    const order = col.data('order');
+
+    const norder = order === undefined || order === "asc" ? "desc" : "asc";
+    //sorting = {"key": key, "order": norder};
+    col.removeClass("fa-sort fa-sort-up fa-sort-down");
+    col.addClass(norder === "asc" ? "fa-sort-up" : "fa-sort-down");
+    col.data('order', norder);
+
+    sets.sort((a, b) => {
+      for (const key of keys)
+      {
+        a = a[key];
+        b = b[key];
+      }
+      if (norder === "asc")
+        return a - b;
+      else
+        return b - a;
+    });
+    let table = $("table#sets>tbody").empty();
+    for (let i = 0, l = Math.min(100, sets.length); i < l; ++i)
+      addSetToTable(sets[i]);
   });
 });
 
@@ -163,7 +202,6 @@ function selectSkill(select)
     const skill = skills[skillname];
     selectedSkills[select.target.id.substr(-1)] = {"name": select.target.value, "stats": skill};
   }
-  console.log(selectedSkills);
 }
 
 function sortSkills(skillList)
@@ -285,19 +323,21 @@ function updateSkillSelect(id)
   select.val(old);
 }
 
-// fix this
 function addSetToTable(set)
 {
-  var maxdef = 0;
-  maxdef += armour[set.gear.head.name].defense.max;
-  maxdef += armour[set.gear.chest.name].defense.max;
-  maxdef += armour[set.gear.arms.name].defense.max;
-  maxdef += armour[set.gear.waist.name].defense.max;
-  maxdef += armour[set.gear.legs.name].defense.max;
-
   let row = "<tr>" +
-    '<td>' + maxdef + '</td>' +
-    "<td>" + set.gear.head.name + "</td>" +
+    '<td>' + set.defmax + '</td>';
+    for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
+    {
+      if (set.res[res] > 0)
+        row += '<td class="numeric good">';
+      else if (set.res[res] < 0)
+        row += '<td class="numeric bad">';
+      else
+        row += '<td class="numeric">'
+      row += set.res[res] + '</td>';
+    }
+    row += "<td>" + set.gear.head.name + "</td>" +
     "<td>" + set.gear.chest.name + "</td>" +
     "<td>" + set.gear.arms.name + "</td>" +
     "<td>" + set.gear.waist.name + "</td>" +
