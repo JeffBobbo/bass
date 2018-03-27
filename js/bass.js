@@ -164,29 +164,59 @@ $(document).ready(function() {
 
   $("th.sort>i").click(function(element) {
     const col = $(element.target);
-    const keys = col.data('key').split('.');
+    const key = col.data('key');
     const order = col.data('order');
 
-    const norder = order === undefined || order === "asc" ? "desc" : "asc";
-    //sorting = {"key": key, "order": norder};
-    col.removeClass("fa-sort fa-sort-up fa-sort-down");
-    col.addClass(norder === "asc" ? "fa-sort-up" : "fa-sort-down");
-    col.data('order', norder);
+    const norder = order === undefined ? "desc" : (order === "asc" ? undefined : "asc");
 
-    sets.sort((a, b) => {
-      for (const key of keys)
+    // if we were already sorting by it, remove it
+    for (let i = 0, l = sorting.length; i < l; ++i)
+    {
+      const by = sorting[i];
+      if (by.key === key)
       {
-        a = a[key];
-        b = b[key];
+        sorting.splice(i, 1);
+        --i;
+        --l;
+        continue;
       }
-      if (norder === "asc")
-        return a - b;
-      else
-        return b - a;
-    });
-    let table = $("table#sets>tbody").empty();
-    for (let i = 0, l = Math.min(100, sets.length); i < l; ++i)
-      addSetToTable(sets[i]);
+    }
+    col.removeClass("fa-sort fa-sort-up fa-sort-down");
+    // and put it at the front of the queue
+    if (norder !== undefined)
+    {
+      sorting.push({"key": key, "order": norder});
+      col.addClass(norder === "asc" ? "fa-sort-up" : "fa-sort-down");
+      col.data('order', norder);
+    }
+    else
+    {
+      col.addClass("fa-sort");
+      col.removeData('order');
+    }
+
+    if (sorting.length > 0)
+    {
+      sets.sort((a, b) => {
+        for (const by of sorting)
+        {
+          const keys = by.key.split('.');
+          let x = a, y = b;
+          for (const key of keys)
+          {
+            x = x[key];
+            y = y[key];
+          }
+          const cmp = x - y;
+          if (cmp !== 0)
+            return order === "asc" ? cmp : -cmp;
+        }
+        return 0;
+      });
+      let table = $("table#sets>tbody").empty();
+      for (let i = 0, l = Math.min(100, sets.length); i < l; ++i)
+        addSetToTable(sets[i]);
+    }
   });
 });
 
