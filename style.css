@@ -1,26 +1,127 @@
 body
 {
+  margin:0px;
+
+  color:white;
 }
 
-.skill-slot.empty
+/*
+ * side bar stuff
+ */
+div#sidebar
 {
-  color:grey;
+  position:fixed;
+  left:0px;
+  top:0px;
+  width:16rem;
+  height:100%;
+
+  background-color:#222;
 }
 
-.skill-slot:not(.empty)
+div#sidebar>*
 {
+  margin:4px;
+}
+
+div.notice
+{
+  border:1px solid grey;
+  padding:2px;
+}
+div.notice>a
+{
+  float:right;
+  color:rgb(255, 152, 0);
+  position:absolute;
+  top:6px;
+  right:8px;
   cursor:pointer;
 }
 
-div#skills
+.collapsable
 {
-  max-height:600px;
+  border:1px solid grey;
+  padding:2px;
+}
+
+.collapsable>p
+{
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+div#skill-overview
+{
+  max-height:400px;
   overflow-y:auto;
 }
 
-div#skills>p
+/*
+ * close side bar stuff
+ */
+div#close
 {
-  cursor:pointer;
+  position:fixed;
+  height:100%;
+  width:1rem;
+  left:15rem;
+  top:0px;
+  color:black;
+}
+
+div#close>p
+{
+  position:relative;
+  margin-top:-8px;
+  margin-bottom:0px;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/*
+ * pane stuff, this is the main content, hosting the results etc
+ */
+div#pane
+{
+  position:fixed;
+  left:16rem;
+  height:100%;
+  width:calc(100% - 16rem);
+
+  display:flex;
+  flex-flow:column;
+
+  background-color:#333;
+}
+
+div#pane>*
+{
+  margin:4px;
+}
+
+div#set-wrapper
+{
+  overflow:auto;
+  flex:1;
+}
+/*
+ * general stuff
+ */
+.hide
+{
+  display:none;
+}
+
+table
+{
+  width:100%;
+}
+
+table select
+{
+  width:100%;
 }
 
 hr
@@ -37,9 +138,4 @@ fieldset
 {
   margin:6px 0px 4px 0px;
   padding:4px;
-}
-
-.notice.error
-{
-  color:brown;
 }

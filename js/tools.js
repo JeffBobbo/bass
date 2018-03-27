@@ -30,6 +30,15 @@ function filter(object, key, comparison, value, keys = Object.keys(object))
         }
         return false;
       }
+      case "is":
+      {
+        for (var i = value.length - 1; i >= 0; i--)
+        {
+          if (obj[key].includes(value[i]))
+            return true;
+        }
+        return false;
+      }
       case "empty":
       {
         return obj[key].length === 0;

@@ -13,7 +13,7 @@ let waists = {};
 let legs = {};
 
 // the currently selected skills
-let selectedSkills = [];
+let selectedSkills = new Array(5).fill(null);
 
 let build = null;
 
@@ -96,7 +96,10 @@ $(document).ready(function() {
   $.getJSON(dir + "/skills.json", function(payload) {
     skills = payload;
     workers.postAll({"cmd": "addSkills", "payload": skills});
-    updateSkillsTable();
+    updateSkillsOverview();
+
+    // add skills to selects
+    updateSkillSelectAll();
   });
   $.getJSON(dir + "/armour.json", function(payload) {
     armour = payload;
@@ -125,70 +128,66 @@ $(document).ready(function() {
     workers.postAll({"cmd": "addJewels", "payload": jewels});
   });
 
-  $("select#filter").change(updateSkillsTable);
-  $("select#class").change(updateSkillsTable);
-  $("input#class-filter").change(updateSkillsTable);
-  $("input#bad-filter").change(updateSkillsTable);
-  $("input[type=radio][name=skill-sort]").change(updateSkillsTable);
-  $("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
+  $("select#filter").change(updateSkillsOverview);
+  $("select#class").change(updateSkillsOverview);
+  $("input#class-filter").change(updateSkillsOverview);
+  $("input#bad-filter").change(function() {
+    updateSkillsOverview();
+    updateSkillSelectAll();
+  });
+  $("input[type=radio][name=skill-sort]").change(function() {
+    updateSkillsOverview();
+    updateSkillSelectAll();
+  });
+  //$("button#removeSkills").click(function() {selectedSkills = []; updateSkillsSelected()});
   $("button#punchit").click(punchit);
+
+  $("select.skill-filter").change(function(element) {
+    updateSkillSelect(element.target.id.substr(-1));
+  });
+  $("select.skill-select").change(function(element) {
+    selectSkill(element);
+    updateSkillSelectAll();
+  });
 });
 
-function addSkill(skillname)
+function selectSkill(select)
 {
-  if (selectedSkills.length >= 5)
-    throw "Too many skills";
-
-  const skill = skills[skillname];
-  if (skill === undefined)
-    throw "Unknown skill: " + skillname;
-
-  selectedSkills.push({"name": skillname, "stats": skill});
-  updateSkillsSelected();
-  updateSkillsTable();
-}
-
-function removeSkill(skillname)
-{
-  if (selectedSkills.length === 0)
-    throw "No skills";
-
-  let index = -1;
-  for (let i = 0, l = selectedSkills.length; i < l; ++i)
+  const skillname = select.target.value;
+  if (skillname === "")
   {
-    const name = selectedSkills[i].name;
-    if (name === skillname)
-    {
-      index = i;
-      break;
-    }
+    selectedSkills[select.target.id.substr(-1)] = null;
   }
-
-  if (index >= 0)
-    selectedSkills.splice(index, 1);
-  updateSkillsSelected();
-  updateSkillsTable();
+  else
+  {
+    const skill = skills[skillname];
+    selectedSkills[select.target.id.substr(-1)] = {"name": select.target.value, "stats": skill};
+  }
+  console.log(selectedSkills);
 }
 
-function updateSkillsSelected()
+function sortSkills(skillList)
 {
-  $('div.skill-slot').each(function(index) {
-    if (index < selectedSkills.length)
-    {
-      $(this).text(selectedSkills[index].name);
-      $(this).removeClass("empty");
-      $(this).click((e) => { removeSkill(e.target.textContent); });
-    }
-    else
-    {
-      $(this).text("Skill #" + (index+1));
-      $(this).addClass("empty");
-      $(this).off("click");
-    }
-  });
+  switch ($("input[type=radio][name=skill-sort]:checked").val())
+  {
+    // sort by jewel then points
+    case "jewel":
+      skillList.sort((a, b) => {
+        const c = skills[a].Jewel.localeCompare(skills[b].Jewel);
+        if (c)
+          return c;
+        return skills[a].Points - skills[b].Points;
+      });
+      break;
+    // sort by skill name
+    case "skill":
+      skillList.sort();
+    break;
+  }
 }
 
-function updateSkillsTable()
+
+function updateSkillsOverview()
 {
   let filtered = Object.keys(skills);
 
@@ -219,40 +218,71 @@ function updateSkillsTable()
     }
   }
 
+  sortSkills(filtered);
 
-  // filter out skills we already chose
-  for (var i = selectedSkills.length - 1; i >= 0; i--)
-  {
-    const skill = selectedSkills[i];
-    filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
-  }
-
-  switch ($("input[type=radio][name=skill-sort]:checked").val())
-  {
-    // sort by jewel then points
-    case "jewel":
-      filtered.sort((a, b) => {
-        const c = skills[a].Jewel.localeCompare(skills[b].Jewel);
-        if (c)
-          return c;
-        return skills[a].Points - skills[b].Points;
-      });
-      break;
-    // sort by skill name
-    case "skill":
-      filtered.sort();
-    break;
-  }
-
-  $('div#skills').empty();
+  $('div#skill-overview').empty();
   for (const name of filtered)
   {
     const skill = skills[name];
     var tooltip = "Jewel: " + skill.Jewel + "\n" +
                   "Points: " + skill.Points;
-    $('div#skills:last-child').append('<p class="tooltip" title="' + tooltip + '">'+name+'</p><hr/>');
+    $('div#skill-overview:last-child').append('<p class="tooltip" title="' + tooltip + '">'+name+'</p><hr/>');
   };
-  $("div#skills p").click((e) => { addSkill(e.target.textContent); });
+}
+
+function updateSkillSelectAll()
+{
+  updateSkillSelect(0);
+  updateSkillSelect(1);
+  updateSkillSelect(2);
+  updateSkillSelect(3);
+  updateSkillSelect(4);
+}
+function updateSkillSelect(id)
+{
+  let select = $('select#skill-select-' + id);
+
+  let filtered = Object.keys(skills);
+  const v = $('select#skill-filter-' + id).val();
+  if (v === "Other")
+  {
+    filtered = filter(skills, "Categories", "empty", null, filtered);
+  }
+  else if (v === "Class")
+  {
+    const weapon = $("select#class").val();
+    if (weapon === "Gunner")
+      filtered = filter(skills, "Categories", "is", ["Bowgun", "Bow"], filtered);
+    else
+      filtered = filter(skills, "Categories", "includes", "Blademaster", filtered);
+  }
+  else if (v !== "all")
+  {
+    filtered = filter(skills, "Categories", "includes", v, filtered)
+  }
+
+  if ($("input#bad-filter").prop("checked"))
+    filtered = filter(skills, "Points", ">", 0, filtered);
+
+  // filter selected skills
+  for (let i = 0, l = selectedSkills.length; i < l; ++i)
+  {
+    if (i == id)
+      continue;
+    const skill = selectedSkills[i];
+    if (skill === null)
+      continue;
+    filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
+  }
+
+  sortSkills(filtered);
+
+  const old = select.val();
+  select.empty();
+  select.append("<option value=''></option>");
+  for (const skill of filtered)
+    select.append("<option value='" + skill + "'>" + skill + "</option>");
+  select.val(old);
 }
 
 // fix this
@@ -455,8 +485,15 @@ function punchit()
   }
   else
   {
+    let chosen = [];
+    for (const skill of selectedSkills)
+    {
+      if (skill === null)
+        continue;
+      chosen.push(skill);
+    }
     build = {
-      "skills": selectedSkills,
+      "skills": chosen,
       "elder": $("select#elder").val(),
       "hr": $("select#hr").val(),
       "gender": $("select#gender").val(),

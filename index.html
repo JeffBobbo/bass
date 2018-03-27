@@ -8,26 +8,32 @@
     <meta name="description" content="" />
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+    <!--link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" /-->
     <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Javascript -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/kickstart.js"></script>
+    <!--script type="text/javascript" src="js/kickstart.js"></script-->
 
     <script type="text/javascript" src="js/tools.js"></script>
     <script type="text/javascript" src="js/bass.js"></script>
   </head>
   <body>
     <!-- black star &#9733; -->
-    <div class="grid">
-      <div class="col_12 notice error">
-        This tool is WIP, there is no guarantee that the results it produces are correct, complete, or possible. Recommend sets are tested by hand or checked with another tool (particularly if you can't afford to waste materials).
-        <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
+    <div id="sidebar">
+      <div id="noticebox">
+        <div class="notice">
+          This tool is WIP, there is no guarantee that the results it produces are correct, complete, or possible. Recommend sets are tested by hand or checked with another tool (particularly if you can't afford to waste materials).
+
+          <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
+        </div>
       </div>
-      <div class="col_9">
-        <div class="col_3">
-          <p>Village Level</p>
+
+      <div class="collapsable">
+        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Hunter</p>
+        <div>
+          <label for="elder">Village</label>
           <select id="elder" disabled title="Not implemented">
             <option value="9">9&#9733; (Nekoht)</option>
             <option value="8">8&#9733; (Nekoht)</option>
@@ -39,9 +45,8 @@
             <option value="2">2&#9733;</option>
             <option value="1">1&#9733;</option>
           </select>
-        </div>
-        <div class="col_3">
-          <p>Hunter Rank</p>
+          <br/>
+          <label for ="hr">Hunter Rank</label>
           <select id="hr" disabled title="Not implemented">
             <option value="9">HR9 (GR)</option>
             <option value="8">HR8 (GR)</option>
@@ -53,31 +58,24 @@
             <option value="2">HR2 (LR)</option>
             <option value="1">HR1 (LR)</option>
           </select>
-        </div>
-        <div class="col_3">
-          <p>Gender</p>
+          <br/>
+          <label for="gender">Gender</label>
           <select id="gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
         </div>
-        <div class="col_3">
-          <p>Class</p>
+      </div>
+      <div class="collapsable">
+        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Weapon</p>
+        <div>
+          <label for="class">Class</label>
           <select id="class">
             <option value="Blademaster">Blademaster</option>
             <option value="Gunner">Gunner</option>
           </select>
-        </div>
-
-        <div class="col_2 skill-slot empty">Skill #1</div>
-        <div class="col_2 skill-slot empty">Skill #2</div>
-        <div class="col_2 skill-slot empty">Skill #3</div>
-        <div class="col_2 skill-slot empty">Skill #4</div>
-        <div class="col_2 skill-slot empty">Skill #5</div>
-        <div class="col_2"><button id="removeSkills" class="small">Remove All</button></div>
-
-        <div class="col_2">
-          <p>Slots</p>
+          <br/>
+          <label for="slots">Slots</label>
           <select id="slots">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -85,51 +83,11 @@
             <option value="3">3</option>
           </select>
         </div>
-        <div class="col_2">
-          <p>Allow bad skills</p>
-          <input type="checkbox" id="badskills" checked/>
-        </div>
-        <div class="col_2">
-          <p>Allow piercings</p>
-          <input type="checkbox" id="piercings" checked/>
-        </div>
-        <div class="col_2">
-          <p title="Partially implemented, Torso Inc will work on the chest piece, but is not considered for jewels">Allow Torso Inc.</p>
-          <input type="checkbox" id="torsoinc" checked title="Partially implemented, Torso Inc will work on the chest piece, but is not considered for jewels"/>
-        </div>
-        <div class="col_2">
-          <p title="Not implemented">Allow (dummy)</p>
-          <input type="checkbox" id="dummy" disabled title="Not implemented"/>
-        </div>
-        <div class="col_2">
-          <button id="punchit">Search</button><br/>
-          <progress max="100" style="display:none;"></progress>
-          <span id="count"></span>
-        </div>
-        <div class="col_12">
-          <div style="overflow:auto; max-height:500px">
-            <table id="sets" class="sortable tight">
-              <thead>
-                <tr>
-                  <td>Defence (Max)</td>
-                  <td>Head</td>
-                  <td>Chest</td>
-                  <td>Arms</td>
-                  <td>Waist</td>
-                  <td>Legs</td>
-                  <td>Jewels</td>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
       </div>
-      <div class="col_3">
-        <fieldset>
-          <legend>Skill list</legend>
-          <label for="filter">Category</label><br/>
+      <div class="collapsable">
+        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Skills</p>
+        <div>
+          <label for="filter">Category</label>
           <select id="filter">
             <option value="all">All</option>
             <option value="Offensive">Offensive</option>
@@ -150,15 +108,141 @@
             <label for="bad-filter">Bad skills</label>
           </fieldset>
           <fieldset>
-            <legend>Sort by</legend>
+            <legend title="Also sorts the skill selection">Sort by</legend>
             <input type="radio" id="skill-sort-jewel" name="skill-sort" value="jewel" checked/>
             <label for="skill-sort-jewel">Jewel name</label><br/>
             <input type="radio" id="skill-sort-skill" name="skill-sort" value="skill"/>
             <label for="skill-sort-skill">Skill name</label>
           </fieldset>
-        </fieldset>
-        <div id="skills">
+          <div id="skill-overview">
+          </div>
         </div>
+      </div>
+    </div>
+    <!--div id="close" onclick="$(this).children('p').toggleClass('fa-chevron-left'); $(this).children('p').toggleClass('fa-chevron-right'); $('#sidebar').toggleClass('hide'); return false;">
+      <p class="fa fa-chevron-left"></p>
+    </div-->
+    <div id="pane">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <select class="skill-select" id="skill-select-0">
+              </select>
+            </td>
+            <td>
+              <select class="skill-select" id="skill-select-1">
+              </select>
+            </td>
+            <td>
+              <select class="skill-select" id="skill-select-2">
+              </select>
+            </td>
+            <td>
+              <select class="skill-select" id="skill-select-3">
+              </select>
+            </td>
+            <td>
+              <select class="skill-select" id="skill-select-4">
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select class="skill-filter" id="skill-filter-0">
+                <option value="all">All</option>
+                <option value="Offensive">Offensive</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Resistance">Resistance</option>
+                <option value="Farming">Farming</option>
+                <option value="Treasure Hunting">Treasure Hunting</option>
+                <option value="Class">Class</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <select class="skill-filter" id="skill-filter-1">
+                <option value="all">All</option>
+                <option value="Offensive">Offensive</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Resistance">Resistance</option>
+                <option value="Farming">Farming</option>
+                <option value="Treasure Hunting">Treasure Hunting</option>
+                <option value="Class">Class</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <select class="skill-filter" id="skill-filter-2">
+                <option value="all">All</option>
+                <option value="Offensive">Offensive</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Resistance">Resistance</option>
+                <option value="Farming">Farming</option>
+                <option value="Treasure Hunting">Treasure Hunting</option>
+                <option value="Class">Class</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <select class="skill-filter" id="skill-filter-3">
+                <option value="all">All</option>
+                <option value="Offensive">Offensive</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Resistance">Resistance</option>
+                <option value="Farming">Farming</option>
+                <option value="Treasure Hunting">Treasure Hunting</option>
+                <option value="Class">Class</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <select class="skill-filter" id="skill-filter-4">
+                <option value="all">All</option>
+                <option value="Offensive">Offensive</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Resistance">Resistance</option>
+                <option value="Farming">Farming</option>
+                <option value="Treasure Hunting">Treasure Hunting</option>
+                <option value="Class">Class</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tr>
+          <td>Allow bad skills</td>
+          <td>Allow piercings</td>
+          <td>Allow torso inc</td>
+          <td>Allow dummy</td>
+          <td><button id="punchit">Search</button></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="badskills" checked/></td>
+          <td><input type="checkbox" id="piercings" checked/></td>
+          <td><input type="checkbox" id="torsoinc" checked title="Partially implemented, Torso Inc will work on the chest piece, but is not considered for jewels"/></td>
+          <td><input type="checkbox" id="dummy" disabled title="Not implemented"/></td>
+          <td><progress max="100" value="0"></progress><span id="count"></span></td>
+        </tr>
+      </table>
+      <div id="set-wrapper">
+        <table id="sets">
+          <thead>
+            <tr>
+              <td>Defence (Max)</td>
+              <td>Head</td>
+              <td>Chest</td>
+              <td>Arms</td>
+              <td>Waist</td>
+              <td>Legs</td>
+              <td>Jewels</td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
