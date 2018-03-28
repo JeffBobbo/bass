@@ -16,7 +16,7 @@
     "Resources": {},
     "Skills": {
       "Reload": -1,
-      "Loading": 1
+      "Capacity": 1
     },
     "Slots": 1
   },
@@ -985,7 +985,7 @@
     "Resources": {},
     "Skills": {
       "Reload": -2,
-      "Loading": 4
+      "Capacity": 4
     },
     "Slots": 3
   },

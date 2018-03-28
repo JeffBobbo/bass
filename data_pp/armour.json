@@ -694,7 +694,7 @@
     },
     "resources": {},
     "skills": {
-      "Loading": 10
+      "Capacity": 10
     },
     "slots": 0,
     "type": "Both"
@@ -3305,7 +3305,7 @@
     "skills": {
       "Artisan": 2,
       "Gluttony": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 2,
@@ -3338,7 +3338,7 @@
     "skills": {
       "Artisan": 2,
       "Cooking": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 2,
@@ -3523,7 +3523,7 @@
     "skills": {
       "Artisan": 2,
       "Gluttony": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 1,
@@ -3556,7 +3556,7 @@
     "skills": {
       "Artisan": 2,
       "Cooking": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 1,
@@ -3622,7 +3622,7 @@
     "skills": {
       "Artisan": 2,
       "Gluttony": 3,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 1,
@@ -3655,7 +3655,7 @@
     "skills": {
       "Artisan": 2,
       "Cooking": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Map": -2
     },
     "slots": 2,
@@ -9155,7 +9155,7 @@
     },
     "skills": {
       "All Resist": 4,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": -2,
       "Protection": 1
     },
@@ -9188,7 +9188,7 @@
     },
     "skills": {
       "All Resist": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": -2,
       "Protection": 1
     },
@@ -9221,7 +9221,7 @@
     },
     "skills": {
       "All Resist": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": -2,
       "Protection": 2
     },
@@ -9254,7 +9254,7 @@
     },
     "skills": {
       "All Resist": 4,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": -2,
       "Protection": 1
     },
@@ -9287,7 +9287,7 @@
     },
     "skills": {
       "All Resist": 4,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": -2,
       "Protection": 1
     },
@@ -9546,7 +9546,7 @@
     },
     "skills": {
       "Health": -3,
-      "Loading": 4,
+      "Capacity": 4,
       "PierceSAdd": 2
     },
     "slots": 2,
@@ -9707,7 +9707,7 @@
     },
     "skills": {
       "Health": -3,
-      "Loading": 4,
+      "Capacity": 4,
       "PierceSAdd": 2
     },
     "slots": 2,
@@ -10030,7 +10030,7 @@
     },
     "skills": {
       "Health": -3,
-      "Loading": 1,
+      "Capacity": 1,
       "PierceSAdd": 5
     },
     "slots": 2,
@@ -10353,7 +10353,7 @@
     },
     "skills": {
       "Health": -3,
-      "Loading": 1,
+      "Capacity": 1,
       "PierceSAdd": 5
     },
     "slots": 2,
@@ -10871,7 +10871,7 @@
     },
     "skills": {
       "Health": -3,
-      "Loading": 2,
+      "Capacity": 2,
       "PierceSAdd": 2
     },
     "slots": 2,
@@ -14213,7 +14213,7 @@
       "Expert": 4,
       "Fast Chrge": -2,
       "HearProtct": 1,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14279,7 +14279,7 @@
       "Expert": 4,
       "Fast Chrge": -2,
       "HearProtct": 1,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 1,
     "type": "Both"
@@ -14378,7 +14378,7 @@
       "Expert": 2,
       "Fast Chrge": -2,
       "HearProtct": 1,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14411,7 +14411,7 @@
       "Expert": 2,
       "Fast Chrge": -2,
       "HearProtct": 1,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -14503,7 +14503,7 @@
       "Expert": 4,
       "Fast Chrge": -2,
       "HearProtct": 1,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -19322,7 +19322,7 @@
     },
     "skills": {
       "Defense": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": 2
     },
@@ -19355,7 +19355,7 @@
     },
     "skills": {
       "Evade": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Rage": 2,
       "Rec Speed": -3
     },
@@ -19454,7 +19454,7 @@
     },
     "skills": {
       "Defense": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": 2
     },
@@ -19487,7 +19487,7 @@
     },
     "skills": {
       "Evade": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Rage": 2,
       "Rec Speed": -3
     },
@@ -19652,7 +19652,7 @@
     },
     "skills": {
       "Defense": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": 2
     },
@@ -19685,7 +19685,7 @@
     },
     "skills": {
       "Evade": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Rage": 2,
       "Rec Speed": -3
     },
@@ -19718,7 +19718,7 @@
     },
     "skills": {
       "Defense": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": 2
     },
@@ -19751,7 +19751,7 @@
     },
     "skills": {
       "Evade": 1,
-      "Loading": 3,
+      "Capacity": 3,
       "Rage": 2,
       "Rec Speed": -3
     },
@@ -19784,7 +19784,7 @@
     },
     "skills": {
       "Defense": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": 2
     },
@@ -19817,7 +19817,7 @@
     },
     "skills": {
       "Evade": 1,
-      "Loading": 1,
+      "Capacity": 1,
       "Rage": 2,
       "Rec Speed": -3
     },
@@ -24089,7 +24089,7 @@
     },
     "skills": {
       "Fate": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Trapper": 3,
       "Whim": -2
     },
@@ -48724,7 +48724,7 @@
     },
     "skills": {
       "Expert": 2,
-      "Loading": 1,
+      "Capacity": 1,
       "Potential": 4,
       "Protection": -2
     },
@@ -48757,7 +48757,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 2,
       "Protection": -2
     },
@@ -48790,7 +48790,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 2,
       "Protection": -4
     },
@@ -48823,7 +48823,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 2,
       "Protection": -2
     },
@@ -48988,7 +48988,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 1,
+      "Capacity": 1,
       "Potential": 4,
       "Protection": -1
     },
@@ -49021,7 +49021,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 4,
       "Protection": -2
     },
@@ -49120,7 +49120,7 @@
     },
     "skills": {
       "Expert": 2,
-      "Loading": 1,
+      "Capacity": 1,
       "Potential": 4,
       "Protection": -2
     },
@@ -49153,7 +49153,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 2,
       "Protection": -2
     },
@@ -49285,7 +49285,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 1,
       "Protection": -3
     },
@@ -49318,7 +49318,7 @@
     },
     "skills": {
       "Expert": 1,
-      "Loading": 2,
+      "Capacity": 2,
       "Potential": 2,
       "Protection": -2
     },
@@ -62037,7 +62037,7 @@
     "skills": {
       "Cooking": 1,
       "Hunger": -2,
-      "Loading": 3,
+      "Capacity": 3,
       "Para CtAdd": 3
     },
     "slots": 2,
@@ -62070,7 +62070,7 @@
     "skills": {
       "Cooking": 4,
       "Hunger": -3,
-      "Loading": 2
+      "Capacity": 2
     },
     "slots": 2,
     "type": "Both"
@@ -62102,7 +62102,7 @@
     "skills": {
       "Cooking": 2,
       "Hunger": -2,
-      "Loading": 2,
+      "Capacity": 2,
       "Para CtAdd": 1
     },
     "slots": 2,
@@ -62135,7 +62135,7 @@
     "skills": {
       "Cooking": 1,
       "Hunger": -2,
-      "Loading": 3,
+      "Capacity": 3,
       "Para CtAdd": 3
     },
     "slots": 2,
@@ -62918,7 +62918,7 @@
     "skills": {
       "Cooking": 3,
       "Hunger": -2,
-      "Loading": 1,
+      "Capacity": 1,
       "Para CtAdd": 3
     },
     "slots": 2,
@@ -63374,7 +63374,7 @@
     },
     "skills": {
       "Reload": 6,
-      "Loading": 1,
+      "Capacity": 1,
       "Protection": -2
     },
     "slots": 2,
@@ -63472,7 +63472,7 @@
     },
     "skills": {
       "Reload": 3,
-      "Loading": 3,
+      "Capacity": 3,
       "Protection": -3
     },
     "slots": 2,
@@ -63504,7 +63504,7 @@
     },
     "skills": {
       "Reload": 6,
-      "Loading": 1,
+      "Capacity": 1,
       "Protection": -2
     },
     "slots": 2,
@@ -63602,7 +63602,7 @@
     },
     "skills": {
       "Reload": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3
     },
     "slots": 2,
@@ -63634,7 +63634,7 @@
     },
     "skills": {
       "Reload": 3,
-      "Loading": 3,
+      "Capacity": 3,
       "Protection": -3
     },
     "slots": 2,
@@ -66246,7 +66246,7 @@
     },
     "skills": {
       "Fast Chrge": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
     },
@@ -66344,7 +66344,7 @@
     },
     "skills": {
       "Fast Chrge": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
     },
@@ -66507,7 +66507,7 @@
     },
     "skills": {
       "Fast Chrge": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
     },
@@ -66540,7 +66540,7 @@
     },
     "skills": {
       "Fast Chrge": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
     },
@@ -66573,7 +66573,7 @@
     },
     "skills": {
       "Fast Chrge": 2,
-      "Loading": 2,
+      "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
     },
