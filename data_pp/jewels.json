@@ -258,7 +258,7 @@
     "Resources": {},
     "Skills": {
       "Stamina": -1,
-      "Technique": 3
+      "Constitutn": 3
     },
     "Slots": 2
   },
@@ -745,7 +745,7 @@
     "Price": 375,
     "Resources": {},
     "Skills": {
-      "Fast Chrge": -1,
+      "ShortChrg": -1,
       "PowerCtAdd": 3
     },
     "Slots": 2
@@ -1193,7 +1193,7 @@
     "Price": 200,
     "Resources": {},
     "Skills": {
-      "Fast Chrge": -1,
+      "ShortChrg": -1,
       "Para CtAdd": 1
     },
     "Slots": 1
@@ -1278,7 +1278,7 @@
     "Price": 450,
     "Resources": {},
     "Skills": {
-      "Fast Chrge": -1,
+      "ShortChrg": -1,
       "Para CtAdd": 3
     },
     "Slots": 2
@@ -1331,7 +1331,7 @@
     "Price": 200,
     "Resources": {},
     "Skills": {
-      "Fast Chrge": -1,
+      "ShortChrg": -1,
       "PowerCtAdd": 1
     },
     "Slots": 1
@@ -1377,14 +1377,19 @@
     },
     "Slots": 2
   },
-  "QuickCharge Jewel": {
+  "ShortCharge Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Daora Horn": 1,
+      "ElderDragonBlood": 1
+    },
     "Skills": {
-      "Fast Chrge": 1,
-      "Technique": -1
+      "ShortChrg": 1,
+      "Constitutn": -1
     },
     "Slots": 1
   },
@@ -1653,14 +1658,20 @@
     },
     "Slots": 2
   },
-  "SpeedCharge Jewel": {
+  "RapidChargeJewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 200,
-    "Resources": {},
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "GoldRajangPelt+": 2,
+      "ThckDaoraDrgnScl": 3,
+      "HvyLavasiothFang": 4
+    },
     "Skills": {
-      "Fast Chrge": 4,
-      "Technique": -2
+      "ShortChrg": 4,
+      "Constitutn": -2
     },
     "Slots": 3
   },
@@ -1693,7 +1704,7 @@
     "Resources": {},
     "Skills": {
       "Stamina": -1,
-      "Technique": 1
+      "Constitutn": 1
     },
     "Slots": 1
   },

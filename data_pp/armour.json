@@ -12517,7 +12517,7 @@
     },
     "skills": {
       "Cooking": 3,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "PelletS Up": 4
     },
     "slots": 2,
@@ -12679,7 +12679,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "Guard Up": 2,
       "PelletSAdd": 3
     },
@@ -13005,7 +13005,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "Fast Chrge": -3,
+      "ShortChrg": -3,
       "PelletS Up": 2
     },
     "slots": 3,
@@ -13329,7 +13329,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "Guard Up": 2,
       "PelletSAdd": 3
     },
@@ -13979,7 +13979,7 @@
     },
     "skills": {
       "Cooking": 1,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "PelletS Up": 4
     },
     "slots": 2,
@@ -14179,7 +14179,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14211,7 +14211,7 @@
     },
     "skills": {
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14245,7 +14245,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14277,7 +14277,7 @@
     },
     "skills": {
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14311,7 +14311,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14344,7 +14344,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14376,7 +14376,7 @@
     },
     "skills": {
       "Expert": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14409,7 +14409,7 @@
     },
     "skills": {
       "Expert": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14469,7 +14469,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 2,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1
     },
     "slots": 2,
@@ -14501,7 +14501,7 @@
     },
     "skills": {
       "Expert": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -15206,10 +15206,10 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Both"
@@ -15239,10 +15239,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 1,
       "Stamina": 2,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Gunner"
@@ -15272,10 +15272,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Blademaster"
@@ -15305,10 +15305,10 @@
       "Union Ore": 2
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Blademaster"
@@ -15338,10 +15338,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Gunner"
@@ -15371,9 +15371,9 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "PsychicVis": 3,
-      "Technique": -3
+      "Constitutn": -3
     },
     "slots": 1,
     "type": "Both"
@@ -15403,9 +15403,9 @@
       "Union Ore": 2
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "PsychicVis": 3,
-      "Technique": -3
+      "Constitutn": -3
     },
     "slots": 1,
     "type": "Gunner"
@@ -15435,10 +15435,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 1,
     "type": "Blademaster"
@@ -15468,10 +15468,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "PsychicVis": 1,
       "Stamina": 2,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -15501,10 +15501,10 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "PsychicVis": 4,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 1,
     "type": "Gunner"
@@ -24765,7 +24765,7 @@
       "Guard Up": 3,
       "Health": 3,
       "Recoil": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Both"
@@ -24958,7 +24958,7 @@
       "Guard Up": 2,
       "Health": 3,
       "Recoil": 2,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Gunner"
@@ -25152,7 +25152,7 @@
       "Guard": 3,
       "Guard Up": 1,
       "Health": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -25345,7 +25345,7 @@
       "Guard Up": 1,
       "Health": 3,
       "Recoil": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Gunner"
@@ -25539,7 +25539,7 @@
       "Guard": 1,
       "Guard Up": 3,
       "Health": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Both"
@@ -25732,7 +25732,7 @@
       "Guard Up": 1,
       "Health": -3,
       "Recoil": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Gunner"
@@ -25926,7 +25926,7 @@
       "Guard": 1,
       "Guard Up": 3,
       "Health": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Blademaster"
@@ -26120,7 +26120,7 @@
       "Guard": 2,
       "Guard Up": 2,
       "Health": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -26314,7 +26314,7 @@
       "Guard": 3,
       "Guard Up": 1,
       "Health": 3,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -26507,7 +26507,7 @@
       "Guard Up": 3,
       "Health": 3,
       "Recoil": 1,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 1,
     "type": "Gunner"
@@ -35107,7 +35107,7 @@
     "skills": {
       "Paralysis": -2,
       "SleepCtAdd": 4,
-      "Technique": 1
+      "Constitutn": 1
     },
     "slots": 3,
     "type": "Both"
@@ -35204,7 +35204,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 1,
-      "Technique": 6
+      "Constitutn": 6
     },
     "slots": 2,
     "type": "Gunner"
@@ -35301,7 +35301,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 4,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 2,
     "type": "Blademaster"
@@ -35399,7 +35399,7 @@
       "Paralysis": -2,
       "Sleep": 1,
       "SleepCtAdd": 3,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -35496,7 +35496,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 1,
-      "Technique": 6
+      "Constitutn": 6
     },
     "slots": 2,
     "type": "Both"
@@ -35594,7 +35594,7 @@
       "Paralysis": -2,
       "Sleep": 1,
       "SleepCtAdd": 3,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -35690,7 +35690,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 2,
-      "Technique": 5
+      "Constitutn": 5
     },
     "slots": 1,
     "type": "Blademaster"
@@ -35787,7 +35787,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 4,
-      "Technique": 1
+      "Constitutn": 1
     },
     "slots": 3,
     "type": "Blademaster"
@@ -35884,7 +35884,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 4,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 2,
     "type": "Blademaster"
@@ -35980,7 +35980,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 2,
-      "Technique": 5
+      "Constitutn": 5
     },
     "slots": 1,
     "type": "Gunner"
@@ -41490,7 +41490,7 @@
       "ElderDragonBlood": 1
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 3
@@ -41523,7 +41523,7 @@
       "ElderDragonBlood": 2
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "Poison": -2,
       "Sharpness": 2,
       "Terrain": 2
@@ -41588,7 +41588,7 @@
       "Fire Stone": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 2
@@ -41621,7 +41621,7 @@
       "Firecell Stone": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41686,7 +41686,7 @@
       "Dragonite Ore": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41718,7 +41718,7 @@
       "Union Ore": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41783,7 +41783,7 @@
       "Elder Drgn Bone": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41815,7 +41815,7 @@
       "Elder Drgn Bone": 5
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41846,7 +41846,7 @@
       "Dragonite Ore": 4
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "Fire Res": 2,
       "Poison": -2,
       "Terrain": 2
@@ -41879,7 +41879,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "Poison": -1,
       "Sharpness": 2,
       "Terrain": 1
@@ -41978,7 +41978,7 @@
       "Elder Drgn Bone": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42010,7 +42010,7 @@
       "Elder Drgn Bone": 5
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42075,7 +42075,7 @@
       "Dragonite Ore": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42107,7 +42107,7 @@
       "Union Ore": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42171,7 +42171,7 @@
       "Dragonite Ore": 4
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "Fire Res": 2,
       "Poison": -2,
       "Terrain": 2
@@ -42204,7 +42204,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "PierceS Up": 2,
       "Poison": -1,
       "Terrain": 1
@@ -42237,7 +42237,7 @@
       "ElderDragonBlood": 1
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 3
@@ -42270,7 +42270,7 @@
       "ElderDragonBlood": 2
     },
     "skills": {
-      "Fast Chrge": 1,
+      "ShortChrg": 1,
       "PierceS Up": 2,
       "Poison": -2,
       "Terrain": 2
@@ -42335,7 +42335,7 @@
       "Fire Stone": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 2
@@ -42368,7 +42368,7 @@
       "Firecell Stone": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -49515,7 +49515,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Both"
@@ -49579,7 +49579,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 3,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -49644,7 +49644,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Blademaster"
@@ -49708,7 +49708,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Gunner"
@@ -49772,7 +49772,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 3,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Both"
@@ -49837,7 +49837,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 3,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -49902,7 +49902,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 2,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 1,
     "type": "Blademaster"
@@ -49966,7 +49966,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Blademaster"
@@ -50030,7 +50030,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 3,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -50095,7 +50095,7 @@
     "skills": {
       "Attack": -2,
       "Evade Dist": 2,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 1,
     "type": "Gunner"
@@ -51394,7 +51394,7 @@
     "skills": {
       "Observance": 5,
       "Stamina": 1,
-      "Technique": -1,
+      "Constitutn": -1,
       "Trapper": 2
     },
     "slots": 2,
@@ -51428,7 +51428,7 @@
       "Hunger": 2,
       "PsychicVis": 5,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 2,
     "type": "Both"
@@ -51493,7 +51493,7 @@
     "skills": {
       "Observance": 5,
       "Stamina": 1,
-      "Technique": -1,
+      "Constitutn": -1,
       "Trapper": 2
     },
     "slots": 2,
@@ -51527,7 +51527,7 @@
       "Hunger": 2,
       "PsychicVis": 5,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 2,
     "type": "Gunner"
@@ -51689,7 +51689,7 @@
     },
     "skills": {
       "Stamina": 3,
-      "Technique": -3,
+      "Constitutn": -3,
       "Trapper": 3
     },
     "slots": 2,
@@ -51722,7 +51722,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 3,
-      "Technique": -3
+      "Constitutn": -3
     },
     "slots": 2,
     "type": "Blademaster"
@@ -51884,7 +51884,7 @@
     },
     "skills": {
       "Stamina": 3,
-      "Technique": 3,
+      "Constitutn": 3,
       "Trapper": 3
     },
     "slots": 2,
@@ -51917,7 +51917,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 3,
-      "Technique": 3
+      "Constitutn": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -52079,7 +52079,7 @@
     },
     "skills": {
       "Stamina": 3,
-      "Technique": -3,
+      "Constitutn": -3,
       "Trapper": 3
     },
     "slots": 2,
@@ -52112,7 +52112,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 3,
-      "Technique": -3
+      "Constitutn": -3
     },
     "slots": 2,
     "type": "Both"
@@ -52274,7 +52274,7 @@
     },
     "skills": {
       "Stamina": 3,
-      "Technique": -3,
+      "Constitutn": -3,
       "Trapper": 3
     },
     "slots": 2,
@@ -52307,7 +52307,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 3,
-      "Technique": -3
+      "Constitutn": -3
     },
     "slots": 2,
     "type": "Gunner"
@@ -52468,7 +52468,7 @@
     },
     "skills": {
       "Stamina": 2,
-      "Technique": -2,
+      "Constitutn": -2,
       "Trapper": 5
     },
     "slots": 1,
@@ -52501,7 +52501,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 2,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -52566,7 +52566,7 @@
     "skills": {
       "Observance": 5,
       "Stamina": 1,
-      "Technique": -1,
+      "Constitutn": -1,
       "Trapper": 2
     },
     "slots": 2,
@@ -52600,7 +52600,7 @@
       "Hunger": 2,
       "PsychicVis": 5,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 2,
     "type": "Blademaster"
@@ -52763,7 +52763,7 @@
     "skills": {
       "Observance": 5,
       "Stamina": 1,
-      "Technique": -1,
+      "Constitutn": -1,
       "Trapper": 2
     },
     "slots": 2,
@@ -52797,7 +52797,7 @@
       "Hunger": 2,
       "PsychicVis": 5,
       "Stamina": 1,
-      "Technique": -1
+      "Constitutn": -1
     },
     "slots": 2,
     "type": "Blademaster"
@@ -52958,7 +52958,7 @@
     },
     "skills": {
       "Stamina": 2,
-      "Technique": -2,
+      "Constitutn": -2,
       "Trapper": 5
     },
     "slots": 1,
@@ -52991,7 +52991,7 @@
     "skills": {
       "Hunger": 3,
       "Stamina": 2,
-      "Technique": -2
+      "Constitutn": -2
     },
     "slots": 2,
     "type": "Gunner"
@@ -53281,7 +53281,7 @@
     },
     "skills": {
       "Attack": 4,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "NormalS Up": 3
     },
     "slots": 2,
@@ -53378,7 +53378,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53476,7 +53476,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "Fast Chrge": -2
+      "ShortChrg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -53572,7 +53572,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53669,7 +53669,7 @@
     "skills": {
       "Attack": 4,
       "Sword Draw": 3,
-      "Fast Chrge": -2
+      "ShortChrg": -2
     },
     "slots": 2,
     "type": "Both"
@@ -53765,7 +53765,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Fast Chrge": -2,
+      "ShortChrg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53863,7 +53863,7 @@
     "skills": {
       "Attack": 1,
       "Sword Draw": 1,
-      "Fast Chrge": -3
+      "ShortChrg": -3
     },
     "slots": 3,
     "type": "Blademaster"
@@ -54091,7 +54091,7 @@
       "Expert": 2,
       "Health": -2,
       "HearProtct": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Gunner"
@@ -54189,7 +54189,7 @@
       "Expert": 2,
       "Health": -2,
       "HearProtct": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54320,7 +54320,7 @@
       "Expert": 1,
       "Health": -3,
       "HearProtct": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Both"
@@ -54418,7 +54418,7 @@
       "Expert": 2,
       "Health": -2,
       "HearProtct": 1,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54516,7 +54516,7 @@
       "Expert": 2,
       "Health": -2,
       "HearProtct": 1,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -54646,7 +54646,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "Fast Chrge": -2
+      "ShortChrg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54743,7 +54743,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "Fast Chrge": -2
+      "ShortChrg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54839,7 +54839,7 @@
     },
     "skills": {
       "Attack": 1,
-      "Fast Chrge": -3,
+      "ShortChrg": -3,
       "NormalS Up": 1
     },
     "slots": 3,
@@ -58383,7 +58383,7 @@
       "Expert": 1,
       "Health": -3,
       "HearProtct": 1,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Gunner"
@@ -62233,7 +62233,7 @@
     },
     "skills": {
       "Artisan": 2,
-      "Fast Chrge": 4,
+      "ShortChrg": 4,
       "Sneak": -3
     },
     "slots": 2,
@@ -62298,7 +62298,7 @@
     "skills": {
       "Artisan": 1,
       "Dragon Res": 2,
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Sneak": -2
     },
     "slots": 2,
@@ -62363,7 +62363,7 @@
     "skills": {
       "Artisan": 1,
       "Dragon Res": 2,
-      "Fast Chrge": 4,
+      "ShortChrg": 4,
       "Sneak": -2
     },
     "slots": 2,
@@ -62755,7 +62755,7 @@
     },
     "skills": {
       "Dragon Res": 2,
-      "Fast Chrge": 4,
+      "ShortChrg": 4,
       "NormalS Up": 1,
       "Sneak": 2
     },
@@ -63146,7 +63146,7 @@
       "ShiningRajangPlt": 2
     },
     "skills": {
-      "Fast Chrge": 4,
+      "ShortChrg": 4,
       "Horn": 3,
       "NormalS Up": 2
     },
@@ -63211,7 +63211,7 @@
     },
     "skills": {
       "Dragon Res": 2,
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "NormalS Up": 1,
       "Sneak": 2
     },
@@ -65587,7 +65587,7 @@
       "Volganos Thk Scl": 5
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65653,7 +65653,7 @@
       "Volganos Hvy Cpc": 4
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65719,7 +65719,7 @@
       "Volganos Thk Scl": 4
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65785,7 +65785,7 @@
       "Volganos Thk Scl": 6
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -65851,7 +65851,7 @@
       "Volganos Thk Scl": 5
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -65917,7 +65917,7 @@
       "Volganos Thk Scl": 4
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -66048,7 +66048,7 @@
       "Volganos Hvy Cpc": 4
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -66114,7 +66114,7 @@
       "Volganos Thk Scl": 6
     },
     "skills": {
-      "Fast Chrge": 3,
+      "ShortChrg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -66245,7 +66245,7 @@
       "Wyvern Stone": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66280,7 +66280,7 @@
     "skills": {
       "Fate": -3,
       "Marksman": 2,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Both"
@@ -66343,7 +66343,7 @@
       "Wht Fatalis Wbng": 3
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66411,7 +66411,7 @@
     "skills": {
       "Fate": -3,
       "SwdMastery": 2,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 3,
     "type": "Both"
@@ -66506,7 +66506,7 @@
       "Wht Fatalis Wbng": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66539,7 +66539,7 @@
       "Wht Fatalis Wbng": 1
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66572,7 +66572,7 @@
       "Wht Fatalis Scl": 2
     },
     "skills": {
-      "Fast Chrge": 2,
+      "ShortChrg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66703,7 +66703,7 @@
     "skills": {
       "Fate": -3,
       "SwdMastery": 2,
-      "Technique": 4
+      "Constitutn": 4
     },
     "slots": 2,
     "type": "Blademaster"
@@ -66767,7 +66767,7 @@
     "skills": {
       "Fate": -3,
       "Marksman": 2,
-      "Technique": 2
+      "Constitutn": 2
     },
     "slots": 3,
     "type": "Gunner"

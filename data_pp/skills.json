@@ -356,12 +356,12 @@
     "Jewel": "MixSucRate",
     "Points": -10
   },
-  "Concentration": {
+  "Focus": {
     "Categories": [
       "Offensive"
     ],
     "Description": "",
-    "Jewel": "Fast Chrge",
+    "Jewel": "ShortChrg",
     "Points": 10
   },
   "Crag Lvl1 Up": {
@@ -460,36 +460,36 @@
     "Jewel": "Defense",
     "Points": -20
   },
-  "Defensive Maneuvers +1": {
+  "Constitution +1": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Technique",
+    "Jewel": "Constitutn",
     "Points": 10
   },
-  "Defensive Maneuvers +2": {
+  "Constitution +2": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Technique",
+    "Jewel": "Constitutn",
     "Points": 15
   },
-  "Defensive Maneuvers -1": {
+  "Constitution -1": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Technique",
+    "Jewel": "Constitutn",
     "Points": -10
   },
-  "Defensive Maneuvers -2": {
+  "Constitution -2": {
     "Categories": [
       "Defensive"
     ],
     "Description": "",
-    "Jewel": "Technique",
+    "Jewel": "Constitutn",
     "Points": -15
   },
   "Demon Whim": {
@@ -516,10 +516,10 @@
   },
   "Distraction": {
     "Categories": [
-      "Bow"
+      "Offensive"
     ],
     "Description": "",
-    "Jewel": "Fast Chrge",
+    "Jewel": "ShortChrg",
     "Points": -10
   },
   "Divine Protection": {
