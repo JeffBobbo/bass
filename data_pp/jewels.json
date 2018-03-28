@@ -33,7 +33,7 @@
     "Resources": {
       "Akito Jewel": 1,
       "Blangonga Pelt": 1,
-      "Power Pill": 1,
+      "Power Pill": 1
     },
     "Skills": {
       "Quake Res": 1,
@@ -762,7 +762,7 @@
     "Rarity": 4,
     "Resources": {
       "BattlefieldJewel": 1,
-      "Rathalos Plate": 1,
+      "Rathalos Plate": 1
     },
     "Skills": {
       "Fencing": 1,
@@ -1399,7 +1399,7 @@
       "Akito Jewel": 1,
       "Gendrome Hide": 1,
       "Vespoid Wing": 1,
-      "ParalysisCoating": 1,
+      "ParalysisCoating": 1
     },
     "Skills": {
       "ShortCharg": -1,
@@ -1988,7 +1988,7 @@
     "Resources": {
       "LapisLazuliJewel": 1,
       "Lg Pelagus Fang": 3,
-      "LethrGarugaTail": 1,
+      "LethrGarugaTail": 1
     },
     "Skills": {
       "Rec Speed": -1,
@@ -2098,7 +2098,7 @@
       "ThkBullfangoPelt": 2
     },
     "Skills": {
-      "Faint": 2,
+      "Faint": 2
     },
     "Slots": 1
   },
