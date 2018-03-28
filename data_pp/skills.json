@@ -50,7 +50,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "CragS Add",
+    "Jewel": "Crag S Add",
     "Points": 15
   },
   "All Pierce Lvls Up": {
@@ -361,7 +361,7 @@
       "Offensive"
     ],
     "Description": "",
-    "Jewel": "ShortChrg",
+    "Jewel": "ShortCharg",
     "Points": 10
   },
   "Crag Lvl1 Up": {
@@ -369,7 +369,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "CragS Add",
+    "Jewel": "Crag S Add",
     "Points": 10
   },
   "Damage Rec Speed +1": {
@@ -519,7 +519,7 @@
       "Offensive"
     ],
     "Description": "",
-    "Jewel": "ShortChrg",
+    "Jewel": "ShortCharg",
     "Points": -10
   },
   "Divine Protection": {
@@ -1159,12 +1159,12 @@
     "Jewel": "PierceS Up",
     "Points": 10
   },
-  "Poison Coat Add": {
+  "Poison Coating Add": {
     "Categories": [
       "Bow"
     ],
     "Description": "",
-    "Jewel": "PoisnCtAdd",
+    "Jewel": "PoisonCAdd",
     "Points": 10
   },
   "Poison Dur Halved": {
@@ -1191,7 +1191,7 @@
     "Jewel": "Poison",
     "Points": 15
   },
-  "Power Coat Add": {
+  "Power Coating Add": {
     "Categories": [
       "Bow"
     ],
@@ -1222,12 +1222,12 @@
     "Jewel": "Rage",
     "Points": 10
   },
-  "Razor Coat Add": {
+  "ClsRngCAdd": {
     "Categories": [
       "Bow"
     ],
     "Description": "",
-    "Jewel": "RazorCtAdd",
+    "Jewel": "ClsRngCAdd",
     "Points": 10
   },
   "Reckless Abandon+1": {
@@ -1416,12 +1416,12 @@
     "Jewel": "Marksman",
     "Points": 10
   },
-  "Sleep Coat Add": {
+  "Sleep Coating Add": {
     "Categories": [
       "Bow"
     ],
     "Description": "",
-    "Jewel": "SleepCtAdd",
+    "Jewel": "SleepCAdd",
     "Points": 10
   },
   "Sleep Dur Halved": {
@@ -1594,7 +1594,7 @@
   "Trap Expert": {
     "Categories": [],
     "Description": "",
-    "Jewel": "Set Trap",
+    "Jewel": "SpeedSetup",
     "Points": 10
   },
   "TrrainDmgeReduce[Hi]": {

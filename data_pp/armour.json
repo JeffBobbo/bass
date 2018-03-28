@@ -12517,7 +12517,7 @@
     },
     "skills": {
       "Cooking": 3,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "PelletS Up": 4
     },
     "slots": 2,
@@ -12679,7 +12679,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "Guard Up": 2,
       "PelletSAdd": 3
     },
@@ -13005,7 +13005,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "ShortChrg": -3,
+      "ShortCharg": -3,
       "PelletS Up": 2
     },
     "slots": 3,
@@ -13329,7 +13329,7 @@
     },
     "skills": {
       "Cooking": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "Guard Up": 2,
       "PelletSAdd": 3
     },
@@ -13979,7 +13979,7 @@
     },
     "skills": {
       "Cooking": 1,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "PelletS Up": 4
     },
     "slots": 2,
@@ -14179,7 +14179,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14211,7 +14211,7 @@
     },
     "skills": {
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14245,7 +14245,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14277,7 +14277,7 @@
     },
     "skills": {
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14311,7 +14311,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14344,7 +14344,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1
     },
     "slots": 1,
@@ -14376,7 +14376,7 @@
     },
     "skills": {
       "Expert": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14409,7 +14409,7 @@
     },
     "skills": {
       "Expert": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14469,7 +14469,7 @@
     "skills": {
       "Artisan": 2,
       "Expert": 2,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1
     },
     "slots": 2,
@@ -14501,7 +14501,7 @@
     },
     "skills": {
       "Expert": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "HearProtct": 1,
       "Capacity": 2
     },
@@ -14533,7 +14533,7 @@
       "Striped Skin": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Health": -5,
       "AutoReload": 2
     },
@@ -14693,7 +14693,7 @@
       "Tigrex Fang": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Health": -5,
       "AutoReload": 2
     },
@@ -14821,7 +14821,7 @@
       "Unknown Skull": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Health": -3,
       "AutoReload": 2
     },
@@ -14949,7 +14949,7 @@
       "Striped Skin": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Health": -5,
       "AutoReload": 2
     },
@@ -15045,7 +15045,7 @@
       "Striped Skin": 2
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Health": -3,
       "AutoReload": 2
     },
@@ -15206,7 +15206,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -2
@@ -15239,7 +15239,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 1,
       "Stamina": 2,
       "Constitutn": -2
@@ -15272,7 +15272,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -2
@@ -15305,7 +15305,7 @@
       "Union Ore": 2
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -2
@@ -15338,7 +15338,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -2
@@ -15371,7 +15371,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "PsychicVis": 3,
       "Constitutn": -3
     },
@@ -15403,7 +15403,7 @@
       "Union Ore": 2
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "PsychicVis": 3,
       "Constitutn": -3
     },
@@ -15435,7 +15435,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -1
@@ -15468,7 +15468,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "PsychicVis": 1,
       "Stamina": 2,
       "Constitutn": -2
@@ -15501,7 +15501,7 @@
       "One-HornedTicket": 1
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "PsychicVis": 4,
       "Stamina": 1,
       "Constitutn": -1
@@ -20006,7 +20006,7 @@
       "Expert": 3,
       "Gathering": -2,
       "HearProtct": 2,
-      "PoisnCtAdd": 2
+      "PoisonCAdd": 2
     },
     "slots": 1,
     "type": "Both"
@@ -20072,7 +20072,7 @@
       "Expert": 3,
       "Gathering": -2,
       "HearProtct": 2,
-      "PoisnCtAdd": 2
+      "PoisonCAdd": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -20103,7 +20103,7 @@
     },
     "skills": {
       "HearProtct": 2,
-      "RazorCtAdd": 1,
+      "ClsRngCAdd": 1,
       "Rec Speed": -2,
       "Spc Attack": 4
     },
@@ -20267,7 +20267,7 @@
     "skills": {
       "Gathering": -2,
       "HearProtct": 2,
-      "PoisnCtAdd": 3
+      "PoisonCAdd": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -20298,7 +20298,7 @@
     },
     "skills": {
       "HearProtct": 2,
-      "RazorCtAdd": 1,
+      "ClsRngCAdd": 1,
       "Rec Speed": -2,
       "Spc Attack": 4
     },
@@ -20398,7 +20398,7 @@
     "skills": {
       "Gathering": -2,
       "HearProtct": 2,
-      "PoisnCtAdd": 3
+      "PoisonCAdd": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -20429,7 +20429,7 @@
     },
     "skills": {
       "HearProtct": 2,
-      "RazorCtAdd": 5,
+      "ClsRngCAdd": 5,
       "Rec Speed": -2
     },
     "slots": 2,
@@ -27907,7 +27907,7 @@
     },
     "skills": {
       "Carving": 5,
-      "PoisnCtAdd": 1,
+      "PoisonCAdd": 1,
       "Recovery": -3
     },
     "slots": 2,
@@ -28099,7 +28099,7 @@
     },
     "skills": {
       "Carving": 4,
-      "PoisnCtAdd": 2,
+      "PoisonCAdd": 2,
       "Recovery": -3
     },
     "slots": 2,
@@ -28487,7 +28487,7 @@
     },
     "skills": {
       "Carving": 4,
-      "PoisnCtAdd": 2,
+      "PoisonCAdd": 2,
       "Recovery": -3
     },
     "slots": 2,
@@ -28875,7 +28875,7 @@
     },
     "skills": {
       "Carving": 3,
-      "PoisnCtAdd": 3,
+      "PoisonCAdd": 3,
       "Recovery": -3
     },
     "slots": 2,
@@ -29649,7 +29649,7 @@
     },
     "skills": {
       "Carving": 4,
-      "PoisnCtAdd": 2,
+      "PoisonCAdd": 2,
       "Recovery": -3
     },
     "slots": 1,
@@ -30590,7 +30590,7 @@
     },
     "skills": {
       "All Resist": -2,
-      "CragS Add": 3,
+      "Crag S Add": 3,
       "Defense": 3,
       "Guard Up": 1
     },
@@ -30689,7 +30689,7 @@
     },
     "skills": {
       "All Resist": -1,
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Defense": 2,
       "Reload": 2
     },
@@ -30754,7 +30754,7 @@
     },
     "skills": {
       "All Resist": -2,
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Defense": 2,
       "Guard Up": 3
     },
@@ -31016,7 +31016,7 @@
     },
     "skills": {
       "All Resist": -1,
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Defense": 2,
       "Reload": 2
     },
@@ -31081,7 +31081,7 @@
     },
     "skills": {
       "All Resist": -2,
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Defense": 2,
       "Guard Up": 3
     },
@@ -31343,7 +31343,7 @@
     },
     "skills": {
       "All Resist": -1,
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Defense": 2,
       "Reload": 2
     },
@@ -31408,7 +31408,7 @@
     },
     "skills": {
       "All Resist": -2,
-      "CragS Add": 3,
+      "Crag S Add": 3,
       "Defense": 3,
       "Guard Up": 1
     },
@@ -31866,7 +31866,7 @@
     },
     "skills": {
       "All Resist": -2,
-      "CragS Add": 1,
+      "Crag S Add": 1,
       "Defense": 2,
       "Reload": 2
     },
@@ -31994,7 +31994,7 @@
       "Machalite Ore": 2
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "Gunnery": 2,
       "Health": 3,
       "Stamina": -2
@@ -32089,7 +32089,7 @@
       "Thunderbug": 2
     },
     "skills": {
-      "CragS Add": 1,
+      "Crag S Add": 1,
       "Gunnery": 3,
       "Health": 3,
       "Stamina": -2
@@ -32281,7 +32281,7 @@
       "Machalite Ore": 3
     },
     "skills": {
-      "CragS Add": 1,
+      "Crag S Add": 1,
       "Gunnery": 3,
       "Health": 3,
       "Stamina": -2
@@ -32472,7 +32472,7 @@
       "Velociprey Hide": 3
     },
     "skills": {
-      "CragS Add": 1,
+      "Crag S Add": 1,
       "Gunnery": 3,
       "Health": 3,
       "Stamina": -2
@@ -32856,7 +32856,7 @@
       "Velociprey Hide": 2
     },
     "skills": {
-      "CragS Add": 1,
+      "Crag S Add": 1,
       "Gunnery": 2,
       "Health": 3,
       "Stamina": -1
@@ -34015,7 +34015,7 @@
       "King Scarab": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "PsychicVis": 3,
       "Sleep": -2
     },
@@ -34209,7 +34209,7 @@
       "King Scarab": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "PsychicVis": 1,
       "Sleep": -2
     },
@@ -34306,7 +34306,7 @@
       "Remobra Skin": 3
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "PsychicVis": 3,
       "Sleep": -2
     },
@@ -34369,7 +34369,7 @@
       "Puppet Ticket+": 5
     },
     "skills": {
-      "Set Trap": 10
+      "SpeedSetup": 10
     },
     "slots": 0,
     "type": "Both"
@@ -34717,7 +34717,7 @@
       "King Scarab": 2
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "PsychicVis": 3,
       "Sleep": -2
     },
@@ -35008,7 +35008,7 @@
       "Rathalos Scale": 2
     },
     "skills": {
-      "CragS Add": 2,
+      "Crag S Add": 2,
       "PsychicVis": 1,
       "Sleep": -2
     },
@@ -35041,7 +35041,7 @@
     },
     "skills": {
       "Observance": 5,
-      "SleepCtAdd": 2,
+      "SleepCAdd": 2,
       "Sneak": -2,
       "Trapper": 2
     },
@@ -35106,7 +35106,7 @@
     },
     "skills": {
       "Paralysis": -2,
-      "SleepCtAdd": 4,
+      "SleepCAdd": 4,
       "Constitutn": 1
     },
     "slots": 3,
@@ -35138,7 +35138,7 @@
     },
     "skills": {
       "Observance": 1,
-      "SleepCtAdd": 2,
+      "SleepCAdd": 2,
       "Sneak": -2,
       "Trapper": 4
     },
@@ -35332,7 +35332,7 @@
     },
     "skills": {
       "Observance": 2,
-      "SleepCtAdd": 2,
+      "SleepCAdd": 2,
       "Sneak": -2,
       "Trapper": 3
     },
@@ -35398,7 +35398,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 1,
-      "SleepCtAdd": 3,
+      "SleepCAdd": 3,
       "Constitutn": 3
     },
     "slots": 2,
@@ -35527,7 +35527,7 @@
     },
     "skills": {
       "Observance": 2,
-      "SleepCtAdd": 2,
+      "SleepCAdd": 2,
       "Sneak": -2,
       "Trapper": 3
     },
@@ -35593,7 +35593,7 @@
     "skills": {
       "Paralysis": -2,
       "Sleep": 1,
-      "SleepCtAdd": 3,
+      "SleepCAdd": 3,
       "Constitutn": 3
     },
     "slots": 2,
@@ -35914,7 +35914,7 @@
       "Machalite Ore": 8
     },
     "skills": {
-      "SleepCtAdd": 2,
+      "SleepCAdd": 2,
       "Sneak": -2,
       "Trapper": 3
     },
@@ -41490,7 +41490,7 @@
       "ElderDragonBlood": 1
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 3
@@ -41523,7 +41523,7 @@
       "ElderDragonBlood": 2
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "Poison": -2,
       "Sharpness": 2,
       "Terrain": 2
@@ -41588,7 +41588,7 @@
       "Fire Stone": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 2
@@ -41621,7 +41621,7 @@
       "Firecell Stone": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41686,7 +41686,7 @@
       "Dragonite Ore": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41718,7 +41718,7 @@
       "Union Ore": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41783,7 +41783,7 @@
       "Elder Drgn Bone": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41815,7 +41815,7 @@
       "Elder Drgn Bone": 5
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -41846,7 +41846,7 @@
       "Dragonite Ore": 4
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "Fire Res": 2,
       "Poison": -2,
       "Terrain": 2
@@ -41879,7 +41879,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "Poison": -1,
       "Sharpness": 2,
       "Terrain": 1
@@ -41978,7 +41978,7 @@
       "Elder Drgn Bone": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42010,7 +42010,7 @@
       "Elder Drgn Bone": 5
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42075,7 +42075,7 @@
       "Dragonite Ore": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42107,7 +42107,7 @@
       "Union Ore": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -42171,7 +42171,7 @@
       "Dragonite Ore": 4
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "Fire Res": 2,
       "Poison": -2,
       "Terrain": 2
@@ -42204,7 +42204,7 @@
       "Rare Scarab": 2
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "PierceS Up": 2,
       "Poison": -1,
       "Terrain": 1
@@ -42237,7 +42237,7 @@
       "ElderDragonBlood": 1
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 3
@@ -42270,7 +42270,7 @@
       "ElderDragonBlood": 2
     },
     "skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "PierceS Up": 2,
       "Poison": -2,
       "Terrain": 2
@@ -42335,7 +42335,7 @@
       "Fire Stone": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Fire Res": 3,
       "Poison": -2,
       "Terrain": 2
@@ -42368,7 +42368,7 @@
       "Firecell Stone": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Poison": -3,
       "Terrain": 4
     },
@@ -46626,7 +46626,7 @@
     "skills": {
       "Evade Dist": 4,
       "HiSpdGathr": 1,
-      "Set Trap": 1,
+      "SpeedSetup": 1,
       "Whim": -3
     },
     "slots": 2,
@@ -46726,7 +46726,7 @@
     "skills": {
       "Evade Dist": 2,
       "HiSpdGathr": 2,
-      "Set Trap": 3,
+      "SpeedSetup": 3,
       "Whim": -2
     },
     "slots": 2,
@@ -46825,7 +46825,7 @@
     },
     "skills": {
       "HiSpdGathr": 3,
-      "Set Trap": 2,
+      "SpeedSetup": 2,
       "Whim": -2
     },
     "slots": 3,
@@ -46925,7 +46925,7 @@
     "skills": {
       "Evade Dist": 2,
       "HiSpdGathr": 2,
-      "Set Trap": 3,
+      "SpeedSetup": 3,
       "Whim": -2
     },
     "slots": 2,
@@ -47025,7 +47025,7 @@
     "skills": {
       "Evade Dist": 2,
       "HiSpdGathr": 2,
-      "Set Trap": 3,
+      "SpeedSetup": 3,
       "Whim": -2
     },
     "slots": 2,
@@ -47125,7 +47125,7 @@
     "skills": {
       "Evade Dist": 4,
       "HiSpdGathr": 1,
-      "Set Trap": 1,
+      "SpeedSetup": 1,
       "Whim": -3
     },
     "slots": 2,
@@ -47223,7 +47223,7 @@
     },
     "skills": {
       "HiSpdGathr": 2,
-      "Set Trap": 1,
+      "SpeedSetup": 1,
       "Whim": -2
     },
     "slots": 3,
@@ -47323,7 +47323,7 @@
     "skills": {
       "Evade Dist": 2,
       "HiSpdGathr": 2,
-      "Set Trap": 3,
+      "SpeedSetup": 3,
       "Whim": -2
     },
     "slots": 2,
@@ -47422,7 +47422,7 @@
     },
     "skills": {
       "HiSpdGathr": 3,
-      "Set Trap": 2,
+      "SpeedSetup": 2,
       "Whim": -2
     },
     "slots": 3,
@@ -47520,7 +47520,7 @@
     },
     "skills": {
       "HiSpdGathr": 2,
-      "Set Trap": 1,
+      "SpeedSetup": 1,
       "Whim": -2
     },
     "slots": 3,
@@ -49612,7 +49612,7 @@
       "Attack": -2,
       "Evade": 2,
       "Evade Dist": 3,
-      "Set Trap": 2
+      "SpeedSetup": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -49805,7 +49805,7 @@
       "Attack": -2,
       "Evade": 2,
       "Evade Dist": 3,
-      "Set Trap": 2
+      "SpeedSetup": 2
     },
     "slots": 2,
     "type": "Both"
@@ -49870,7 +49870,7 @@
       "Attack": -2,
       "Evade": 2,
       "Evade Dist": 3,
-      "Set Trap": 2
+      "SpeedSetup": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -50063,7 +50063,7 @@
       "Attack": -2,
       "Evade": 2,
       "Evade Dist": 3,
-      "Set Trap": 2
+      "SpeedSetup": 2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -53281,7 +53281,7 @@
     },
     "skills": {
       "Attack": 4,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "NormalS Up": 3
     },
     "slots": 2,
@@ -53378,7 +53378,7 @@
     },
     "skills": {
       "Attack": 5,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53476,7 +53476,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "ShortChrg": -2
+      "ShortCharg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -53572,7 +53572,7 @@
     },
     "skills": {
       "Attack": 5,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53669,7 +53669,7 @@
     "skills": {
       "Attack": 4,
       "Sword Draw": 3,
-      "ShortChrg": -2
+      "ShortCharg": -2
     },
     "slots": 2,
     "type": "Both"
@@ -53765,7 +53765,7 @@
     },
     "skills": {
       "Attack": 5,
-      "ShortChrg": -2,
+      "ShortCharg": -2,
       "NormalS Up": 2
     },
     "slots": 2,
@@ -53863,7 +53863,7 @@
     "skills": {
       "Attack": 1,
       "Sword Draw": 1,
-      "ShortChrg": -3
+      "ShortCharg": -3
     },
     "slots": 3,
     "type": "Blademaster"
@@ -54646,7 +54646,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "ShortChrg": -2
+      "ShortCharg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54743,7 +54743,7 @@
     "skills": {
       "Attack": 5,
       "Sword Draw": 2,
-      "ShortChrg": -2
+      "ShortCharg": -2
     },
     "slots": 2,
     "type": "Blademaster"
@@ -54839,7 +54839,7 @@
     },
     "skills": {
       "Attack": 1,
-      "ShortChrg": -3,
+      "ShortCharg": -3,
       "NormalS Up": 1
     },
     "slots": 3,
@@ -62233,7 +62233,7 @@
     },
     "skills": {
       "Artisan": 2,
-      "ShortChrg": 4,
+      "ShortCharg": 4,
       "Sneak": -3
     },
     "slots": 2,
@@ -62298,7 +62298,7 @@
     "skills": {
       "Artisan": 1,
       "Dragon Res": 2,
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Sneak": -2
     },
     "slots": 2,
@@ -62363,7 +62363,7 @@
     "skills": {
       "Artisan": 1,
       "Dragon Res": 2,
-      "ShortChrg": 4,
+      "ShortCharg": 4,
       "Sneak": -2
     },
     "slots": 2,
@@ -62755,7 +62755,7 @@
     },
     "skills": {
       "Dragon Res": 2,
-      "ShortChrg": 4,
+      "ShortCharg": 4,
       "NormalS Up": 1,
       "Sneak": 2
     },
@@ -63146,7 +63146,7 @@
       "ShiningRajangPlt": 2
     },
     "skills": {
-      "ShortChrg": 4,
+      "ShortCharg": 4,
       "Horn": 3,
       "NormalS Up": 2
     },
@@ -63211,7 +63211,7 @@
     },
     "skills": {
       "Dragon Res": 2,
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "NormalS Up": 1,
       "Sneak": 2
     },
@@ -65587,7 +65587,7 @@
       "Volganos Thk Scl": 5
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65653,7 +65653,7 @@
       "Volganos Hvy Cpc": 4
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65719,7 +65719,7 @@
       "Volganos Thk Scl": 4
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -65785,7 +65785,7 @@
       "Volganos Thk Scl": 6
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -65851,7 +65851,7 @@
       "Volganos Thk Scl": 5
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -65917,7 +65917,7 @@
       "Volganos Thk Scl": 4
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -66048,7 +66048,7 @@
       "Volganos Hvy Cpc": 4
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "MixSucRate": -2,
       "Survival": 3,
       "Terrain": 2
@@ -66114,7 +66114,7 @@
       "Volganos Thk Scl": 6
     },
     "skills": {
-      "ShortChrg": 3,
+      "ShortCharg": 3,
       "MixSucRate": -2,
       "Survival": 1,
       "Terrain": 5
@@ -66245,7 +66245,7 @@
       "Wyvern Stone": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66343,7 +66343,7 @@
       "Wht Fatalis Wbng": 3
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66506,7 +66506,7 @@
       "Wht Fatalis Wbng": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66539,7 +66539,7 @@
       "Wht Fatalis Wbng": 1
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66572,7 +66572,7 @@
       "Wht Fatalis Scl": 2
     },
     "skills": {
-      "ShortChrg": 2,
+      "ShortCharg": 2,
       "Capacity": 2,
       "Protection": -3,
       "Stamina": -2
@@ -66959,7 +66959,7 @@
     "skills": {
       "HearProtct": 2,
       "NormalS Up": 2,
-      "RazorCtAdd": 3,
+      "ClsRngCAdd": 3,
       "Rec Speed": -2
     },
     "slots": 2,

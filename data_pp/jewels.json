@@ -13,7 +13,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Rathian Spike": 1,
+      "Remobra Skull": 1
+    },
     "Skills": {
       "Reload": -1,
       "Capacity": 1
@@ -36,11 +41,17 @@
     },
     "Slots": 1
   },
-  "Anorexic Jewel": {
+  "No Food Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "ThckGrnPlesioScl": 1,
+      "Coral Cphlos Fin": 1,
+      "Power Juice": 1
+    },
     "Skills": {
       "Hunger": 2
     },
@@ -66,7 +77,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "DaoraDragonScale": 3,
+      "Daora Tail": 1,
+      "Gourment Fish+": 2
+    },
     "Skills": {
       "Faint": -1,
       "Terrain": 3
@@ -219,7 +235,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "FlynMealPassReg": 1,
+      "Burnt Meat": 1
+    },
     "Skills": {
       "BBQ": 2
     },
@@ -257,22 +278,33 @@
     },
     "Slots": 1
   },
-  "Body Arts Jewel": {
+  "Health Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 375,
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Black Narga Pelt": 3,
+      "Hypno Beak": 1,
+      "Pawprint Stamp": 1
+    },
     "Skills": {
       "Stamina": -1,
       "Constitutn": 3
     },
     "Slots": 2
   },
-  "Bomb Bonus Jewel": {
+  "Crag Bonus Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Basarios Shell": 1,
+      "Crag S Lv3": 1
+    },
     "Skills": {
       "CragS Add": 2
     },
@@ -282,7 +314,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Flame Sac": 1,
+      "FlynMealPassReg": 1
+    },
     "Skills": {
       "BombStrUp": 2
     },
@@ -459,11 +496,17 @@
     },
     "Slots": 2
   },
-  "Dire Element Jewel": {
+  "Element Jewel+": {
     "Elder": 1,
     "HR": 1,
-    "Price": 200,
-    "Resources": {},
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "LthrKirinThndrTl": 2,
+      "HvyBlangongaFang": 4,
+      "Big Wyvern Stone": 1
+    },
     "Skills": {
       "ElementAtk": 4,
       "Rec Speed": -2
@@ -481,11 +524,16 @@
     },
     "Slots": 2
   },
-  "DivinePrtctionJewel": {
+  "DivineProtectJewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "UkanlosUnderscl": 1,
+      "Commendation S": 1
+    },
     "Skills": {
       "Protection": 2
     },
@@ -495,7 +543,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Lg Lobstershell": 1,
+      "Gendrome Tail": 1
+    },
     "Skills": {
       "Cold Res": -1,
       "Evade": 3
@@ -548,7 +601,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Garuga Ear": 1,
+      "Hornetaur Head": 1
+    },
     "Skills": {
       "HearProtct": 1,
       "Protection": -1
@@ -559,7 +617,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Kirin Horn": 1,
+      "Firestone": 1,
+      "Ice Crystal": 1
+    },
     "Skills": {
       "ElementAtk": 1,
       "Rec Speed": -1
@@ -581,7 +645,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Sm Lobstershell": 1,
+      "Hercudrome": 1
+    },
     "Skills": {
       "Cold Res": -1,
       "Evade": 1
@@ -619,7 +688,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Tigrex Fang+": 1,
+      "Conga Pelt+": 2,
+      "Iodrome Skull": 1
+    },
     "Skills": {
       "Cooking": 2,
       "Recovery": -1
@@ -630,7 +705,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Grn Plesioth Fin": 1,
+      "Cephalos Scale": 1,
+      "Gourment Steak": 1
+    },
     "Skills": {
       "Cooking": -1,
       "Hunger": 3
@@ -652,7 +733,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Congalala Fang": 1,
+      "Glutton Tuna": 1
+    },
     "Skills": {
       "Gluttony": 2
     },
@@ -760,14 +846,20 @@
     },
     "Slots": 1
   },
-  "Force Coating Jewel": {
+  "PowerCAddJewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "E.CongalalaPelt+": 3,
+      "Dark Stone": 2,
+      "Power Coating": 50
+    },
     "Skills": {
-      "ShortChrg": -1,
-      "PowerCtAdd": 3
+      "ShortCharg": -1,
+      "PowerCAdd": 3
     },
     "Slots": 2
   },
@@ -881,7 +973,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Chameleos Hide+": 1,
+      "Diablos Carapace": 1
+    },
     "Skills": {
       "Fate": -1,
       "WindPress": 3
@@ -990,11 +1087,17 @@
     },
     "Slots": 2
   },
-  "Impale Jewel": {
+  "Pierce Jewel+": {
     "Elder": 1,
     "HR": 1,
-    "Price": 375,
-    "Resources": {},
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "TerraCeanatrClaw": 3,
+      "LthrSlvrRthlsTal": 2,
+      "Daora Jewel": 1
+    },
     "Skills": {
       "Reload": -2,
       "PierceS Up": 4
@@ -1023,11 +1126,16 @@
     },
     "Slots": 1
   },
-  "Instant Meal Jewel": {
+  "Scarfing Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 200,
-    "Resources": {},
+    "Price": 450,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "YamaTsukamiHide": 3,
+      "Vibrant Comb": 2,
+      "Tigrex Skull Shl": 1
+    },
     "Skills": {
       "Cooking": 4,
       "Recovery": -2
@@ -1076,22 +1184,33 @@
     },
     "Slots": 1
   },
-  "Jump Jewel": {
+  "Jumping Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "NargaCuttingWing": 1,
+      "Lunastra Spike": 1
+    },
     "Skills": {
       "Attack": -1,
       "Evade Dist": 1
     },
     "Slots": 1
   },
-  "Leap Jewel": {
+  "Flying Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 375,
-    "Resources": {},
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Str Fatalis Wng": 2,
+      "Narga Brain Stem": 1,
+      "SilverGarugaPelt": 3
+    },
     "Skills": {
       "Attack": -2,
       "Evade Dist": 4
@@ -1113,7 +1232,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Fatalis Horn": 1,
+      "Rathian Spike+": 1,
+      "Thunderbug Juice": 5
+    },
     "Skills": {
       "Reload": -2,
       "Capacity": 4
@@ -1134,7 +1259,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Firestone": 1,
+      "Mega Juice": 1,
+      "Gourmet Steak": 1
+    },
     "Skills": {
       "Hunger": -1,
       "Stamina": 1
@@ -1162,7 +1293,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Basarios Shell": 1,
+      "Armor Pill": 1
+    },
     "Skills": {
       "Faint": -1,
       "Terrain": 1
@@ -1186,11 +1322,17 @@
     },
     "Slots": 3
   },
-  "MightyShot Jewel": {
+  "StrongShotJewel+": {
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "HvyC.BlangoFang": 3,
+      "Blk Rajang Pelt+": 4,
+      "Fire Drgn Jwl": 1
+    },
     "Skills": {
       "Reload": -2,
       "NormalS Up": 4
@@ -1236,21 +1378,32 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Diablos Shell": 1,
+      "Iron Ore": 2
+    },
     "Skills": {
       "Fate": -1,
       "WindPress": 1
     },
     "Slots": 1
   },
-  "ParaCoating Jewel": {
+  "ParalysCoatJewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Gendrome Hide": 1,
+      "Vespoid Wing": 1,
+      "ParalysisCoating": 1,
+    },
     "Skills": {
-      "ShortChrg": -1,
-      "Para CtAdd": 1
+      "ShortCharg": -1,
+      "ParalyCAdd": 1
     },
     "Slots": 1
   },
@@ -1272,7 +1425,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Piscine Fang": 3,
+      "Wyvern Fang": 2
+    },
     "Skills": {
       "Reload": -1,
       "PelletS Up": 1
@@ -1283,7 +1441,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Cephalos Fin": 1,
+      "Pellet S Lv 3": 1
+    },
     "Skills": {
       "PelletSAdd": 2
     },
@@ -1294,7 +1457,7 @@
     "HR": 1,
     "Price": 200,
     "Resources": {
-      "suiko Jewel": 1,
+      "Suiko Jewel": 1,
       "Sleep Herb": 2
     },
     "Skills": {
@@ -1328,13 +1491,19 @@
     },
     "Slots": 1
   },
-  "Petrify Coating Jewel": {
+  "ParalysisCAddJwl": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 375,
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Gendrome Tail": 2,
+      "Vespoid Abdomen": 1,
+      "ParalysisCoating": 20
+    },
     "Skills": {
-      "ShortChrg": -1,
+      "ShortCharg": -1,
       "Para CtAdd": 3
     },
     "Slots": 2
@@ -1343,7 +1512,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Cephalos Scale": 1,
+      "Well-Done Steak": 2
+    },
     "Skills": {
       "Cooking": -1,
       "Hunger": 1
@@ -1354,7 +1528,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Ceanataur Claw": 1,
+      "Pin Tuna": 3
+    },
     "Skills": {
       "Reload": -1,
       "PierceS Up": 1
@@ -1365,30 +1544,47 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Garuga Scale": 1,
+      "Pierce S Lv3": 1
+    },
     "Skills": {
       "PierceSAdd": 2
     },
     "Slots": 1
   },
-  "PoisnCoating Jewel": {
+  "PoisonCoatJewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Rubbery Hide": 1,
+      "Poison Sac": 1,
+      "Poison Coating": 1
+    },
     "Skills": {
-      "PoisnCtAdd": 2
+      "PoisonCAdd": 2
     },
     "Slots": 1
   },
-  "PowerCoating Jewel": {
+  "Power Coat Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Congalala Pelt+": 1,
+      "Dark Piece": 1,
+      "Power Coating": 1
+    },
     "Skills": {
-      "ShortChrg": -1,
-      "PowerCtAdd": 1
+      "ShortCharg": -1,
+      "PowerCAdd": 1
     },
     "Slots": 1
   },
@@ -1406,7 +1602,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Commendation": 1,
+      "Black Pearl": 1
+    },
     "Skills": {
       "Protection": 1
     },
@@ -1444,7 +1645,7 @@
       "ElderDragonBlood": 1
     },
     "Skills": {
-      "ShortChrg": 1,
+      "ShortCharg": 1,
       "Constitutn": -1
     },
     "Slots": 1
@@ -1453,7 +1654,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Tigrex Fang": 1,
+      "Mosswine Hide": 1
+    },
     "Skills": {
       "Cooking": 1,
       "Recovery": -1
@@ -1476,13 +1682,19 @@
     },
     "Slots": 1
   },
-  "RazorCoating Jewel": {
+  "Combo Coat Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "DaoraDragonScale": 1,
+      "Garuga Mane": 1,
+      "CloseRngCoating": 1
+    },
     "Skills": {
-      "RazorCtAdd": 2
+      "ClsRngCAdd": 2
     },
     "Slots": 1
   },
@@ -1490,7 +1702,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Gaoren Shell": 1,
+      "Blk Gravios Skl": 1
+    },
     "Skills": {
       "Reload": -1,
       "Recoil": 1
@@ -1529,11 +1746,17 @@
     },
     "Slots": 2
   },
-  "Scatter Jewel": {
+  "Pellet Jewel+": {
     "Elder": 1,
     "HR": 1,
-    "Price": 375,
-    "Resources": {},
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "HrdE.CongaClaw": 3,
+      "Azure LaoS Claw": 3,
+      "Chameleos Jewel": 1
+    },
     "Skills": {
       "Reload": -2,
       "PelletS Up": 4
@@ -1544,7 +1767,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Gravios Shell": 1,
+      "Clust S Lv3": 1
+    },
     "Skills": {
       "ClustS Add": 2
     },
@@ -1564,7 +1792,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Kelbi Horn": 1,
+      "Killer Beetle": 1,
+      "Pin Tuna": 1
+    },
     "Skills": {
       "Precision": 2
     },
@@ -1585,7 +1819,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Gaoren Thoracic": 2,
+      "Wyvern Stone": 1,
+      "Lao-Shan's Claw": 2
+    },
     "Skills": {
       "Reload": -2,
       "Recoil": 4
@@ -1596,7 +1836,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Lao-Shan's Scale": 1,
+      "Normal S Lv3": 1
+    },
     "Skills": {
       "NormalSAdd": 2
     },
@@ -1606,7 +1850,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Azure Rthlos Cpc": 1,
+      "Tigrex Skull Shl": 1,
+      "Monster Broth": 2
+    },
     "Skills": {
       "HearProtct": 4,
       "Protection": -2
@@ -1624,13 +1874,19 @@
     },
     "Slots": 1
   },
-  "SleepCoating Jewel": {
+  "Sleep Coat Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Plesioth Fin": 1,
+      "Sleep Sac": 1,
+      "Sleep Coating": 1
+    },
     "Skills": {
-      "SleepCtAdd": 2
+      "SleepCAdd": 2
     },
     "Slots": 1
   },
@@ -1649,7 +1905,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Anteka Antlers": 1,
+      "Sharp Claw": 1
+    },
     "Skills": {
       "Precision": 1,
       "AutoReload": -1
@@ -1690,7 +1951,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "SpecChameleHide+": 2,
+      "HvyDiablosSpine": 1,
+      "Purecrystal": 1
+    },
     "Skills": {
       "Fate": -1,
       "WindPress": 5
@@ -1701,18 +1968,28 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Chameleos Claw": 1,
+      "Chaos Mushroom": 2
+    },
     "Skills": {
       "Rec Speed": -1,
       "Spc Attack": 1
     },
     "Slots": 1
   },
-  "SpecialStrikeJewel": {
+  "SpecialAtkJewel+": {
     "Elder": 1,
     "HR": 1,
-    "Price": 200,
-    "Resources": {},
+    "Price": 375,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Lg Pelagus Fang": 3,
+      "LethrGarugaTail": 1,
+    },
     "Skills": {
       "Rec Speed": -1,
       "Spc Attack": 3
@@ -1731,7 +2008,7 @@
       "HvyLavasiothFang": 4
     },
     "Skills": {
-      "ShortChrg": 4,
+      "ShortCharg": 4,
       "Constitutn": -2
     },
     "Slots": 3
@@ -1755,18 +2032,29 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Firecell Stone": 3,
+      "Plesioth Fin+": 1,
+      "Gypceros Head": 1
+    },
     "Skills": {
       "Hunger": -2,
       "Stamina": 4
     },
     "Slots": 3
   },
-  "Stamina Jewel": {
+  "ConstitutnJewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "FlynMealPassPlus": 1,
+      "Sharpened Beak": 1
+    },
     "Skills": {
       "Stamina": -1,
       "Constitutn": 1
@@ -1859,7 +2147,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Congalala Claw": 1,
+      "Rumblefish": 5
+    },
     "Skills": {
       "Reload": -1,
       "NormalS Up": 1
@@ -1978,13 +2271,18 @@
     },
     "Slots": 1
   },
-  "TrapMaster Jewel": {
+  "TrapMasterJewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "ShakalakaTreasre": 1,
+      "Shock Trap": 1
+    },
     "Skills": {
-      "Set Trap": 2
+      "SpeedSetup": 2
     },
     "Slots": 1
   },
