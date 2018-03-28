@@ -1476,13 +1476,13 @@
     "Jewel": "Whim",
     "Points": -10
   },
-  "Speed Fire": {
+  "Auto-Reload": {
     "Categories": [
       "Bow",
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Speed Fire",
+    "Jewel": "AutoReload",
     "Points": 10
   },
   "Spirit's Whim": {

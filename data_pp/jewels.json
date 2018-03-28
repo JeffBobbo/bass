@@ -202,10 +202,16 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Akantor Spike": 1,
+      "FireWyvrn BrnStm": 1,
+      "Gendrome Skull": 1
+    },
     "Skills": {
       "Protection": -2,
-      "Speed Fire": 4
+      "AutoReload": 4
     },
     "Slots": 3
   },
@@ -308,7 +314,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Teostra Shell": 1,
+      "Twisted Horn": 1
+    },
     "Skills": {
       "Expert": 3,
       "Health": -1
@@ -521,7 +532,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Sm Ceanataur Shl": 1,
+      "Kelbi Hide": 2
+    },
     "Skills": {
       "Hunger": -1,
       "Reload": 1
@@ -576,7 +592,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Blue Kut-ku Shell": 1,
+      "Anteka Antlers": 1
+    },
     "Skills": {
       "Expert": 1,
       "Health": -1
@@ -816,7 +837,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Earth Crystal": 1,
+      "Giadrome Claw": 1
+    },
     "Skills": {
       "SwdShrpner": 2
     },
@@ -826,7 +851,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Blk Gravios Shl": 1
+    },
     "Skills": {
       "Guard Up": 1,
       "Stamina": -1
@@ -837,7 +866,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Blango Pelt": 2,
+      "Conga Pelt": 1
+    },
     "Skills": {
       "Throw": 2
     },
@@ -858,7 +892,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Fire Dragon Pwdr": 2,
+      "Splendid Beak": 1,
+      "Giadrome Skull": 1
+    },
     "Skills": {
       "Expert": 5,
       "Health": -1
@@ -880,7 +920,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Kirin Hide": 1,
+      "Lao-Shan's Horn": 1,
+      "TwstBlkBlosHrn": 2
+    },
     "Skills": {
       "Hunger": -1,
       "Reload": 3
@@ -912,7 +958,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Bullfango Pelt": 1,
+      "Sm Hermitaur Shl": 2
+    },
     "Skills": {
       "Auto-Guard": 2
     },
@@ -994,11 +1045,16 @@
     },
     "Slots": 3
   },
-  "Iron Curtain Jewel": {
+  "IronCurtainJewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Gaoren Spine": 1,
+      "Gravios Skl Shl": 1
+    },
     "Skills": {
       "Guard": 3,
       "Stamina": -1
@@ -1457,11 +1513,16 @@
     },
     "Slots": 1
   },
-  "Rigid Wall Jewel": {
+  "Wall Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "PlumD.HermitrClw": 2,
+      "HvyGraviosShell": 1
+    },
     "Skills": {
       "Guard Up": 3,
       "Stamina": -1
@@ -1591,7 +1652,7 @@
     "Resources": {},
     "Skills": {
       "Precision": 1,
-      "Speed Fire": -1
+      "AutoReload": -1
     },
     "Slots": 1
   },
@@ -1675,14 +1736,18 @@
     },
     "Slots": 3
   },
-  "SpeedFire Jewel": {
+  "Cont. Fire Jewel": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Rathian Plate": 1
+    },
     "Skills": {
       "Protection": -1,
-      "Speed Fire": 1
+      "AutoReload": 1
     },
     "Slots": 1
   },
@@ -1753,7 +1818,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Basarios Shell": 1,
+      "Hermitaur Shell": 1
+    },
     "Skills": {
       "Guard": 1,
       "Stamina": -1
@@ -1800,7 +1870,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Blk Gravios Cpc": 1,
+      "Hermitaur Claw+": 4,
+      "LunastraShell": 2
+    },
     "Skills": {
       "Guard Up": 4,
       "Stamina": -2

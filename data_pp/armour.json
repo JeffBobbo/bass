@@ -4288,7 +4288,7 @@
     "skills": {
       "Cold Res": -3,
       "NormalS Up": 1,
-      "Speed Fire": 3
+      "AutoReload": 3
     },
     "slots": 3,
     "type": "Both"
@@ -4451,7 +4451,7 @@
       "Cold Res": -2,
       "Faint": 3,
       "NormalS Up": 3,
-      "Speed Fire": 1
+      "AutoReload": 1
     },
     "slots": 2,
     "type": "Gunner"
@@ -4777,7 +4777,7 @@
       "Cold Res": -2,
       "Faint": 3,
       "NormalS Up": 1,
-      "Speed Fire": 3
+      "AutoReload": 3
     },
     "slots": 2,
     "type": "Gunner"
@@ -5102,7 +5102,7 @@
       "Cold Res": -2,
       "Faint": 3,
       "NormalS Up": 3,
-      "Speed Fire": 1
+      "AutoReload": 1
     },
     "slots": 2,
     "type": "Gunner"
@@ -5754,7 +5754,7 @@
       "Cold Res": -2,
       "Faint": 1,
       "NormalS Up": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -14535,7 +14535,7 @@
     "skills": {
       "CragS Add": 2,
       "Health": -5,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14567,7 +14567,7 @@
     "skills": {
       "Health": -3,
       "Spc Attack": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -14695,7 +14695,7 @@
     "skills": {
       "CragS Add": 2,
       "Health": -5,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14727,7 +14727,7 @@
     "skills": {
       "Health": -3,
       "Spc Attack": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -14823,7 +14823,7 @@
     "skills": {
       "CragS Add": 2,
       "Health": -3,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14855,7 +14855,7 @@
     "skills": {
       "Health": -3,
       "Spc Attack": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14951,7 +14951,7 @@
     "skills": {
       "CragS Add": 2,
       "Health": -5,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -14983,7 +14983,7 @@
     "skills": {
       "Health": -3,
       "Spc Attack": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -15047,7 +15047,7 @@
     "skills": {
       "CragS Add": 2,
       "Health": -3,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Both"
@@ -15079,7 +15079,7 @@
     "skills": {
       "Health": -3,
       "Spc Attack": 2,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Both"
@@ -17477,7 +17477,7 @@
       "Expert": -2,
       "NormalS Up": 1,
       "Protection": -3,
-      "Speed Fire": 3
+      "AutoReload": 3
     },
     "slots": 1,
     "type": "Both"
@@ -17609,7 +17609,7 @@
       "Expert": -2,
       "NormalS Up": 1,
       "Protection": -3,
-      "Speed Fire": 3
+      "AutoReload": 3
     },
     "slots": 1,
     "type": "Gunner"
@@ -17873,7 +17873,7 @@
       "Expert": -2,
       "NormalS Up": 3,
       "Protection": -3,
-      "Speed Fire": 1
+      "AutoReload": 1
     },
     "slots": 1,
     "type": "Gunner"
@@ -18005,7 +18005,7 @@
       "Expert": -2,
       "NormalS Up": 3,
       "Protection": -3,
-      "Speed Fire": 1
+      "AutoReload": 1
     },
     "slots": 1,
     "type": "Gunner"
@@ -18071,7 +18071,7 @@
       "Expert": -2,
       "NormalS Up": 2,
       "Protection": -3,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 0,
     "type": "Gunner"
@@ -38046,7 +38046,7 @@
       "ChmleosRes": 2,
       "Everlastng": -2,
       "Expert": 3,
-      "Speed Fire": 2
+      "AutoReload": 2
     },
     "slots": 2,
     "type": "Gunner"
