@@ -18109,14 +18109,14 @@
     "slots": 1,
     "type": "Gunner"
   },
-  "Eagle Eye Piercing": {
+  "Hawkeye Piercing": {
     "defense": {
-      "max": 20,
-      "min": 0
+      "max": 44,
+      "min": 20
     },
-    "elder": 1,
+    "elder": 7,
     "gender": "Both",
-    "hr": 1,
+    "hr": 10,
     "part": "Head",
     "price": 0,
     "rarity": 10,

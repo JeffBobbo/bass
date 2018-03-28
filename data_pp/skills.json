@@ -195,7 +195,7 @@
   },
   "Autotracker": {
     "Categories": [],
-    "Description": "",
+    "Description": "Always shows location of large monsters, as well as direction and state",
     "Jewel": "PsychicVis",
     "Points": 15
   },
@@ -510,7 +510,7 @@
   },
   "Detect": {
     "Categories": [],
-    "Description": "",
+    "Description": "Shows location of large monsters at start of quest and every 10 minutes. Painting shows detail",
     "Jewel": "PsychicVis",
     "Points": 10
   },
