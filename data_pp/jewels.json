@@ -24,7 +24,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Blangonga Pelt": 1,
+      "Power Pill": 1,
+    },
     "Skills": {
       "Quake Res": 1,
       "Sleep": -1
@@ -68,11 +73,16 @@
     },
     "Slots": 2
   },
-  "Anti-Toxin Jewel": {
+  "Antidote Jewel+": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "DeadlyPoisonSac": 1,
+      "SpecRemobraSkin": 2
+    },
     "Skills": {
       "Poison": 2
     },
@@ -82,7 +92,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Ioprey Fang": 2
+    },
     "Skills": {
       "Faint": -1,
       "Poison": 1
@@ -93,7 +107,10 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Resources": {
+      "Akito Jewel": 1,
+      "Paralysis Sac": 1
+    },
     "Skills": {
       "Paralysis": 3,
       "Poison": -1
@@ -104,7 +121,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Poison Sac": 2,
+      "Herbal Medicine": 2
+    },
     "Skills": {
       "Faint": -1,
       "Poison": 3
@@ -114,8 +136,13 @@
   "Antiviral Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 375,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Congalala Pelt": 2,
+      "Antiseptic Stone": 2
+    },
     "Skills": {
       "Antiseptic": 2
     },
@@ -385,11 +412,16 @@
     },
     "Slots": 1
   },
-  "Defroster Jewel": {
+  "Snowblower Jewel+": {
     "Elder": 1,
     "HR": 1,
-    "Price": 375,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "LeathrBlangoTail": 1,
+      "Giaprey Scale+": 3
+    },
     "Skills": {
       "Snow Res": 2
     },
@@ -958,7 +990,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Sleep Sac": 1,
+      "Sleepyfish": 2
+    },
     "Skills": {
       "Sleep": 2
     },
@@ -1052,8 +1089,8 @@
     "Slots": 1
   },
   "Strongest Jewel": {
-    "Elder": 7,
-    "HR": 7,
+    "Elder": 1,
+    "HR": 1,
     "Price": 450,
     "Rarity": 5,
     "Resources": {
@@ -1083,7 +1120,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Chameleos Hide": 1
+    },
     "Skills": {
       "Sneak": 2
     },
@@ -1136,7 +1177,10 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Genprey Fang": 1
+    },
     "Skills": {
       "Paralysis": 1,
       "Poison": -1
@@ -1168,7 +1212,10 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Resources": {
+      "suiko Jewel": 1,
+      "Sleep Herb": 2
+    },
     "Skills": {
       "Sleep": 1,
       "Water Res": -1
@@ -1186,11 +1233,15 @@
     },
     "Slots": 2
   },
-  "Petrification Jewel": {
+  "Paralysis Jewel+": {
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "VespoidQn'sCrown": 1,
+      "Thunderbug Jelly": 2
+    },
     "Skills": {
       "Paralysis": 2
     },
@@ -1359,7 +1410,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Conga Pelt": 2,
+      "Bitterbug": 1
+    },
     "Skills": {
       "Antiseptic": 1,
       "Sneak": -1
@@ -1508,7 +1564,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Giaprey Scale": 2
+    },
     "Skills": {
       "Snow Res": 1,
       "Terrain": -1
@@ -1519,7 +1579,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Blangonga Fang": 1
+    },
     "Skills": {
       "Snow Res": 3,
       "Terrain": -1
@@ -1630,8 +1694,8 @@
     "Slots": 1
   },
   "Steadfast Jewel+": {
-    "Elder": 7,
-    "HR": 7,
+    "Elder": 1,
+    "HR": 1,
     "Price": 200,
     "Rarity": 4,
     "Resources": {
@@ -1670,7 +1734,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Bulldrome Hide": 1
+    },
     "Skills": {
       "Health": 2
     },
@@ -1724,7 +1792,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Gaoren Pincer": 1,
+      "Blangonga Tail": 1
+    },
     "Skills": {
       "Quake Res": 3,
       "Sleep": -1
@@ -1745,7 +1818,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Sharp Claw": 1,
+      "Ivy": 2
+    },
     "Skills": {
       "Map": -1,
       "Sneak": 1
@@ -1756,7 +1834,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Fire Drgn Webbng": 1,
+      "Sunset Herb": 3
+    },
     "Skills": {
       "Fatigue": 2
     },
