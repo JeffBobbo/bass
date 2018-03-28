@@ -1622,13 +1622,13 @@
     "Jewel": "SwdMastery",
     "Points": 10
   },
-  "Unsheathed Atk Crit": {
+  "Art of Unsheathing": {
     "Categories": [
       "Blademaster",
       "Offensive"
     ],
     "Description": "",
-    "Jewel": "Drawn Crit",
+    "Jewel": "Sword Draw",
     "Points": 10
   },
   "Water Res +10": {

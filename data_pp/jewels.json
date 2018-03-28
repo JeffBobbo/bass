@@ -162,7 +162,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Monoblos Heart": 1
+    },
     "Skills": {
       "Artisan": 1,
       "Potential": -1
@@ -380,7 +384,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Gravios BrainStm": 1,
+      "Black Blos Tail": 2,
+      "Garuga Wing": 2
+    },
     "Skills": {
       "Defense": -2,
       "Sharpness": 4
@@ -491,13 +501,18 @@
     },
     "Slots": 1
   },
-  "Draw Jewel": {
+  "Sword Draw Jewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Monoblos Carapace": 2,
+      "Rathalos Wing": 1
+    },
     "Skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Expert": -1
     },
     "Slots": 1
@@ -637,7 +652,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Rathalos Plate": 1,
+    },
     "Skills": {
       "Fencing": 1,
       "Recovery": -1
@@ -1070,7 +1089,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Akantor Claw": 1,
+      "Daora Sharp Claw": 2,
+      "Basarios Wing": 1
+    },
     "Skills": {
       "Artisan": 4,
       "Potential": -2
@@ -1378,7 +1403,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "Ceanataur Pincer": 1,
+      "Sharpened Beak": 1
+    },
     "Skills": {
       "Defense": -1,
       "Sharpness": 1
@@ -1781,7 +1811,13 @@
     "Elder": 1,
     "HR": 1,
     "Price": 450,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "Fatalis Eye": 1,
+      "Slvr Rthlos Wing": 1,
+      "Majestic Horn": 1
+    },
     "Skills": {
       "Fencing": 4,
       "Recovery": -2
@@ -1892,13 +1928,18 @@
     },
     "Slots": 2
   },
-  "Unsheathe Jewel": {
+  "UnsheathingJewel": {
     "Elder": 1,
     "HR": 1,
-    "Price": 450,
-    "Resources": {},
+    "Price": 375,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "HrdCeanataurClaw": 3,
+      "Rathalos Ruby": 1
+    },
     "Skills": {
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Expert": -1
     },
     "Slots": 2

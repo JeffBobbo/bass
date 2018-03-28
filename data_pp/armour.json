@@ -213,7 +213,7 @@
       "LaoS Dvine Plate": 1
     },
     "skills": {
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Faint": -3,
       "Rec Speed": 2
     },
@@ -343,7 +343,7 @@
       "RathianDvnePlate": 1
     },
     "skills": {
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -473,7 +473,7 @@
       "Tigrex Thck Scl": 6
     },
     "skills": {
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -603,7 +603,7 @@
       "TigrexDvinePlate": 1
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -667,7 +667,7 @@
       "Naruga Marrow": 1
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Faint": -2,
       "Rec Speed": 6
     },
@@ -7568,7 +7568,7 @@
       "TigrexDvinePlate": 1
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -7698,7 +7698,7 @@
       "LaoS Dvine Plate": 1
     },
     "skills": {
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Faint": -3,
       "Rec Speed": 2
     },
@@ -7893,7 +7893,7 @@
       "RathianDvnePlate": 1
     },
     "skills": {
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -8088,7 +8088,7 @@
       "Naruga Marrow": 1
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Faint": -2,
       "Rec Speed": 6
     },
@@ -8120,7 +8120,7 @@
       "Tigrex Thck Scl": 6
     },
     "skills": {
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Faint": -2,
       "Rec Speed": 4
     },
@@ -9122,7 +9122,7 @@
     },
     "skills": {
       "Cold Res": -2,
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Evade": 3,
       "Gathering": 2
     },
@@ -9384,7 +9384,7 @@
       "Melange Ore": 2
     },
     "skills": {
-      "Drawn Crit": 4,
+      "Sword Draw": 4,
       "Fencing": 1,
       "Health": -4
     },
@@ -9868,7 +9868,7 @@
       "Hrd Monster Bone": 4
     },
     "skills": {
-      "Drawn Crit": 4,
+      "Sword Draw": 4,
       "Fencing": 1,
       "Health": -4
     },
@@ -10191,7 +10191,7 @@
       "King Scarab": 6
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Fencing": 4,
       "Health": -4
     },
@@ -10514,7 +10514,7 @@
       "Rare Scarab": 4
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Fencing": 2,
       "Health": -4
     },
@@ -10676,7 +10676,7 @@
       "PhantomButterfly": 2
     },
     "skills": {
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Fencing": 4,
       "Health": -4
     },
@@ -51097,7 +51097,7 @@
     },
     "skills": {
       "Cold Res": -2,
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Evade": 3,
       "Gathering": 2
     },
@@ -53475,7 +53475,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Fast Chrge": -2
     },
     "slots": 2,
@@ -53668,7 +53668,7 @@
     },
     "skills": {
       "Attack": 4,
-      "Drawn Crit": 3,
+      "Sword Draw": 3,
       "Fast Chrge": -2
     },
     "slots": 2,
@@ -53862,7 +53862,7 @@
     },
     "skills": {
       "Attack": 1,
-      "Drawn Crit": 1,
+      "Sword Draw": 1,
       "Fast Chrge": -3
     },
     "slots": 3,
@@ -54645,7 +54645,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Fast Chrge": -2
     },
     "slots": 2,
@@ -54742,7 +54742,7 @@
     },
     "skills": {
       "Attack": 5,
-      "Drawn Crit": 2,
+      "Sword Draw": 2,
       "Fast Chrge": -2
     },
     "slots": 2,
