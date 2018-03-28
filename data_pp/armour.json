@@ -2042,7 +2042,7 @@
     "skills": {
       "Attack": 2,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "NormalS Up": 2,
       "PsychicVis": 2
     },
@@ -2077,7 +2077,7 @@
       "Attack": 1,
       "ClustS Add": 2,
       "Hunger": -2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Both"
@@ -2109,7 +2109,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Both"
@@ -2141,7 +2141,7 @@
     "skills": {
       "Attack": 2,
       "Hunger": -2,
-      "Load": 3,
+      "Reload": 3,
       "Precision": 2
     },
     "slots": 1,
@@ -2175,7 +2175,7 @@
       "Attack": 3,
       "ClustS Add": 2,
       "Hunger": -2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -2207,7 +2207,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -2338,7 +2338,7 @@
     "skills": {
       "Attack": 2,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "NormalS Up": 2,
       "PsychicVis": 2
     },
@@ -2373,7 +2373,7 @@
       "Attack": 3,
       "ClustS Add": 2,
       "Hunger": -2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -2405,7 +2405,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -2536,7 +2536,7 @@
     "skills": {
       "Attack": 2,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "Precision": 2,
       "PsychicVis": 2
     },
@@ -2571,7 +2571,7 @@
       "Attack": 1,
       "ClustS Add": 2,
       "Hunger": -2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -2603,7 +2603,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 1,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 3,
     "type": "Gunner"
@@ -2930,7 +2930,7 @@
     "skills": {
       "Attack": 2,
       "Hunger": -2,
-      "Load": 3,
+      "Reload": 3,
       "Precision": 2
     },
     "slots": 0,
@@ -2964,7 +2964,7 @@
       "Attack": 2,
       "ClustS Add": 2,
       "Hunger": -1,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -2996,7 +2996,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 1,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -3979,7 +3979,7 @@
     },
     "skills": {
       "Dragon Res": 3,
-      "Load": 2,
+      "Reload": 2,
       "Sharpness": 2
     },
     "slots": 2,
@@ -9515,7 +9515,7 @@
     "skills": {
       "Expert": 2,
       "Health": -3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Both"
@@ -9578,7 +9578,7 @@
     },
     "skills": {
       "Defense": -3,
-      "Load": 3,
+      "Reload": 3,
       "PierceS Up": 3
     },
     "slots": 2,
@@ -9676,7 +9676,7 @@
     "skills": {
       "Expert": 2,
       "Health": -3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -9739,7 +9739,7 @@
     },
     "skills": {
       "Defense": -3,
-      "Load": 4,
+      "Reload": 4,
       "PierceS Up": 2
     },
     "slots": 2,
@@ -9999,7 +9999,7 @@
     "skills": {
       "Expert": 2,
       "Health": -1,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 3,
     "type": "Gunner"
@@ -10062,7 +10062,7 @@
     },
     "skills": {
       "Defense": -4,
-      "Load": 2,
+      "Reload": 2,
       "PierceS Up": 1
     },
     "slots": 3,
@@ -10322,7 +10322,7 @@
     "skills": {
       "Expert": 2,
       "Health": -3,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -10385,7 +10385,7 @@
     },
     "skills": {
       "Defense": -3,
-      "Load": 4,
+      "Reload": 4,
       "PierceS Up": 2
     },
     "slots": 2,
@@ -10840,7 +10840,7 @@
     "skills": {
       "Expert": 2,
       "Health": -1,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -10903,7 +10903,7 @@
     },
     "skills": {
       "Defense": -3,
-      "Load": 2,
+      "Reload": 2,
       "PierceS Up": 2
     },
     "slots": 2,
@@ -15569,7 +15569,7 @@
     "skills": {
       "Fate": -1,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -15633,7 +15633,7 @@
     },
     "skills": {
       "Fate": -2,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -15697,7 +15697,7 @@
     },
     "skills": {
       "HearProtct": 2,
-      "Load": 2,
+      "Reload": 2,
       "Protection": -3
     },
     "slots": 3,
@@ -15761,7 +15761,7 @@
     "skills": {
       "Fate": -3,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 1,
@@ -15825,7 +15825,7 @@
     },
     "skills": {
       "Fate": -2,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -15890,7 +15890,7 @@
     "skills": {
       "Expert": 2,
       "HearProtct": 2,
-      "Load": 3,
+      "Reload": 3,
       "Protection": -2
     },
     "slots": 2,
@@ -16342,7 +16342,7 @@
     "skills": {
       "Fate": -1,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -16406,7 +16406,7 @@
     },
     "skills": {
       "Fate": -2,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -16471,7 +16471,7 @@
     "skills": {
       "Expert": 3,
       "HearProtct": 2,
-      "Load": 2,
+      "Reload": 2,
       "Protection": -2
     },
     "slots": 2,
@@ -16731,7 +16731,7 @@
     "skills": {
       "Fate": -1,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -16795,7 +16795,7 @@
     },
     "skills": {
       "Fate": -2,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 2,
@@ -16860,7 +16860,7 @@
     "skills": {
       "Expert": 3,
       "HearProtct": 2,
-      "Load": 2,
+      "Reload": 2,
       "Protection": -2
     },
     "slots": 2,
@@ -17314,7 +17314,7 @@
     "skills": {
       "Fate": -1,
       "Hunger": -1,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 1,
@@ -17378,7 +17378,7 @@
     },
     "skills": {
       "Fate": -2,
-      "Load": 2,
+      "Reload": 2,
       "WindPress": 3
     },
     "slots": 1,
@@ -17443,7 +17443,7 @@
     "skills": {
       "Expert": 2,
       "HearProtct": 2,
-      "Load": 1,
+      "Reload": 1,
       "Protection": -2
     },
     "slots": 2,
@@ -20721,7 +20721,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -20753,7 +20753,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 3,
       "Rec Speed": 2
     },
@@ -20786,7 +20786,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -20851,7 +20851,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 3,
       "Rec Speed": 2
     },
@@ -20884,7 +20884,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -20980,7 +20980,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -21013,7 +21013,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -21109,7 +21109,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -21142,7 +21142,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 1,
@@ -21270,7 +21270,7 @@
     },
     "skills": {
       "Faint": -2,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 3
     },
     "slots": 1,
@@ -23220,7 +23220,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -23253,7 +23253,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 1,
@@ -23349,7 +23349,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -23382,7 +23382,7 @@
     },
     "skills": {
       "Faint": -2,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 3
     },
     "slots": 1,
@@ -23478,7 +23478,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 3,
       "Rec Speed": 2
     },
@@ -23511,7 +23511,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -23607,7 +23607,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 3,
       "Rec Speed": 2
     },
@@ -23640,7 +23640,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -23736,7 +23736,7 @@
     },
     "skills": {
       "Hunger": -1,
-      "Load": 3,
+      "Reload": 3,
       "NormalSAdd": 1,
       "Rec Speed": 2
     },
@@ -23769,7 +23769,7 @@
     },
     "skills": {
       "Faint": -1,
-      "Load": 4,
+      "Reload": 4,
       "Rec Speed": 2
     },
     "slots": 2,
@@ -30527,7 +30527,7 @@
     "skills": {
       "All Resist": -2,
       "Defense": 2,
-      "Load": 3
+      "Reload": 3
     },
     "slots": 2,
     "type": "Both"
@@ -30623,7 +30623,7 @@
     },
     "skills": {
       "ClustS Add": 3,
-      "Load": -2,
+      "Reload": -2,
       "Recoil": 3,
       "Survival": 1
     },
@@ -30691,7 +30691,7 @@
       "All Resist": -1,
       "CragS Add": 2,
       "Defense": 2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -30786,7 +30786,7 @@
       "Pur HermitaurShl": 4
     },
     "skills": {
-      "Load": -3,
+      "Reload": -3,
       "Recoil": 1,
       "Survival": 3
     },
@@ -31018,7 +31018,7 @@
       "All Resist": -1,
       "CragS Add": 2,
       "Defense": 2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -31113,7 +31113,7 @@
       "Pure Crystal": 1
     },
     "skills": {
-      "Load": -3,
+      "Reload": -3,
       "Recoil": 1,
       "Survival": 3
     },
@@ -31345,7 +31345,7 @@
       "All Resist": -1,
       "CragS Add": 2,
       "Defense": 2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 2,
     "type": "Gunner"
@@ -31441,7 +31441,7 @@
     },
     "skills": {
       "ClustS Add": 3,
-      "Load": -2,
+      "Reload": -2,
       "Recoil": 3,
       "Survival": 1
     },
@@ -31868,7 +31868,7 @@
       "All Resist": -2,
       "CragS Add": 1,
       "Defense": 2,
-      "Load": 2
+      "Reload": 2
     },
     "slots": 1,
     "type": "Gunner"
@@ -31963,7 +31963,7 @@
     },
     "skills": {
       "ClustS Add": 1,
-      "Load": -2,
+      "Reload": -2,
       "Recoil": 2,
       "Survival": 2
     },
@@ -41458,7 +41458,7 @@
     },
     "skills": {
       "FireDrgRes": 2,
-      "Load": 4,
+      "Reload": 4,
       "Poison": -2,
       "Recoil": 1
     },
@@ -41946,7 +41946,7 @@
     },
     "skills": {
       "FireDrgRes": 2,
-      "Load": 2,
+      "Reload": 2,
       "Poison": -2,
       "Recoil": 3
     },
@@ -42140,7 +42140,7 @@
     },
     "skills": {
       "FireDrgRes": 2,
-      "Load": 2,
+      "Reload": 2,
       "Poison": -2,
       "Recoil": 3
     },
@@ -42401,7 +42401,7 @@
     },
     "skills": {
       "FireDrgRes": 2,
-      "Load": 4,
+      "Reload": 4,
       "Poison": -2,
       "Recoil": 1
     },
@@ -42599,7 +42599,7 @@
     "skills": {
       "Expert": 1,
       "Health": -3,
-      "Load": 3
+      "Reload": 3
     },
     "slots": 3,
     "type": "Both"
@@ -42792,7 +42792,7 @@
     "skills": {
       "Expert": 3,
       "Health": -2,
-      "Load": 1,
+      "Reload": 1,
       "Recovery": 3
     },
     "slots": 2,
@@ -43184,7 +43184,7 @@
     "skills": {
       "Expert": 3,
       "Health": -2,
-      "Load": 1,
+      "Reload": 1,
       "Recovery": 3
     },
     "slots": 2,
@@ -43577,7 +43577,7 @@
     "skills": {
       "Expert": 1,
       "Health": -2,
-      "Load": 3
+      "Reload": 3
     },
     "slots": 3,
     "type": "Gunner"
@@ -44360,7 +44360,7 @@
     "skills": {
       "Expert": 2,
       "Health": -2,
-      "Load": 2,
+      "Reload": 2,
       "Recovery": 1
     },
     "slots": 2,
@@ -60183,7 +60183,7 @@
     "skills": {
       "Cooking": -2,
       "Fate": 2,
-      "Load": -1,
+      "Reload": -1,
       "Quake Res": 2,
       "Recoil": 2
     },
@@ -60217,7 +60217,7 @@
     "skills": {
       "Cooking": -2,
       "Fate": 2,
-      "Load": -1,
+      "Reload": -1,
       "Quake Res": 2,
       "Recoil": 2
     },
@@ -60251,7 +60251,7 @@
     "skills": {
       "Cooking": -2,
       "Fate": 2,
-      "Load": -1,
+      "Reload": -1,
       "Quake Res": 2,
       "Recoil": 2
     },
@@ -60284,7 +60284,7 @@
     "skills": {
       "Cooking": -2,
       "Fate": 2,
-      "Load": -1,
+      "Reload": -1,
       "Quake Res": 2,
       "Recoil": 2
     },
@@ -60317,7 +60317,7 @@
     },
     "skills": {
       "Cooking": -2,
-      "Load": -1,
+      "Reload": -1,
       "Quake Res": 2,
       "Recoil": 2
     },
@@ -63373,7 +63373,7 @@
       "YamatsukamiFluid": 4
     },
     "skills": {
-      "Load": 6,
+      "Reload": 6,
       "Loading": 1,
       "Protection": -2
     },
@@ -63471,7 +63471,7 @@
       "Ucamulbas Shell": 3
     },
     "skills": {
-      "Load": 3,
+      "Reload": 3,
       "Loading": 3,
       "Protection": -3
     },
@@ -63503,7 +63503,7 @@
       "Ucamulbas Shell": 2
     },
     "skills": {
-      "Load": 6,
+      "Reload": 6,
       "Loading": 1,
       "Protection": -2
     },
@@ -63601,7 +63601,7 @@
       "Ucamulbas Scale": 3
     },
     "skills": {
-      "Load": 2,
+      "Reload": 2,
       "Loading": 2,
       "Protection": -3
     },
@@ -63633,7 +63633,7 @@
       "Ucamulbas Tail": 2
     },
     "skills": {
-      "Load": 3,
+      "Reload": 3,
       "Loading": 3,
       "Protection": -3
     },

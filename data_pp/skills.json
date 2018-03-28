@@ -1299,7 +1299,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": 10
   },
   "Reloading Speed +2": {
@@ -1307,7 +1307,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": 15
   },
   "Reloading Speed +3": {
@@ -1315,7 +1315,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": 20
   },
   "Reloading Speed -1": {
@@ -1323,7 +1323,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": -10
   },
   "Reloading Speed -2": {
@@ -1331,7 +1331,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": -15
   },
   "Reloading Speed -3": {
@@ -1339,7 +1339,7 @@
       "Bowgun"
     ],
     "Description": "",
-    "Jewel": "Load",
+    "Jewel": "Reload",
     "Points": -20
   },
   "Reward Celebrity": {
