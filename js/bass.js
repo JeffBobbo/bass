@@ -573,6 +573,8 @@ function punchit()
       "piercings": $("input#piercings").prop("checked"),
       "torsoinc": $("input#torsoinc").prop("checked")
     };
+    sets = [];
+    progress.fill(0);
     setup();
   }
 }
