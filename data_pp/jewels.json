@@ -141,7 +141,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Power Seed": 1,
+      "Kut-ku Scale": 1
+    },
     "Skills": {
       "Attack": 1
     },
@@ -365,7 +370,11 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Sm Hermitaur Shl": 2
+    },
     "Skills": {
       "Defense": 1
     },
@@ -602,7 +611,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Fire Wyvern Claw": 1,
+      "Demondrug": 2
+    },
     "Skills": {
       "Attack": 3,
       "Defense": -1
@@ -1032,11 +1046,17 @@
     },
     "Slots": 1
   },
-  "Merciless Jewel": {
-    "Elder": 1,
-    "HR": 1,
-    "Price": 200,
-    "Resources": {},
+  "Strongest Jewel": {
+    "Elder": 7,
+    "HR": 7,
+    "Price": 450,
+    "Rarity": 5,
+    "Resources": {
+      "LapisLazuliJewel": 1,
+      "HrdFireWyvernClw": 4,
+      "Mega Demondrug": 3,
+      "Lthr Pelagus Plt": 2
+    },
     "Skills": {
       "Attack": 5,
       "Defense": -1
@@ -1753,7 +1773,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Blk Gravios Shl": 1,
+      "Hermitaur Claw": 1
+    },
     "Skills": {
       "All Resist": -1,
       "Defense": 3
