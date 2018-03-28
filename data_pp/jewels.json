@@ -45,7 +45,12 @@
     "Elder": 1,
     "HR": 1,
     "Price": 375,
-    "Resources": {},
+    "Rarity": 5,
+    "Resources": {
+      "Akito Jewel": 1,
+      "Velocidrome Claw": 2,
+      "Pur Rubbery Hide": 1
+    },
     "Skills": {
       "Faint": 3,
       "Paralysis": -1
@@ -1613,10 +1618,29 @@
     "Elder": 1,
     "HR": 1,
     "Price": 200,
-    "Resources": {},
+    "Rarity": 4,
+    "Resources": {
+      "Suiko Jewel": 1,
+      "Velociprey Fang": 2
+    },
     "Skills": {
       "Faint": 1,
       "Paralysis": -1
+    },
+    "Slots": 1
+  },
+  "Steadfast Jewel+": {
+    "Elder": 7,
+    "HR": 7,
+    "Price": 200,
+    "Rarity": 4,
+    "Resources": {
+      "BattlefieldJewel": 1,
+      "LthrC.BlangoTail": 1,
+      "ThkBullfangoPelt": 2
+    },
+    "Skills": {
+      "Faint": 2,
     },
     "Slots": 1
   },
