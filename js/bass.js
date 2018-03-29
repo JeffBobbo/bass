@@ -419,15 +419,16 @@ function armourStatString(piece)
 function addSetToTable(set)
 {
   let row = "<tr>" +
-    '<td>' + set.defmax + '</td>';
+    '<td title="Effective defense: ' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '">' + set.defmax + '</td>';
     for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
     {
+      row += '<td title="Effective defense: ' + Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax) + '"';
       if (set.res[res] > 0)
-        row += '<td class="numeric good">';
+        row += ' class="numeric good">';
       else if (set.res[res] < 0)
-        row += '<td class="numeric bad">';
+        row += ' class="numeric bad">';
       else
-        row += '<td class="numeric">'
+        row += ' class="numeric">'
       row += set.res[res] + '</td>';
     }
     row +=
