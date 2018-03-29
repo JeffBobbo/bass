@@ -23,7 +23,15 @@
       <div id="noticebox">
         <div class="notice">
           This tool is WIP, there is no guarantee that the results it produces are correct, complete, or possible. Recommend sets are tested by hand or checked with another tool (particularly if you can't afford to waste materials).
-
+          <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
+        </div>
+        <div class="notice">
+          Known issues:
+          <ul>
+            <li>Torso Inc does not work for jewels</li>
+            <li>Jeweling is not fully solved, better sets may be possible</li>
+            <li>Sorting defence/resistance is done by the raw value, regardless of the defence display style</li>
+          </ul>
           <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
         </div>
       </div>
@@ -114,6 +122,18 @@
           </fieldset>
           <div id="skill-overview">
           </div>
+        </div>
+      </div>
+      <div class="collapsable">
+        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Options</p>
+        <div>
+          <fieldset>
+            <legend>Defence display</legend>
+            <input type="radio" id="def-style-raw" name="def-style" value="raw" title="Raw display shows defence displayed in game, and the resistances displayed in game" checked/>
+            <label for="def-style-raw">Raw</label><br/>
+            <input type="radio" id="def-style-eff" name="def-style" value="eff" title="Effective display shows the defence used in damage delt calculations, and can be readily compared for elemental attacks."/>
+            <label for="def-style-eff">Effective</label>
+          </fieldset>
         </div>
       </div>
     </div>
@@ -230,7 +250,7 @@
           <thead>
             <tr>
               <th class="sort">
-                <span>Defence (Max)</span>
+                <img src="img/def.png" title="Defence (Max)"/>
                 <i data-key="defmax" class="fa fa-sort"/>
               </th>
               <th class="sort">
@@ -253,11 +273,26 @@
                 <img src="img/dragon.png" title="Dragon resistance"/>
                 <i data-key="res.Dragon" class="fa fa-sort"/>
               </th>
-              <th>Head</th>
-              <th>Chest</th>
-              <th>Arms</th>
-              <th>Waist</th>
-              <th>Legs</th>
+              <th>
+                <!--<img src="img/head.png" title="Head"/>-->
+                Head
+              </th>
+              <th>
+                <!--<img src="img/chest.png" title="Chest"/>-->
+                Chest
+              </th>
+              <th>
+                <!--<img src="img/arms.png" title="Arms"/>-->
+                Arms
+              </th>
+              <th>
+                <!--<img src="img/waist.png" title="Waist"/>-->
+                Waist
+              </th>
+              <th>
+                <!--<img src="img/legs.png" title="Legs"/>-->
+                Legs
+              </th>
               <th>Jewels</th>
             </tr>
           </thead>

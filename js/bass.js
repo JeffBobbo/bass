@@ -19,6 +19,8 @@ let build = null;
 
 // sets thave been been found
 let sets = [];
+// sets that are on display
+let display = [];
 
 let workers = null;
 let progress = [];
@@ -101,8 +103,11 @@ $(document).ready(function() {
             ++jwls[jewel];
           }
           set.jewels = jwls;
-          if (sets.length < 100)
+          if (display.length < 100)
+          {
+            display.push(set);
             addSetToTable(set);
+          }
           sets.push(set);
         }
         $("span#count").text(sets.length + " sets found");
@@ -204,7 +209,14 @@ $(document).ready(function() {
     }
 
     if (sorting.length > 0)
+    {
       sortSets();
+      displaySets();
+    }
+  });
+
+  $("input[type=radio][name=def-style]").change(function() {
+    displaySets();
   });
 });
 
@@ -228,23 +240,23 @@ function sortSets()
   };
 
   const NUM_DISPLAY = 100;
-  let cut = sets.slice(0, NUM_DISPLAY);
-  cut.sort(sorter); // sort the initial cut
+  display = sets.slice(0, NUM_DISPLAY);
+  display.sort(sorter); // sort the initial cut
 
   // now do the rest
   for (let i = NUM_DISPLAY, l = sets.length; i < l; ++i)
   {
     const set = sets[i];
-    if (sorter(set, cut[NUM_DISPLAY-1]) >= 0) // if it's worse, skip
+    if (sorter(set, display[NUM_DISPLAY-1]) >= 0) // if it's worse, skip
       continue;
 
-    // find where it should be in our cut -- binary search
+    // find where it should be in our display -- binary search
     let at = -1;
     let min = 0, max = 99, mid;
     while (min <= max)
     {
       mid = Math.floor((min + max) / 2);
-      const c = sorter(set, cut[mid]);
+      const c = sorter(set, display[mid]);
       if (c === 0)
         break;
       else
@@ -252,16 +264,9 @@ function sortSets()
     }
 
     // insert at the right place, pop off the end
-    cut.splice(mid, 0, set);
-    cut.pop();
+    display.splice(mid, 0, set);
+    display.pop();
   }
-
-  // old
-  //sets.sort(sorter);
-
-  let table = $("table#sets>tbody").empty();
-  for (const set of cut)
-    addSetToTable(set);
 }
 
 function selectSkill(select)
@@ -416,32 +421,52 @@ function armourStatString(piece)
   return stat;
 }
 
+function displaySets()
+{
+  let table = $("table#sets>tbody").empty();
+  for (const set of display)
+    addSetToTable(set);
+}
+
 function addSetToTable(set)
 {
-  let row = "<tr>" +
-    '<td title="Effective defense: ' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '">' + set.defmax + '</td>';
-    for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
-    {
+  const effStyle = $("input[type=radio][name=def-style]:checked").val() === "eff";
+  let row = "<tr>";
+  if (effStyle)
+    row += '<td title="Defense: ' + set.defmax + '">' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '</td>';
+  else
+    row += '<td title="Effective defense: ' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '">' + set.defmax + '</td>';
+
+  for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
+  {
+    if (effStyle)
+      row += '<td title="Resistance: ' + set.res[res] + '"';
+    else
       row += '<td title="Effective defense: ' + Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax) + '"';
-      if (set.res[res] > 0)
-        row += ' class="numeric good">';
-      else if (set.res[res] < 0)
-        row += ' class="numeric bad">';
-      else
-        row += ' class="numeric">'
+
+    if (set.res[res] > 0)
+      row += ' class="numeric good">';
+    else if (set.res[res] < 0)
+      row += ' class="numeric bad">';
+    else
+      row += ' class="numeric">'
+
+    if (effStyle)
+      row += Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax) + '</td>';
+    else
       row += set.res[res] + '</td>';
-    }
-    row +=
+  }
+  row +=
     "<td title='" + armourStatString(armour[set.gear.head.name]) + "''>" + set.gear.head.name + "</td>" +
     "<td title='" + armourStatString(armour[set.gear.chest.name]) + "''>" + set.gear.chest.name + "</td>" +
     "<td title='" + armourStatString(armour[set.gear.arms.name]) + "''>" + set.gear.arms.name + "</td>" +
     "<td title='" + armourStatString(armour[set.gear.waist.name]) + "''>" + set.gear.waist.name + "</td>" +
     "<td title='" + armourStatString(armour[set.gear.legs.name]) + "''>" + set.gear.legs.name + "</td>" +
     "<td>";
-    for (const [jewel, amount] of Object.entries(set.jewels))
-      row += amount + "x " + jewel + "</br>";
-    row += "</td>" +
-    "</tr>";
+  for (const [jewel, amount] of Object.entries(set.jewels))
+    row += amount + "x " + jewel + "</br>";
+  row += "</td>" +
+  "</tr>";
   $("table#sets > tbody:last-child").append(row);
 }
 
