@@ -17,6 +17,7 @@ div#sidebar
   height:100%;
 
   background-color:#222;
+  overflow-y:auto;
 }
 
 div#sidebar>*
@@ -28,6 +29,7 @@ div.notice
 {
   border:1px solid grey;
   padding:2px;
+  position:relative;
 }
 div.notice>a
 {
