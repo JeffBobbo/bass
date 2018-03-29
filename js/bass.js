@@ -204,29 +204,65 @@ $(document).ready(function() {
     }
 
     if (sorting.length > 0)
-    {
-      sets.sort((a, b) => {
-        for (const by of sorting)
-        {
-          const keys = by.key.split('.');
-          let x = a, y = b;
-          for (const key of keys)
-          {
-            x = x[key];
-            y = y[key];
-          }
-          const cmp = x - y;
-          if (cmp !== 0)
-            return order === "asc" ? cmp : -cmp;
-        }
-        return 0;
-      });
-      let table = $("table#sets>tbody").empty();
-      for (let i = 0, l = Math.min(100, sets.length); i < l; ++i)
-        addSetToTable(sets[i]);
-    }
+      sortSets();
   });
 });
+
+function sortSets()
+{
+  let sorter = (a, b) => {
+    for (const by of sorting)
+    {
+      const keys = by.key.split('.');
+      let x = a, y = b;
+      for (const key of keys)
+      {
+        x = x[key];
+        y = y[key];
+      }
+      const cmp = x - y;
+      if (cmp !== 0)
+        return by.order === "asc" ? cmp : -cmp;
+    }
+    return 0;
+  };
+
+  const NUM_DISPLAY = 100;
+  let cut = sets.slice(0, NUM_DISPLAY);
+  cut.sort(sorter); // sort the initial cut
+
+  // now do the rest
+  for (let i = NUM_DISPLAY, l = sets.length; i < l; ++i)
+  {
+    const set = sets[i];
+    if (sorter(set, cut[NUM_DISPLAY-1]) >= 0) // if it's worse, skip
+      continue;
+
+    // find where it should be in our cut -- binary search
+    let at = -1;
+    let min = 0, max = 99, mid;
+    while (min <= max)
+    {
+      mid = Math.floor((min + max) / 2);
+      const c = sorter(set, cut[mid]);
+      if (c === 0)
+        break;
+      else
+        c > 0 ? min = mid+1 : max = mid-1;
+    }
+
+    // insert at the right place, pop off the end
+    cut.splice(mid, 0, set);
+    cut.pop();
+  }
+
+  // old
+  //sets.sort(sorter);
+
+  let table = $("table#sets>tbody").empty();
+  for (const set of cut)
+    addSetToTable(set);
+}
 
 function selectSkill(select)
 {
