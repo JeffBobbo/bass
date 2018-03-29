@@ -93,6 +93,14 @@ $(document).ready(function() {
             for (const [res, amt] of Object.entries(item.resistance))
               set.res[res] += amt;
           }
+          let jwls = {};
+          for (const jewel of set.jewels)
+          {
+            if (jwls[jewel] === undefined)
+              jwls[jewel] = 0;
+            ++jwls[jewel];
+          }
+          set.jewels = jwls;
           if (sets.length < 100)
             addSetToTable(set);
           sets.push(set);
@@ -353,6 +361,25 @@ function updateSkillSelect(id)
   select.val(old);
 }
 
+function armourStatString(piece)
+{
+  let stat = "Part: " + piece.part + "\n" +
+  "Rarity: " + piece.rarity + "\n" +
+  "Defense (min, max): " + piece.defense.min + ", " + piece.defense.max + "\n" +
+  "Resistances:\n";
+  for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
+    stat += "  " + piece.resistance[res] + " " + res + "\n";
+  stat += "Skills:\n";
+  for (const [name, points] of Object.entries(piece.skills))
+    stat += "  " + points + " " + name + "\n";
+  stat += "Slots: " + piece.slots + "\n";
+  stat += "Cost:\n  " + piece.price + "z\n";
+  for (const [item, quant] of Object.entries(piece.resources))
+    stat += "  " + quant + "x " + item + "\n";
+
+  return stat;
+}
+
 function addSetToTable(set)
 {
   let row = "<tr>" +
@@ -367,14 +394,15 @@ function addSetToTable(set)
         row += '<td class="numeric">'
       row += set.res[res] + '</td>';
     }
-    row += "<td>" + set.gear.head.name + "</td>" +
-    "<td>" + set.gear.chest.name + "</td>" +
-    "<td>" + set.gear.arms.name + "</td>" +
-    "<td>" + set.gear.waist.name + "</td>" +
-    "<td>" + set.gear.legs.name + "</td>" +
+    row +=
+    "<td title='" + armourStatString(armour[set.gear.head.name]) + "''>" + set.gear.head.name + "</td>" +
+    "<td title='" + armourStatString(armour[set.gear.chest.name]) + "''>" + set.gear.chest.name + "</td>" +
+    "<td title='" + armourStatString(armour[set.gear.arms.name]) + "''>" + set.gear.arms.name + "</td>" +
+    "<td title='" + armourStatString(armour[set.gear.waist.name]) + "''>" + set.gear.waist.name + "</td>" +
+    "<td title='" + armourStatString(armour[set.gear.legs.name]) + "''>" + set.gear.legs.name + "</td>" +
     "<td>";
-    for (const jewel of set.jewels)
-      row += jewel + "</br>";
+    for (const [jewel, amount] of Object.entries(set.jewels))
+      row += amount + "x " + jewel + "</br>";
     row += "</td>" +
     "</tr>";
   $("table#sets > tbody:last-child").append(row);
