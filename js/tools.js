@@ -76,3 +76,8 @@ function sort(objects, keys)
     return 0;
   });
 }
+
+function commify(x)
+{
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

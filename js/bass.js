@@ -69,7 +69,7 @@ $(document).ready(function() {
         for (const p of progress)
           sum += p;
         $("progress").val(Math.floor((sum / build.combis) * 100));
-        $("progress").prop("title", sum + " of " + build.combis + " sets searched");
+        $("progress").prop("title", commify(sum) + " of " + commify(build.combis) + " sets searched");
         break;
       case "stopped":
         $("button#punchit").text("Search");
@@ -95,6 +95,12 @@ $(document).ready(function() {
             for (const [res, amt] of Object.entries(item.resistance))
               set.res[res] += amt;
           }
+          // calculate effective scores
+          set.effdef = Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax);
+          set.eff = {};
+          for (const res of Object.keys(set.res))
+            set.eff[res] = Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax);
+
           let jwls = {};
           for (const jewel of set.jewels)
           {
@@ -110,7 +116,7 @@ $(document).ready(function() {
           }
           sets.push(set);
         }
-        $("span#count").text(sets.length + " sets found");
+        $("span#count").text(commify(sets.length) + " sets found");
         break;
       default:
         throw "Unknown command: " + data.cmd;
@@ -216,6 +222,26 @@ $(document).ready(function() {
   });
 
   $("input[type=radio][name=def-style]").change(function() {
+    const effStyle = $("input[type=radio][name=def-style]:checked").val() === "eff";
+
+    if (effStyle)
+    {
+      $("th > i#def").data('key', 'effdef');
+      $("th > i#fire").data('key', 'eff.Fire');
+      $("th > i#thunder").data('key', 'eff.Thunder');
+      $("th > i#water").data('key', 'eff.Water');
+      $("th > i#ice").data('key', 'eff.Ice');
+      $("th > i#dragon").data('key', 'eff.Dragon');
+    }
+    else
+    {
+      $("th > i#def").data('key', 'defmax');
+      $("th > i#fire").data('key', 'res.Fire');
+      $("th > i#thunder").data('key', 'res.Thunder');
+      $("th > i#water").data('key', 'res.Water');
+      $("th > i#ice").data('key', 'res.Ice');
+      $("th > i#dragon").data('key', 'res.Dragon');
+    }
     displaySets();
   });
 });
@@ -414,7 +440,7 @@ function armourStatString(piece)
   for (const [name, points] of Object.entries(piece.skills))
     stat += "  " + points + " " + name + "\n";
   stat += "Slots: " + piece.slots + "\n";
-  stat += "Cost:\n  " + piece.price + "z\n";
+  stat += "Cost:\n  " + commify(piece.price) + "z\n";
   for (const [item, quant] of Object.entries(piece.resources))
     stat += "  " + quant + "x " + item + "\n";
 
@@ -433,16 +459,16 @@ function addSetToTable(set)
   const effStyle = $("input[type=radio][name=def-style]:checked").val() === "eff";
   let row = "<tr>";
   if (effStyle)
-    row += '<td title="Defense: ' + set.defmax + '">' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '</td>';
+    row += '<td title="Defense: ' + commify(set.defmax) + '">' + commify(set.effdef) + '</td>';
   else
-    row += '<td title="Effective defense: ' + Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax) + '">' + set.defmax + '</td>';
+    row += '<td title="Effective defense: ' + commify(set.effdef) + '">' + commify(set.defmax) + '</td>';
 
   for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
   {
     if (effStyle)
       row += '<td title="Resistance: ' + set.res[res] + '"';
     else
-      row += '<td title="Effective defense: ' + Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax) + '"';
+      row += '<td title="Effective defense: ' + commify(set.eff[res]) + '"';
 
     if (set.res[res] > 0)
       row += ' class="numeric good">';
@@ -452,7 +478,7 @@ function addSetToTable(set)
       row += ' class="numeric">'
 
     if (effStyle)
-      row += Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax) + '</td>';
+      row += commify(set.eff[res]) + '</td>';
     else
       row += set.res[res] + '</td>';
   }
@@ -664,6 +690,7 @@ function punchit()
       "torsoinc": $("input#torsoinc").prop("checked")
     };
     sets = [];
+    display = [];
     progress.fill(0);
     setup();
   }

@@ -30,7 +30,6 @@
           <ul>
             <li>Torso Inc does not work for jewels</li>
             <li>Jeweling is not fully solved, better sets may be possible</li>
-            <li>Sorting defence/resistance is done by the raw value, regardless of the defence display style</li>
           </ul>
           <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
         </div>
@@ -251,27 +250,27 @@
             <tr>
               <th class="sort">
                 <img src="img/def.png" title="Defence (Max)"/>
-                <i data-key="defmax" class="fa fa-sort"/>
+                <i id="def" data-key="defmax" class="fa fa-sort"/>
               </th>
               <th class="sort">
                 <img src="img/fire.png" title="Fire resistance"/>
-                <i data-key="res.Fire" class="fa fa-sort"/>
+                <i id="fire" data-key="res.Fire" class="fa fa-sort"/>
               </th>
               <th class="sort">
                 <img src="img/thunder.png" title="Thunder resistance"/>
-                <i data-key="res.Thunder" class="fa fa-sort"/>
+                <i id="thunder" data-key="res.Thunder" class="fa fa-sort"/>
               </th>
               <th class="sort">
                 <img src="img/water.png" title="Water resistance"/>
-                <i data-key="res.Water" class="fa fa-sort"/>
+                <i id="water" data-key="res.Water" class="fa fa-sort"/>
               </th>
               <th class="sort">
                 <img src="img/ice.png" title="Ice resistance"/>
-                <i data-key="res.Ice" class="fa fa-sort"/>
+                <i id="ice" data-key="res.Ice" class="fa fa-sort"/>
               </th>
               <th class="sort">
                 <img src="img/dragon.png" title="Dragon resistance"/>
-                <i data-key="res.Dragon" class="fa fa-sort"/>
+                <i id="dragon" data-key="res.Dragon" class="fa fa-sort"/>
               </th>
               <th>
                 <!--<img src="img/head.png" title="Head"/>-->
