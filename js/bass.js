@@ -492,6 +492,10 @@ function addSetToTable(set)
   for (const [jewel, amount] of Object.entries(set.jewels))
     row += amount + "x " + jewel + "</br>";
   row += "</td>" +
+  "<td>";
+  for (let i = 1; i <= 3; ++i)
+    row += set.slots[i] + "x " i + " slots<br/>";
+  row += "</td>" +
   "</tr>";
   $("table#sets > tbody:last-child").append(row);
 }

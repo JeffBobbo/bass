@@ -81,6 +81,7 @@ function search(sets)
   const g = combinations.next();
   if (g.done)
     return false;
+  //const [hname, cname, aname, wname, lname] = ["Butterfly Testa X", "Butterfly Petto X", "Ucamulbas Claw", "Naruga Tasset X", "Ucamulbas Hessian"];//g.value;
   const [hname, cname, aname, wname, lname] = g.value;
   const [head, chest, arm, waist, leg] = [heads[hname], chests[cname], arms[aname], waists[wname], legs[lname]];
   ++build.count;
@@ -116,12 +117,12 @@ function search(sets)
   for (const [jname, jstat] of Object.entries(need))
     need[jname] -= set.points[jname] ? set.points[jname] : 0;
 
-  var slots = {
-    "0": 0,
-    "1": 0,
-    "2": 0,
-    "3": 0
-  };
+  let slots = [
+    0,
+    0,
+    0,
+    0
+  ];
   ++slots[heads[hname].slots];
   ++slots[chests[cname].slots];
   ++slots[arms[aname].slots];
@@ -129,11 +130,12 @@ function search(sets)
   ++slots[legs[lname].slots];
   ++slots[build.slots];
 
-  for (var [name, stat] of Object.entries(need))
+  for (let [name, stat] of Object.entries(need))
   {
     while (stat > 0)
     {
-      var best = null;
+      let best = null;
+      let use; // what number of slots this is going on
       // look for gems
       for (const jname of build.jewels[name])
       {
@@ -144,6 +146,7 @@ function search(sets)
           if (slots[i] > 0)
           {
             canfit = true;
+            use = i;
             break;
           }
         }
@@ -154,7 +157,9 @@ function search(sets)
       if (best === null) // there is no gem to use, so break out
         break;
 
-      --slots[jewels[best].Slots];
+      --slots[use]; // take away one from what we used
+      if (use != jewels[best].Slots) // and if what we used is different to what we need
+        ++slots[use-jewels[best].Slots]; // add what is left back in
       need[name] -= jewels[best].Skills[name];
       stat -= jewels[best].Skills[name];
       set.jewels.push(best);
@@ -179,6 +184,8 @@ function search(sets)
 
   if (!build.allowbad && badSkills(set.points))
     return true;;
+
+  set.slots = slots;
 
   if (allSkills(need))
     sets.push(set);
