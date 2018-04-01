@@ -494,7 +494,7 @@ function addSetToTable(set)
   row += "</td>" +
   "<td>";
   for (let i = 1; i <= 3; ++i)
-    row += set.slots[i] + "x " i + " slots<br/>";
+    row += set.slots[i] + "x " + i + " slots<br/>";
   row += "</td>" +
   "</tr>";
   $("table#sets > tbody:last-child").append(row);
