@@ -27,7 +27,7 @@ div#sidebar>*
 
 div.notice
 {
-  border:1px solid grey;
+  border:1px solid gray;
   padding:2px;
   position:relative;
 }
@@ -43,7 +43,7 @@ div.notice>a
 
 .collapsable
 {
-  border:1px solid grey;
+  border:1px solid gray;
   padding:2px;
   position:relative;
 }
