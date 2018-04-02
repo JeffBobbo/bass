@@ -369,7 +369,7 @@ function updateSkillsOverview()
     const skill = skills[name];
     var tooltip = "Jewel: " + skill.Jewel + "\n" +
                   "Points: " + skill.Points;
-    $('div#skill-overview:last-child').append('<p class="tooltip" title="' + tooltip + '">'+name+'</p><hr/>');
+    $('div#skill-overview:last-child').append('<p title="' + tooltip + '">'+name+'</p><hr/>');
   };
 }
 
