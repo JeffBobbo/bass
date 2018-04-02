@@ -36,7 +36,8 @@
       </div>
 
       <div class="collapsable">
-        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Hunter</p>
+        <p>Hunter</p>
+        <i class="fa fa-chevron-down" onclick="$($(this).siblings('div')).toggleClass('hide'); $(this).toggleClass('fa-chevron-down'); $(this).toggleClass('fa-chevron-up');" style="float:right;"></i>
         <div>
           <label for="elder">Village</label>
           <select id="elder" disabled title="Not implemented">
@@ -72,7 +73,8 @@
         </div>
       </div>
       <div class="collapsable">
-        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Weapon</p>
+        <p>Weapon</p>
+        <i class="fa fa-chevron-down" onclick="$($(this).siblings('div')).toggleClass('hide'); $(this).toggleClass('fa-chevron-down'); $(this).toggleClass('fa-chevron-up');" style="float:right;"></i>
         <div>
           <label for="class">Class</label>
           <select id="class">
@@ -90,7 +92,8 @@
         </div>
       </div>
       <div class="collapsable">
-        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Skills</p>
+        <p>Skills</p>
+        <i class="fa fa-chevron-down" onclick="$($(this).siblings('div')).toggleClass('hide'); $(this).toggleClass('fa-chevron-down'); $(this).toggleClass('fa-chevron-up');" style="float:right;"></i>
         <div>
           <label for="filter">Category</label>
           <select id="filter">
@@ -124,13 +127,16 @@
         </div>
       </div>
       <div class="collapsable">
-        <p onclick="$($(this).siblings('div')).toggleClass('hide');">Options</p>
+        <p>Options</p>
+        <i class="fa fa-chevron-down" onclick="$($(this).siblings('div')).toggleClass('hide'); $(this).toggleClass('fa-chevron-down'); $(this).toggleClass('fa-chevron-up');" style="float:right;"></i>
         <div>
           <fieldset>
-            <legend>Defence display</legend>
+            <legend class="tooltip">Defence display
+              <div class="tooltiptext">Boop!</div>
+            </legend>
             <input type="radio" id="def-style-raw" name="def-style" value="raw" title="Raw display shows defence displayed in game, and the resistances displayed in game" checked/>
             <label for="def-style-raw">Raw</label><br/>
-            <input type="radio" id="def-style-eff" name="def-style" value="eff" title="Effective display shows the defence used in damage delt calculations, and can be readily compared for elemental attacks."/>
+            <input type="radio" id="def-style-eff" name="def-style" value="eff"/>
             <label for="def-style-eff">Effective</label>
           </fieldset>
         </div>
