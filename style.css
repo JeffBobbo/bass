@@ -13,7 +13,7 @@ div#sidebar
   position:fixed;
   left:0px;
   top:0px;
-  width:16rem;
+  width:15rem;
   height:100%;
 
   background-color:#222;
@@ -80,7 +80,12 @@ div#close
   width:1rem;
   left:15rem;
   top:0px;
-  color:black;
+  color:white;
+  background-color:#444;
+}
+div#close.closed
+{
+  left:0rem;
 }
 
 div#close>p
@@ -107,6 +112,11 @@ div#pane
   flex-flow:column;
 
   background-color:#333;
+}
+div#pane.closed
+{
+  left:1rem;
+  width:calc(100% - 1rem);
 }
 
 div#pane>*
