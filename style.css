@@ -13,7 +13,7 @@ div#sidebar
   position:fixed;
   left:0px;
   top:0px;
-  width:16rem;
+  width:15rem;
   height:100%;
 
   background-color:#222;
@@ -27,7 +27,7 @@ div#sidebar>*
 
 div.notice
 {
-  border:1px solid grey;
+  border:1px solid gray;
   padding:2px;
   position:relative;
 }
@@ -43,13 +43,23 @@ div.notice>a
 
 .collapsable
 {
-  border:1px solid grey;
+  border:1px solid gray;
   padding:2px;
+  position:relative;
 }
 
 .collapsable>p
 {
   font-size:1.5rem;
+  user-select:none;
+  margin:4px 0px;
+}
+.collapsable>i
+{
+  float:right;
+  position:absolute;
+  top:6px;
+  right:8px;
   cursor:pointer;
   user-select:none;
 }
@@ -70,7 +80,12 @@ div#close
   width:1rem;
   left:15rem;
   top:0px;
-  color:black;
+  color:white;
+  background-color:#444;
+}
+div#close.closed
+{
+  left:0rem;
 }
 
 div#close>p
@@ -97,6 +112,11 @@ div#pane
   flex-flow:column;
 
   background-color:#333;
+}
+div#pane.closed
+{
+  left:1rem;
+  width:calc(100% - 1rem);
 }
 
 div#pane>*
@@ -130,6 +150,35 @@ table.sortable tr:nth-child(even)
 td.numeric
 {
   text-align:right;
+}
+
+/*
+ * tooltip
+ */
+.tooltip
+{
+  position:relative;
+  display:block;
+  border-bottom:1px dotted black;
+}
+
+.tooltip .tooltiptext
+{
+  visibility:hidden;
+  width:120px;
+  background-color:black;
+  color:#fff;
+  text-align:center;
+  padding:5px 0px;
+  border-radius:6px;
+
+  position:absolute;
+  z-index:1;
+}
+
+.tooltip:hover .tooltiptext
+{
+  visibility:visible;
 }
 
 /*
