@@ -602,6 +602,28 @@ function switchGame()
   }
 
   game = games[g];
+
+  if (Object.keys(game.skills).length === 0)
+  {
+    // retrieve the data
+    const dir = 'data/' + g + '/';
+    $.getJSON(dir + 'skills.json', function(payload) {
+      let foo = payload;
+      game.registerSkills(foo);
+
+      updateSkillsOverview();
+      updateSkillSelectAll();
+    });
+    $.getJSON(dir + 'armour.json', function(payload) {
+      let foo = payload;
+      game.registerArmour(foo);
+    });
+    $.getJSON(dir + 'jewels.json', function(payload) {
+      let foo = payload;
+      game.registerJewels(foo);
+    });
+  }
+
   game.tableHead();
   displaySets();
   updateSkillSelectAll();
