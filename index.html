@@ -14,6 +14,8 @@
     <!-- Javascript -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/workerpool.js"></script>
     <script type="text/javascript" src="js/tools.js"></script>
     <script type="text/javascript" src="js/bass.js"></script>
   </head>
@@ -126,6 +128,16 @@
       <div class="collapsable">
         <p onclick="$($(this).siblings('div')).toggleClass('hide');">Options</p>
         <div>
+          <fieldset>
+            <legend>Game</legend>
+            <select id="game">
+              <option value="mhf">MHF</option>
+              <option value="mhfu">MHFU (incomplete)</option>
+              <option value="mhp3rd" disabled>MHP3rd (give me data)</option>
+            </select>
+            <br/>
+            <button id="switch">Switch game</button>
+          </fieldset>
           <fieldset>
             <legend>Defence display</legend>
             <input type="radio" id="def-style-raw" name="def-style" value="raw" title="Raw display shows defence displayed in game, and the resistances displayed in game" checked/>

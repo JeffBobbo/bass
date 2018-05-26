@@ -1,0 +1,1262 @@
+{
+    "Abnormal Sts Atk Up": {
+        "Categories": [
+            "Offensive"
+        ],
+        "Description": "",
+        "Jewel": "Spc Attack",
+        "Points": 10
+    },
+    "Alchemy": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Alchemy",
+        "Points": 10
+    },
+    "All Res +10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": 25
+    },
+    "All Res +3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": 10
+    },
+    "All Res +5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": 15
+    },
+    "All Res -10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": -25
+    },
+    "All Res -3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": -10
+    },
+    "All Res -5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "All Res Up",
+        "Points": -15
+    },
+    "Anti-Cold": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Cold Res",
+        "Points": 15
+    },
+    "Anti-Heat": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Heat Res",
+        "Points": 15
+    },
+    "Anti-Theft": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "StealNoEff",
+        "Points": 10
+    },
+    "Attack Up (Large)": {
+        "Categories": [
+            "Offensive"
+        ],
+        "Description": "",
+        "Jewel": "Attack",
+        "Points": 25
+    },
+    "Attack Up (Medium)": {
+        "Categories": [
+            "Offensive"
+        ],
+        "Description": "",
+        "Jewel": "Attack",
+        "Points": 15
+    },
+    "Attack Up (Small)": {
+        "Categories": [
+            "Offensive"
+        ],
+        "Description": "",
+        "Jewel": "Attack",
+        "Points": 10
+    },
+    "Auto-guard": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Auto-guard",
+        "Points": 10
+    },
+    "Autotracker": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "PsychicVis",
+        "Points": 15
+    },
+    "Backpacking Expert": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Backpackng",
+        "Points": 10
+    },
+    "Bad Luck": {
+        "Categories": [
+            "Farming"
+        ],
+        "Description": "",
+        "Jewel": "Fate",
+        "Points": -10
+    },
+    "Blunt": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Sharpness",
+        "Points": -10
+    },
+    "Bomber": {
+        "Categories": [
+            "Offensive"
+        ],
+        "Description": "",
+        "Jewel": "BombStrUp",
+        "Points": 10
+    },
+    "Bullet Limit": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Shot Mix",
+        "Points": 10
+    },
+    "Calamity": {
+        "Categories": [
+            "Farming"
+        ],
+        "Description": "",
+        "Jewel": "Fate",
+        "Points": -25
+    },
+    "Clust S All LV Ad": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "ClustS Add",
+        "Points": 25
+    },
+    "Clust S LV1 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "ClustS Add",
+        "Points": 10
+    },
+    "Clust S LV1+2 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "ClustS Add",
+        "Points": 15
+    },
+    "Cold Inc [x1.5]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Cold Res",
+        "Points": -10
+    },
+    "Cold Inc [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Cold Res",
+        "Points": -25
+    },
+    "Cold Reduced By Half": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Cold Res",
+        "Points": 10
+    },
+    "Combine Success +10%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": 15
+    },
+    "Combine Success +20%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": 25
+    },
+    "Combine Success +5%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": 10
+    },
+    "Combine Success -10%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": -15
+    },
+    "Combine Success -15%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": -25
+    },
+    "Combine Success -5%": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "MixSucRate",
+        "Points": -10
+    },
+    "Crag S All LV Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "BmbShotAdd",
+        "Points": 25
+    },
+    "Crag S LV1 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "BmbShotAdd",
+        "Points": 10
+    },
+    "Crag S LV1+2 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "BmbShotAdd",
+        "Points": 15
+    },
+    "Damage Rec Speed +1": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Rec Speed",
+        "Points": 10
+    },
+    "Damage Rec Speed +2": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Rec Speed",
+        "Points": 25
+    },
+    "Damage Rec Speed -1": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Rec Speed",
+        "Points": -10
+    },
+    "Damage Rec Speed -2": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Rec Speed",
+        "Points": -25
+    },
+    "Defense +10": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": 10
+    },
+    "Defense +15": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": 15
+    },
+    "Defense +20": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": 25
+    },
+    "Defense -10": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": -10
+    },
+    "Defense -15": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": -15
+    },
+    "Defense -20": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Defense",
+        "Points": -25
+    },
+    "Demonic Protection": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Protection",
+        "Points": -10
+    },
+    "Detect": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "PsychicVis",
+        "Points": 10
+    },
+    "Devil's Whim": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Whim",
+        "Points": -15
+    },
+    "Divine Protection": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Protection",
+        "Points": 10
+    },
+    "Divine Whim": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Whim",
+        "Points": 15
+    },
+    "Dragon Res +10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": 25
+    },
+    "Dragon Res +3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": 10
+    },
+    "Dragon Res +5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": 15
+    },
+    "Dragon Res -10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": -25
+    },
+    "Dragon Res -3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": -10
+    },
+    "Dragon Res -5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Dragon Res",
+        "Points": -15
+    },
+    "Earplug": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "HearProtct",
+        "Points": 10
+    },
+    "Eating +1": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Gluttony",
+        "Points": 10
+    },
+    "Eating +2": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Gluttony",
+        "Points": 15
+    },
+    "ESP": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Fencing",
+        "Points": 10
+    },
+    "Farsight": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Map",
+        "Points": 10
+    },
+    "Fire Res +10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": 25
+    },
+    "Fire Res +3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": 10
+    },
+    "Fire Res +5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": 15
+    },
+    "Fire Res -10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": -25
+    },
+    "Fire Res -3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": -10
+    },
+    "Fire Res -5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Fire Res",
+        "Points": -15
+    },
+    "Fishing Expert": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Fishing",
+        "Points": 10
+    },
+    "Flute Expert": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Flute",
+        "Points": 10
+    },
+    "Gathering +1": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Gathering",
+        "Points": 10
+    },
+    "Gathering +2": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Gathering",
+        "Points": 15
+    },
+    "Gathering -1": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Gathering",
+        "Points": -10
+    },
+    "Gathering -2": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Gathering",
+        "Points": -15
+    },
+    "Good Luck": {
+        "Categories": [
+            "Farming"
+        ],
+        "Description": "",
+        "Jewel": "Fate",
+        "Points": 10
+    },
+    "Guard +1": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Guard",
+        "Points": 10
+    },
+    "Guard +2": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Guard",
+        "Points": 15
+    },
+    "Guard -1": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Guard",
+        "Points": -10
+    },
+    "Guard -2": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Guard",
+        "Points": -15
+    },
+    "Guard Inc": {
+        "Categories": [
+            "Defensive",
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Guard Up",
+        "Points": 10
+    },
+    "Health +10": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": 10
+    },
+    "Health +20": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": 15
+    },
+    "Health +30": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": 25
+    },
+    "Health -10": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": -10
+    },
+    "Health -15": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": -15
+    },
+    "Health -30": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Health",
+        "Points": -25
+    },
+    "HealthRecItemsImprvd": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Recovery",
+        "Points": 10
+    },
+    "Heat Inc [x1.5]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Heat Res",
+        "Points": -10
+    },
+    "Heat Inc [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Heat Res",
+        "Points": -25
+    },
+    "Heat Reduced By Half": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Heat Res",
+        "Points": 10
+    },
+    "Herbal Med Wide": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Wide Rec",
+        "Points": 10
+    },
+    "High Grade Earplug": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "HearProtct",
+        "Points": 15
+    },
+    "High Speed Gathering": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "HiSpdGathr",
+        "Points": 10
+    },
+    "High Wind Res": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "WindPress",
+        "Points": 15
+    },
+    "Hunger [x1.5]": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Hunger",
+        "Points": -10
+    },
+    "Hunger [x2]": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Hunger",
+        "Points": -25
+    },
+    "Hunger Halved": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Hunger",
+        "Points": 10
+    },
+    "Hunger Negated": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Hunger",
+        "Points": 15
+    },
+    "Knock Out Negated": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Faint",
+        "Points": 15
+    },
+    "Knockout Prob Halved": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Faint",
+        "Points": 10
+    },
+    "KO Duration [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Faint",
+        "Points": -10
+    },
+    "Low Wind Res": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "WindPress",
+        "Points": 10
+    },
+    "Luck Booster": {
+        "Categories": [
+            "Farming"
+        ],
+        "Description": "",
+        "Jewel": "Fate",
+        "Points": 15
+    },
+    "Map Unavailable": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Map",
+        "Points": -10
+    },
+    "Normal S All LV Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "NormalSAdd",
+        "Points": 15
+    },
+    "Normal S Attack Up": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "NormalS Up",
+        "Points": 10
+    },
+    "Normal S LV1 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "NormalSAdd",
+        "Points": 10
+    },
+    "Pellet S All LV Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PelletSAdd",
+        "Points": 25
+    },
+    "Pellet S Attack Up": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PelletS Up",
+        "Points": 10
+    },
+    "Pellet S LV1 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PelletSAdd",
+        "Points": 10
+    },
+    "Pellet S LV1+2 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PelletSAdd",
+        "Points": 15
+    },
+    "Pierce S All LV Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PierceSAdd",
+        "Points": 25
+    },
+    "Pierce S Attack Up": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PierceS Up",
+        "Points": 10
+    },
+    "Pierce S LV1 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PierceSAdd",
+        "Points": 10
+    },
+    "Pierce S LV1+2 Add": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "PierceSAdd",
+        "Points": 15
+    },
+    "Poison Dur [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Poison",
+        "Points": -10
+    },
+    "Poison Dur [x3]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Poison",
+        "Points": -15
+    },
+    "Poison Dur [x4]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Poison",
+        "Points": -25
+    },
+    "Poison Dur Halved": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Poison",
+        "Points": 10
+    },
+    "Poison Negated": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Poison",
+        "Points": 15
+    },
+    "Provocation": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Worry",
+        "Points": -10
+    },
+    "Rapid Fire": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Rapid Fire",
+        "Points": 10
+    },
+    "Recoil Reduction +1": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Recoil",
+        "Points": 10
+    },
+    "Recoil Reduction +2": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Recoil",
+        "Points": 15
+    },
+    "Reloading Speed +1": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": 10
+    },
+    "Reloading Speed +2": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": 15
+    },
+    "Reloading Speed +3": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": 25
+    },
+    "Reloading Speed -1": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": -10
+    },
+    "Reloading Speed -2": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": -15
+    },
+    "Reloading Speed -3": {
+        "Categories": [
+            "Bowgun"
+        ],
+        "Description": "",
+        "Jewel": "Load",
+        "Points": -25
+    },
+    "Sharp Sword": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Sharpness",
+        "Points": 10
+    },
+    "Sharpening Skl Half": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "SwdShrpner",
+        "Points": -10
+    },
+    "Sharpening Skl Inc": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "SwdShrpner",
+        "Points": 10
+    },
+    "Sharpness +1": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Artisan",
+        "Points": 10
+    },
+    "Sharpness -1": {
+        "Categories": [
+            "Blademaster"
+        ],
+        "Description": "",
+        "Jewel": "Artisan",
+        "Points": -10
+    },
+    "Sleep Dur Halved": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Sleep",
+        "Points": 10
+    },
+    "Sleep Duration [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Sleep",
+        "Points": -10
+    },
+    "Sleep Negated": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Sleep",
+        "Points": 15
+    },
+    "Spectre's Whim": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Whim",
+        "Points": -10
+    },
+    "Speed Eater": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Gluttony",
+        "Points": 25
+    },
+    "Spirit's Whim": {
+        "Categories": [
+            "Treasure Hunting"
+        ],
+        "Description": "",
+        "Jewel": "Whim",
+        "Points": 10
+    },
+    "Stealth": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Worry",
+        "Points": 10
+    },
+    "Str Rec Item Weak": {
+        "Categories": [
+            "Defensive"
+        ],
+        "Description": "",
+        "Jewel": "Recovery",
+        "Points": -10
+    },
+    "Stun Duration [x2]": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Paralysis",
+        "Points": -10
+    },
+    "Stun Duration Halved": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Paralysis",
+        "Points": 10
+    },
+    "Stun Negated": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Paralysis",
+        "Points": 15
+    },
+    "Throwing Skill Up": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Throw",
+        "Points": 10
+    },
+    "Thunder Res +10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": 25
+    },
+    "Thunder Res +3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": 10
+    },
+    "Thunder Res +5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": 15
+    },
+    "Thunder Res -10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": -25
+    },
+    "Thunder Res -3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": -10
+    },
+    "Thunder Res -5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "ThunderRes",
+        "Points": -15
+    },
+    "Water Res +10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": 25
+    },
+    "Water Res +3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": 10
+    },
+    "Water Res +5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": 15
+    },
+    "Water Res -10": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": -25
+    },
+    "Water Res -3": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": -10
+    },
+    "Water Res -5": {
+        "Categories": [
+            "Resistance"
+        ],
+        "Description": "",
+        "Jewel": "Water Res",
+        "Points": -15
+    },
+    "Wide Area Antidote": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Wide Cntr",
+        "Points": 10
+    },
+    "Wide Area Recovery": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "Wide Rec",
+        "Points": 15
+    },
+    "WideAreaPwrArmEffect": {
+        "Categories": [],
+        "Description": "",
+        "Jewel": "WideEffect",
+        "Points": 10
+    }
+}

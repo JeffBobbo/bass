@@ -1,162 +1,52 @@
 "use strict";
 
-// all skills, armour pieces and hewels
-let skills = {};
-let armour = {};
-let jewels = {};
+let games = {};
+let game = null;
 
-// all armour pieces, filtered appropriately
-let heads = {};
-let chests = {};
-let arms = {};
-let waists = {};
-let legs = {};
-
-// the currently selected skills
-let selectedSkills = new Array(5).fill(null);
-
-let build = null;
-
-// sets thave been been found
-let sets = [];
-// sets that are on display
-let display = [];
-
-let workers = null;
-let progress = [];
-
-// how to go about sorting
-let sorting = [];
-
-class WorkerPool
-{
-  constructor(size, cb)
-  {
-    this.size = size;
-    this.workers = [];
-    for (let i = 0; i < size; ++i)
-    {
-      let worker = new Worker('./js/thread.js');
-      worker.onmessage = cb;
-      worker.postMessage({"cmd": "id", "id": i});
-      this.workers.push(worker);
-      progress.push(0);
-    }
-  }
-
-  get count() { return this.size; }
-
-  postAll(msg)
-  {
-    for (let i = 0; i < this.size; ++i)
-      this.workers[i].postMessage(msg);
-  }
-
-  post(index, msg)
-  {
-    this.workers[index].postMessage(msg);
-  }
-}
+let run = false;
 
 $(document).ready(function() {
-  workers = new WorkerPool(2, (msg) => {
-    const data = msg.data;
-    switch (data.cmd)
+  let parse = () => {
+    const data = location.search.substr(1); // ignore the ?
+    let get = {};
+    for (const pair of data.split('&'))
     {
-      case "prog":
-        progress[data.thread] = data.count;
-        let sum = 0;
-        for (const p of progress)
-          sum += p;
-        $("progress").val(Math.floor((sum / build.combis) * 100));
-        $("progress").prop("title", commify(sum) + " of " + commify(build.combis) + " sets searched");
-        break;
-      case "stopped":
-        $("button#punchit").text("Search");
-        $("button#punchit").prop("disabled", false);
-        run = false;
-        break;
-      case "sets":
-        for (let set of data.sets)
-        {
-          // compute set stats
-          set.defmin = 0;
-          set.defmax = 0;
-          set.res = {"Fire": 0, "Water": 0, "Thunder": 0, "Ice": 0, "Dragon": 0};
-          for (const piece of Object.values(set.gear))
-          {
-            const item = armour[piece.name];
-
-            // defense
-            set.defmin += item.defense.min;
-            set.defmax += item.defense.max;
-
-            // resistances
-            for (const [res, amt] of Object.entries(item.resistance))
-              set.res[res] += amt;
-          }
-          // calculate effective scores
-          set.effdef = Math.floor((1 / (160 / (set.defmax + 160))) * set.defmax);
-          set.eff = {};
-          for (const res of Object.keys(set.res))
-            set.eff[res] = Math.floor((1 / ((160 * (1 - set.res[res] / 100)) / (set.defmax + 160))) * set.defmax);
-
-          let jwls = {};
-          for (const jewel of set.jewels)
-          {
-            if (jwls[jewel] === undefined)
-              jwls[jewel] = 0;
-            ++jwls[jewel];
-          }
-          set.jewels = jwls;
-          if (display.length < 100)
-          {
-            display.push(set);
-            addSetToTable(set);
-          }
-          sets.push(set);
-        }
-        $("span#count").text(commify(sets.length) + " sets found");
-        break;
-      default:
-        throw "Unknown command: " + data.cmd;
+      const p = pair.split('=');
+      get[p[0]] = decodeURI(p[1]);
     }
-  });
+    return get;
+  };
+  const get = parse();
 
-  const dir = 'data_pp';
-  $.getJSON(dir + "/skills.json", function(payload) {
-    skills = payload;
-    workers.postAll({"cmd": "addSkills", "payload": skills});
+  let gname = get['game'] || 'mhfu';
+  if (gname != 'mhf' && gname != 'mhfu')
+    throw "Invalid game";
+
+  // setup the games
+  {
+    games['mhf'] = new Game('mhfu', ['Fire', 'Water', 'Thunder', 'Dragon'], false);
+    games['mhfu'] = new Game('mhfu', ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'], true);
+  }
+  game = games[gname];
+  $('select#game').val(gname);
+  game.tableHead();
+
+  // retrieve the data
+  const dir = 'data/' + gname + '/';
+  $.getJSON(dir + 'skills.json', function(payload) {
+    let foo = payload;
+    game.registerSkills(foo);
+
     updateSkillsOverview();
-
-    // add skills to selects
     updateSkillSelectAll();
   });
-  $.getJSON(dir + "/armour.json", function(payload) {
-    armour = payload;
-    for (const [name, stats] of Object.entries(armour))
-    {
-      let to = null;
-      if (stats.part === "Head")
-        to = heads;
-      else if (stats.part === "Chest")
-        to = chests;
-      else if (stats.part === "Arms")
-        to = arms;
-      else if (stats.part === "Waist")
-        to = waists;
-      else if (stats.part === "Legs")
-        to = legs;
-      else
-        throw "Unknown armour type: " + stats.part;
-
-      to[name] = stats;
-    }
-    workers.postAll({"cmd": "addArmour", "payload": [heads, chests, arms, waists, legs]});
+  $.getJSON(dir + 'armour.json', function(payload) {
+    let foo = payload;
+    game.registerArmour(foo);
   });
-  $.getJSON(dir + "/jewels.json", function(payload) {
-    jewels = payload;
-    workers.postAll({"cmd": "addJewels", "payload": jewels});
+  $.getJSON(dir + 'jewels.json', function(payload) {
+    let foo = payload;
+    game.registerJewels(foo);
   });
 
   $("select#filter").change(updateSkillsOverview);
@@ -189,12 +79,12 @@ $(document).ready(function() {
     const norder = order === undefined ? "desc" : (order === "asc" ? undefined : "asc");
 
     // if we were already sorting by it, remove it
-    for (let i = 0, l = sorting.length; i < l; ++i)
+    for (let i = 0, l = game.sorting.length; i < l; ++i)
     {
-      const by = sorting[i];
+      const by = game.sorting[i];
       if (by.key === key)
       {
-        sorting.splice(i, 1);
+        game.sorting.splice(i, 1);
         --i;
         --l;
         continue;
@@ -204,7 +94,7 @@ $(document).ready(function() {
     // and put it at the front of the queue
     if (norder !== undefined)
     {
-      sorting.push({"key": key, "order": norder});
+      game.sorting.push({"key": key, "order": norder});
       col.addClass(norder === "asc" ? "fa-sort-up" : "fa-sort-down");
       col.data('order', norder);
     }
@@ -214,7 +104,7 @@ $(document).ready(function() {
       col.removeData('order');
     }
 
-    if (sorting.length > 0)
+    if (game.sorting.length > 0)
     {
       sortSets();
       displaySets();
@@ -227,29 +117,25 @@ $(document).ready(function() {
     if (effStyle)
     {
       $("th > i#def").data('key', 'effdef');
-      $("th > i#fire").data('key', 'eff.Fire');
-      $("th > i#thunder").data('key', 'eff.Thunder');
-      $("th > i#water").data('key', 'eff.Water');
-      $("th > i#ice").data('key', 'eff.Ice');
-      $("th > i#dragon").data('key', 'eff.Dragon');
+      for (const r of game.resistances())
+        $('th > i#' + r.toLowerCase()).data('key', 'eff.' + r);
     }
     else
     {
-      $("th > i#def").data('key', 'defmax');
-      $("th > i#fire").data('key', 'res.Fire');
-      $("th > i#thunder").data('key', 'res.Thunder');
-      $("th > i#water").data('key', 'res.Water');
-      $("th > i#ice").data('key', 'res.Ice');
-      $("th > i#dragon").data('key', 'res.Dragon');
+      $("th > i#def").data('key', 'def');
+      for (const r of game.resistances())
+        $('th > i#' + r.toLowerCase()).data('key', 'res.' + r);
     }
     displaySets();
   });
+
+  $('button#switch').click(switchGame);
 });
 
 function sortSets()
 {
   let sorter = (a, b) => {
-    for (const by of sorting)
+    for (const by of game.sorting)
     {
       const keys = by.key.split('.');
       let x = a, y = b;
@@ -266,14 +152,14 @@ function sortSets()
   };
 
   const NUM_DISPLAY = 100;
-  display = sets.slice(0, NUM_DISPLAY);
-  display.sort(sorter); // sort the initial cut
+  game.display = game.sets.slice(0, NUM_DISPLAY);
+  game.display.sort(sorter); // sort the initial cut
 
   // now do the rest
-  for (let i = NUM_DISPLAY, l = sets.length; i < l; ++i)
+  for (let i = NUM_DISPLAY, l = game.sets.length; i < l; ++i)
   {
-    const set = sets[i];
-    if (sorter(set, display[NUM_DISPLAY-1]) >= 0) // if it's worse, skip
+    const set = game.sets[i];
+    if (sorter(set, game.display[NUM_DISPLAY-1]) >= 0) // if it's worse, skip
       continue;
 
     // find where it should be in our display -- binary search
@@ -282,7 +168,7 @@ function sortSets()
     while (min <= max)
     {
       mid = Math.floor((min + max) / 2);
-      const c = sorter(set, display[mid]);
+      const c = sorter(set, game.display[mid]);
       if (c === 0)
         break;
       else
@@ -290,8 +176,8 @@ function sortSets()
     }
 
     // insert at the right place, pop off the end
-    display.splice(mid, 0, set);
-    display.pop();
+    game.display.splice(mid, 0, set);
+    game.display.pop();
   }
 }
 
@@ -300,12 +186,12 @@ function selectSkill(select)
   const skillname = select.target.value;
   if (skillname === "")
   {
-    selectedSkills[select.target.id.substr(-1)] = null;
+    game.selected[select.target.id.substr(-1)] = null;
   }
   else
   {
-    const skill = skills[skillname];
-    selectedSkills[select.target.id.substr(-1)] = {"name": select.target.value, "stats": skill};
+    const skill = game.skills[skillname];
+    game.selected[select.target.id.substr(-1)] = {"name": select.target.value, "stats": skill};
   }
 }
 
@@ -316,10 +202,10 @@ function sortSkills(skillList)
     // sort by jewel then points
     case "jewel":
       skillList.sort((a, b) => {
-        const c = skills[a].Jewel.localeCompare(skills[b].Jewel);
+        const c = game.skills[a].Jewel.localeCompare(game.skills[b].Jewel);
         if (c)
           return c;
-        return skills[a].Points - skills[b].Points;
+        return game.skills[a].Points - game.skills[b].Points;
       });
       break;
     // sort by skill name
@@ -332,32 +218,32 @@ function sortSkills(skillList)
 
 function updateSkillsOverview()
 {
-  let filtered = Object.keys(skills);
+  let filtered = Object.keys(game.skills);
 
   // filter out by the selection
   {
     const v = $("select#filter").val();
     if (v === "Other")
-      filtered = filter(skills, "Categories", "empty", null, filtered);
+      filtered = filter(game.skills, "Categories", "empty", null, filtered);
     else if (v !== "all")
-      filtered = filter(skills, "Categories", "includes", v, filtered)
+      filtered = filter(game.skills, "Categories", "includes", v, filtered)
   }
 
   // filter out bad skills
   if ($("input#bad-filter").prop("checked"))
-    filtered = filter(skills, "Points", ">", 0, filtered);
+    filtered = filter(game.skills, "Points", ">", 0, filtered);
 
   // filter out class
   if ($("input#class-filter").prop('checked'))
   {
     if ($("select#class").val() === "Blademaster")
     {
-      filtered = filter(skills, "Categories", "excludes", "Bowgun", filtered);
-      filtered = filter(skills, "Categories", "excludes", "Bow", filtered);
+      filtered = filter(game.skills, "Categories", "excludes", "Bowgun", filtered);
+      filtered = filter(game.skills, "Categories", "excludes", "Bow", filtered);
     }
     else
     {
-      filtered = filter(skills, "Categories", "excludes", "Blademaster", filtered)
+      filtered = filter(game.skills, "Categories", "excludes", "Blademaster", filtered)
     }
   }
 
@@ -366,7 +252,7 @@ function updateSkillsOverview()
   $('div#skill-overview').empty();
   for (const name of filtered)
   {
-    const skill = skills[name];
+    const skill = game.skills[name];
     var tooltip = "Jewel: " + skill.Jewel + "\n" +
                   "Points: " + skill.Points;
     $('div#skill-overview:last-child').append('<p class="tooltip" title="' + tooltip + '">'+name+'</p><hr/>');
@@ -385,37 +271,37 @@ function updateSkillSelect(id)
 {
   let select = $('select#skill-select-' + id);
 
-  let filtered = Object.keys(skills);
+  let filtered = Object.keys(game.skills);
   const v = $('select#skill-filter-' + id).val();
   if (v === "Other")
   {
-    filtered = filter(skills, "Categories", "empty", null, filtered);
+    filtered = filter(game.skills, "Categories", "empty", null, filtered);
   }
   else if (v === "Class")
   {
     const weapon = $("select#class").val();
     if (weapon === "Gunner")
-      filtered = filter(skills, "Categories", "is", ["Bowgun", "Bow"], filtered);
+      filtered = filter(game.skills, "Categories", "is", ["Bowgun", "Bow", "Gunner"], filtered);
     else
-      filtered = filter(skills, "Categories", "includes", "Blademaster", filtered);
+      filtered = filter(game.skills, "Categories", "includes", "Blademaster", filtered);
   }
   else if (v !== "all")
   {
-    filtered = filter(skills, "Categories", "includes", v, filtered)
+    filtered = filter(game.skills, "Categories", "includes", v, filtered)
   }
 
   if ($("input#bad-filter").prop("checked"))
-    filtered = filter(skills, "Points", ">", 0, filtered);
+    filtered = filter(game.skills, "Points", ">", 0, filtered);
 
   // filter selected skills
-  for (let i = 0, l = selectedSkills.length; i < l; ++i)
+  for (let i = 0, l = game.selected.length; i < l; ++i)
   {
     if (i == id)
       continue;
-    const skill = selectedSkills[i];
+    const skill = game.selected[i];
     if (skill === null)
       continue;
-    filtered = filter(skills, "Jewel", "!=", skill.stats.Jewel, filtered);
+    filtered = filter(game.skills, "Jewel", "!=", skill.stats.Jewel, filtered);
   }
 
   sortSkills(filtered);
@@ -431,10 +317,11 @@ function updateSkillSelect(id)
 function armourStatString(piece)
 {
   let stat = "Part: " + piece.part + "\n" +
+  "Class: " + piece.type + "\n" +
   "Rarity: " + piece.rarity + "\n" +
-  "Defense (min, max): " + piece.defense.min + ", " + piece.defense.max + "\n" +
+  "Defense: " + piece.defense + "\n" +
   "Resistances:\n";
-  for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
+  for (const res of game.resistances())
     stat += "  " + piece.resistance[res] + " " + res + "\n";
   stat += "Skills:\n";
   for (const [name, points] of Object.entries(piece.skills))
@@ -450,7 +337,7 @@ function armourStatString(piece)
 function displaySets()
 {
   let table = $("table#sets>tbody").empty();
-  for (const set of display)
+  for (const set of game.display)
     addSetToTable(set);
 }
 
@@ -459,11 +346,11 @@ function addSetToTable(set)
   const effStyle = $("input[type=radio][name=def-style]:checked").val() === "eff";
   let row = "<tr>";
   if (effStyle)
-    row += '<td title="Defense: ' + commify(set.defmax) + '">' + commify(set.effdef) + '</td>';
+    row += '<td title="Defense: ' + commify(set.def) + '">' + commify(set.effdef) + '</td>';
   else
-    row += '<td title="Effective defense: ' + commify(set.effdef) + '">' + commify(set.defmax) + '</td>';
+    row += '<td title="Effective defense: ' + commify(set.effdef) + '">' + commify(set.def) + '</td>';
 
-  for (const res of ['Fire', 'Water', 'Thunder', 'Ice', 'Dragon'])
+  for (const res of game.resistances())
   {
     if (effStyle)
       row += '<td title="Resistance: ' + set.res[res] + '"';
@@ -483,20 +370,23 @@ function addSetToTable(set)
       row += set.res[res] + '</td>';
   }
   row +=
-    "<td title='" + armourStatString(armour[set.gear.head.name]) + "''>" + set.gear.head.name + "</td>" +
-    "<td title='" + armourStatString(armour[set.gear.chest.name]) + "''>" + set.gear.chest.name + "</td>" +
-    "<td title='" + armourStatString(armour[set.gear.arms.name]) + "''>" + set.gear.arms.name + "</td>" +
-    "<td title='" + armourStatString(armour[set.gear.waist.name]) + "''>" + set.gear.waist.name + "</td>" +
-    "<td title='" + armourStatString(armour[set.gear.legs.name]) + "''>" + set.gear.legs.name + "</td>" +
+    "<td title='" + armourStatString(game.armour[set.gear.head.name]) + "''>" + set.gear.head.name + "</td>" +
+    "<td title='" + armourStatString(game.armour[set.gear.chest.name]) + "''>" + set.gear.chest.name + "</td>" +
+    "<td title='" + armourStatString(game.armour[set.gear.arms.name]) + "''>" + set.gear.arms.name + "</td>" +
+    "<td title='" + armourStatString(game.armour[set.gear.waist.name]) + "''>" + set.gear.waist.name + "</td>" +
+    "<td title='" + armourStatString(game.armour[set.gear.legs.name]) + "''>" + set.gear.legs.name + "</td>" +
     "<td>";
-  for (const [jewel, amount] of Object.entries(set.jewels))
-    row += amount + "x " + jewel + "</br>";
-  row += "</td>" +
-  "<td>";
-  for (let i = 1; i <= 3; ++i)
-    row += set.slots[i] + "x " + i + " slots<br/>";
-  row += "</td>" +
-  "</tr>";
+  if (game.usesJewels())
+  {
+    for (const [jewel, amount] of Object.entries(set.jewels))
+      row += amount + "x " + jewel + "</br>";
+    row += "</td>" +
+    "<td>";
+    for (let i = 1; i <= 3; ++i)
+      row += set.slots[i] + "x " + i + " slots<br/>";
+    row += "</td>";
+  }
+  row +="</tr>";
   $("table#sets > tbody:last-child").append(row);
 }
 
@@ -505,8 +395,7 @@ function clearSetsTable()
   $("table#sets tbody tr").remove();
 }
 
-let run = false;
-function setup()
+function setup(build)
 {
   if (build.skills.length == 0)
   {
@@ -524,15 +413,15 @@ function setup()
         build[part] = filter(source, "type", "in", ["Both", "Blademaster"], build[part]);
         break;
       case "Gunner":
-        build[part] = filter(source, "type", "in", ["Both", "Bow", "Bowgun"], build[part]);
+        build[part] = filter(source, "type", "in", ["Both", "Gunner"], build[part]);
         break;
     }
   }
-  reduceType("heads", heads);
-  reduceType("chests", chests);
-  reduceType("arms", arms);
-  reduceType("waists", waists);
-  reduceType("legs", legs);
+  reduceType("heads", game.heads);
+  reduceType("chests", game.chests);
+  reduceType("arms", game.arms);
+  reduceType("waists", game.waists);
+  reduceType("legs", game.legs);
 
   // remove piercings?
   if (build.piercings === false)
@@ -581,11 +470,11 @@ function setup()
       }
     }
   }
-  reduceSkillsAndWeigh(build.heads, heads);
-  reduceSkillsAndWeigh(build.chests, chests);
-  reduceSkillsAndWeigh(build.arms, arms);
-  reduceSkillsAndWeigh(build.waists, waists);
-  reduceSkillsAndWeigh(build.legs, legs);
+  reduceSkillsAndWeigh(build.heads, game.heads);
+  reduceSkillsAndWeigh(build.chests, game.chests);
+  reduceSkillsAndWeigh(build.arms, game.arms);
+  reduceSkillsAndWeigh(build.waists, game.waists);
+  reduceSkillsAndWeigh(build.legs, game.legs);
 
   // sort by the weight assigned in reduce skills
   function desc(list, from)
@@ -594,11 +483,11 @@ function setup()
       return from[b].weight - from[a].weight;
     });
   }
-  desc(build.heads, heads);
-  desc(build.chests, chests);
-  desc(build.arms, arms);
-  desc(build.waists, waists);
-  desc(build.legs, legs);
+  desc(build.heads, game.heads);
+  desc(build.chests, game.chests);
+  desc(build.arms, game.arms);
+  desc(build.waists, game.waists);
+  desc(build.legs, game.legs);
 
   while (build.heads.length > 20)
     build.heads.splice(Math.ceil(build.heads.length * 0.9));
@@ -618,7 +507,7 @@ function setup()
     if (build.jewels[statname] === undefined)
       build.jewels[statname] = [];
 
-    for (const [jname, jstats] of Object.entries(jewels))
+    for (const [jname, jstats] of Object.entries(game.jewels))
     {
       const b = jstats.Skills[statname];
       if (b !== undefined && b > 0)
@@ -645,14 +534,14 @@ function setup()
   build.start = (new Date()).getTime();
 
   {
-    let offset = 0, len = Math.floor(build.legs.length / workers.count), end = len;
-    for (let i = 0; i < workers.count-1; ++i)
+    let offset = 0, len = Math.floor(build.legs.length / game.workers.count), end = len;
+    for (let i = 0; i < game.workers.count-1; ++i)
     {
-      workers.post(i, {"cmd": "start", "build": build, "offset": offset, "end": end});
+      game.workers.post(i, {"cmd": "start", "build": build, "offset": offset, "end": end});
       offset += len;
       end += len;
     }
-    workers.post(workers.count-1, {"cmd": "start", "build": build, "offset": offset, "end": build.legs.length})
+    game.workers.post(game.workers.count-1, {"cmd": "start", "build": build, "offset": offset, "end": build.legs.length})
   }
 
 
@@ -668,7 +557,7 @@ function punchit()
 {
   if (run)
   {
-    workers.postAll({"cmd": "stop"});
+    game.workers.postAll({"cmd": "stop"});
     $("button#punchit").text("Stopping");
     $("button#punchit").prop("disabled", true);
     run = false;
@@ -676,13 +565,13 @@ function punchit()
   else
   {
     let chosen = [];
-    for (const skill of selectedSkills)
+    for (const skill of game.selected)
     {
       if (skill === null)
         continue;
       chosen.push(skill);
     }
-    build = {
+    game.build = {
       "skills": chosen,
       "elder": $("select#elder").val(),
       "hr": $("select#hr").val(),
@@ -693,9 +582,34 @@ function punchit()
       "piercings": $("input#piercings").prop("checked"),
       "torsoinc": $("input#torsoinc").prop("checked")
     };
-    sets = [];
-    display = [];
-    progress.fill(0);
-    setup();
+    game.sets = [];
+    game.display = [];
+    game.workers.reset();
+    setup(game.build);
   }
+}
+
+function switchGame()
+{
+  const g = $('select#game').val();
+
+  if (run)
+  {
+    game.workers.postAll({"cmd": "stop"});
+    $("button#punchit").text("Stopping");
+    $("button#punchit").prop("disabled", true);
+    run = false;
+  }
+
+  game = games[g];
+  game.tableHead();
+  displaySets();
+  updateSkillSelectAll();
+  for (let i = 0; i < game.selected.length; ++i)
+  {
+    if (game.selected[i])
+      $('select#skill-select-' + i).val(game.selected[i].name);
+  }
+  // retrieve the data
+  updateSkillsOverview();
 }
