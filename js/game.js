@@ -149,7 +149,7 @@ class Game
     let row = '<tr>' +
       '<th class="sort">' +
           '<img src="img/def.png" title="Defence"/>' +
-          '<i id="def" data-key="defmax" class="fa fa-sort"/>' +
+          '<i id="def" data-key="def" class="fa fa-sort"/>' +
         '</th>';
 
       for (const r of this.resistances())
