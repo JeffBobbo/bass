@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: ./project
+    volumes:
+      - './project:/var/www/html'
+    ports:
+      - '8000:80'
+    restart: always
+
