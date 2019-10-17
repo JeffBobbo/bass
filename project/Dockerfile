@@ -1,14 +1,14 @@
 FROM ubuntu:18.04
 
-ENV debian_frontend=noninteractive
+ENV PYTHONUNBUFFERED 1
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt -y update && apt -y upgrade && apt autoremove && apt autoclean
-RUN apt -y install nginx
 
-RUN mkdir -p /var/www/html
-WORKDIR /var/www/html
-COPY . /var/www/html/
+RUN apt -y install python3.7 python3-pip python3-psycopg2 postgresql
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN mkdir /app
+WORKDIR /app
+COPY . /app/
 
-EXPOSE 80
+RUN pip3 install -r /app/requirements.txt

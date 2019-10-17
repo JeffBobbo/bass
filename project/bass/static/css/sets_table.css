@@ -1,0 +1,38 @@
+/*
+ * sortable table stuff
+ */
+table.sortable th.sort>i
+{
+  cursor: pointer;
+  user-select: none;
+}
+
+table.sortable tr:nth-child(even)
+{
+  background-color: #444;
+}
+
+td.numeric
+{
+  text-align: right;
+}
+
+table
+{
+  width: 100%;
+}
+
+table img
+{
+  width: 1em;
+}
+
+table select
+{
+  width: 100%;
+}
+
+th
+{
+  font: initial;
+}

@@ -1,0 +1,58 @@
+body
+{
+  margin: 0;
+  color: white;
+  background-color: #444;
+}
+
+.content
+{
+
+}
+
+
+.search-panel
+{
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 300px;
+
+  border-right: 1px solid #fff;
+}
+
+
+.options-panel
+{
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 300px;
+
+  border-left: 1px solid #fff;
+
+  transition: width 500ms ease-in-out;
+}
+
+.options-panel.minimised
+{
+  width: 16px;
+}
+
+.options-panel-toggle
+{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 16px;
+  background-color: #333;
+
+  cursor: pointer;
+}
+
+.options-panel .version
+{
+  margin: 8px;
+  font-size: 11px;
+  float: right;
+}

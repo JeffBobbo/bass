@@ -32,7 +32,7 @@ $(document).ready(function() {
   game.tableHead();
 
   // retrieve the data
-  const dir = 'data/' + gname + '/';
+  const dir = '/static/data/' + gname + '/';
   $.getJSON(dir + 'skills.json', function(payload) {
     let foo = payload;
     game.registerSkills(foo);
@@ -606,7 +606,7 @@ function switchGame()
   if (Object.keys(game.skills).length === 0)
   {
     // retrieve the data
-    const dir = 'data/' + g + '/';
+    const dir = '/static/data/' + g + '/';
     $.getJSON(dir + 'skills.json', function(payload) {
       let foo = payload;
       game.registerSkills(foo);

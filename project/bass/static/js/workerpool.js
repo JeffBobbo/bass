@@ -10,7 +10,7 @@ class WorkerPool
 
     for (let i = 0; i < size; ++i)
     {
-      let worker = new Worker('./js/thread.js');
+      let worker = new Worker('/static/js/thread.js');
       worker.onmessage = cb;
       worker.postMessage({"cmd": "id", "id": i});
       this.workers.push(worker);

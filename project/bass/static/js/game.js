@@ -148,24 +148,22 @@ class Game
 
     let row = '<tr>' +
       '<th class="sort">' +
-          '<img src="img/def.png" title="Defence"/>' +
+          '<img src="/static/img/def.png" title="Defence"/>' +
           '<i id="def" data-key="def" class="fa fa-sort"/>' +
         '</th>';
 
       for (const r of this.resistances())
       {
         row += '<th class="sort">' +
-          '<img src="img/' + r.toLowerCase() + '.png" title="' + r + ' resistance"/>' +
+          '<img src="/static/img/' + r.toLowerCase() + '.png" title="' + r + ' resistance"/>' +
           '<i id="' + r.toLowerCase() + '" data-key="res.' + r + '" class="fa fa-sort"/>' +
         '</th>'
       }
 
       for (const p of ['Head', 'Chest', 'Arms', 'Waist', 'Legs'])
       {
-        row += '<th>' +
-          //'<img src="img/' + p.toLowerCase() + '.png" title="Head"/>' +
-          p +
-          '</th>';
+        row += `<th>${p}</th>`;
+        // row += `<th><img src="/static/img/${p.toLowerCase()}.png" title="${p}"/></th>`;
       }
       if (this.hasJewels)
         row += '<th>Jewels</th><th>Slots</th>';
