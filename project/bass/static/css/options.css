@@ -1,0 +1,16 @@
+.notification
+{
+  border: 1px solid gray;
+  padding: 2px;
+  position: relative;
+}
+
+.notification > a
+{
+  float: right;
+  color: rgb(255, 152, 0);
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  cursor: pointer;
+}

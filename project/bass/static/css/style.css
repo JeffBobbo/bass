@@ -25,22 +25,6 @@ div#sidebar>*
   margin:4px;
 }
 
-div.notice
-{
-  border:1px solid gray;
-  padding:2px;
-  position:relative;
-}
-div.notice>a
-{
-  float:right;
-  color:rgb(255, 152, 0);
-  position:absolute;
-  top:6px;
-  right:8px;
-  cursor:pointer;
-}
-
 .collapsable
 {
   border:1px solid gray;

@@ -5,19 +5,9 @@
 {% block content %}
   <!-- black star &#9733; -->
   <div id="sidebar">
-    <div id="noticebox">
-      <div class="notice">
-        This tool is WIP, there is no guarantee that the results it produces are correct, complete, or possible. Recommend sets are tested by hand or checked with another tool (particularly if you can't afford to waste materials).
-        <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
-      </div>
-      <div class="notice">
-        Known issues:
-        <ul>
-          <li>Torso Inc does not work for jewels</li>
-          <li>Jeweling is not fully solved, better sets may be possible</li>
-        </ul>
-        <a class="fa fa-remove" onclick="this.parentElement.parentElement.removeChild(this.parentElement); return false;"></a>
-      </div>
+    <div id="notifications">
+      {% include 'elements/notification.html' with content="This tool is WIP, there is no guarantee that the results it produces are correct, complete, or possible. Recommend sets are tested by hand or checked with another tool (particularly if you can't afford to waste materials)." %}
+      {% include 'elements/notification.html' with content='Known issues:<ul><li>Torso Inc does not work for jewels</li><li>Jeweling is not fully solved, better sets may be possible</li></ul>' %}
     </div>
 
     <div class="collapsable">
@@ -38,16 +28,10 @@
         </select>
         <br/>
         <label for ="hr">Hunter Rank</label>
-        <select id="hr" disabled title="Not implemented">
-          <option value="9">HR9 (GR)</option>
-          <option value="8">HR8 (GR)</option>
-          <option value="7">HR7 (GR)</option>
-          <option value="6">HR6 (HR)</option>
-          <option value="5">HR5 (HR)</option>
-          <option value="4">HR4 (HR)</option>
-          <option value="3">HR3 (LR)</option>
-          <option value="2">HR2 (LR)</option>
-          <option value="1">HR1 (LR)</option>
+        <select id="hr">
+          {% for x in '987654321'|make_list %}
+            <option value="{{ x }}">HR{{ x }}</option>
+          {% endfor %}
         </select>
         <br/>
         <label for="gender">Gender</label>
@@ -69,10 +53,9 @@
         <br/>
         <label for="slots">Slots</label>
         <select id="slots">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
+          {% for x in '0123'|make_list %}
+            <option value="{{ x }}">{{ x }}</option>
+          {% endfor %}
         </select>
       </div>
     </div>
@@ -115,16 +98,7 @@
       <p>Options</p>
       <i class="fa fa-chevron-down" onclick="$($(this).siblings('div')).toggleClass('hide'); $(this).toggleClass('fa-chevron-down'); $(this).toggleClass('fa-chevron-up');" style="float:right;"></i>
       <div>
-        <fieldset>
-          <legend>Game</legend>
-          <select id="game">
-            <option value="mhf">MHF</option>
-            <option value="mhfu">MHFU (incomplete)</option>
-            <option value="mhp3rd" disabled>MHP3rd (give me data)</option>
-          </select>
-          <br/>
-          <button id="switch">Switch game</button>
-        </fieldset>
+        {% include 'elements/game_selector.html' %}
         <fieldset>
           <legend>Defence display</legend>
           <input type="radio" id="def-style-raw" name="def-style" value="raw" title="Raw display shows defence displayed in game, and the resistances displayed in game" checked/>
@@ -251,6 +225,13 @@
               <img src="{% static 'img/def.png' %}" title="Defence">
               <i id="def" data-key="def" class="fa fa-sort"/>
             </th>
+            {% for resistance in resistances %}
+              <th class="sort">
+                <img src="{{ resistance.image.url }}" title="{{ resistance.name }} resistance">
+                <i id="{{ resistance.name|lower }}" data-key="res.{{ resistance.name|lower }}" class="fa fa-sort"/>
+              </th>
+              {{ resistance.name }}
+            {% endfor %}
             <th class="sort">
               <img src="{% static 'img/fire.png' %}" title="Fire resistance">
               <i id="fire" data-key="res.Fire" class="fa fa-sort"/>

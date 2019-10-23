@@ -1,0 +1,12 @@
+{% if games %}
+  <fieldset>
+    <legend>Game</legend>
+    <select id="game">
+      {% for game in games %}
+        <option value="{{ game.slug }}">{{ game.title }}</option>
+      {% endfor %}
+    </select>
+    <br/>
+    <button id="switch">Switch game</button>
+  </fieldset>
+{% endif %}
